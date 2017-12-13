@@ -26,6 +26,7 @@ void ModKeyDown(char val, byte type)
 void ModIntercedePress(char val, byte type)
 {
   shiftedIntercedePress(val, type);
+  tapDanceIntercedePress(val, type);
 }
 
 void ModKeyUp(char val, byte type)
