@@ -85,6 +85,13 @@ void receiveEvent(int numBytes)
     BledPWMSetBright(input);
     #endif
   }
+  else if (type == 7)
+  {
+    byte x = Wire.read();
+    byte y = Wire.read();
+    LayerState[x][y] = TempLayer;
+    PressKey(GetValEEPROM(x, y, TempLayer), GetTypeEEPROM(x, y, TempLayer));
+  }
 }
 
 /* references
@@ -94,6 +101,19 @@ void receiveEvent(int numBytes)
 4: set EEPROM
 5: set KeyLayer
 */
+
+void I2CPrePress(byte x, byte y)
+{
+  if (slaveCount < MAX_SLAVE_COUNT)
+  {
+    slaveArray[slaveCount] = x;
+    slaveCount++;
+    slaveArray[slaveCount] = y;
+    slaveCount++;
+    slaveArray[slaveCount] = 2;
+    slaveCount++;
+  }
+}
 
 void I2CSlaveKeyDown(char val, byte type)
 {

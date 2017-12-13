@@ -52,16 +52,28 @@ void I2CLoop()
   }
   if (slaveExists)
   {
+    byte reX = 0;
+    byte reY = 0;
     slaveCount = slaveArray[0];
     for (int i = 1; i < slaveCount; i=i+3)
     {
       char cinput = slaveArray[i];
       byte tinput = slaveArray[i+1];
-      if (slaveArray[i+2]>1)
+      byte type = slaveArray[i+2];
+      if (type == 2)
       {
-        PressKey(cinput, tinput);
+        reX = cinput;
+        reY = tinput;
       }
-      else
+      else if (type == 5)
+      {
+        ModIntercedePress(cinput, tinput);
+        if (TempLayer != I2CTempLayer)
+          I2CRequestPress(reX, reY);
+        else
+          PressKey(cinput, tinput);
+      }
+      else if (type == 1)
       {
         ReleaseKey(cinput, tinput);
       }
@@ -170,6 +182,7 @@ void I2CSerial(String input)
 4: set EEPROM
 5: set KeyLayer
 6: set brightness
+7: request press key
 */
 void I2CSetKeyLayer(byte input)
 {
@@ -229,6 +242,15 @@ void I2CSetEEPROM(int addr, byte val)
     addr = addr - 255;
   }
   Wire.write(addr);
+  Wire.endTransmission();
+}
+
+void I2CRequestPress(byte x, byte y)
+{
+  byte type = 7;
+  Wire.beginTransmission(8);
+  Wire.write(x);
+  Wire.write(y);
   Wire.endTransmission();
 }
 

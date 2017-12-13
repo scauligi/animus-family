@@ -116,16 +116,9 @@ void modMethod(KeyDown)(char val, byte type)
 
 void modMethod(IntercedePress)(char val, byte type)
 {
-  if (IS_MASTER)
-  {
-    Serial.write("\nsent key with val ");
-    Serial.print((byte)val, DEC);
-    Serial.write(" and type ");
-    Serial.println(type);
-  }
   if (IS_MASTER && !modMethod(FromHere) && type != 19)
   {
-    /*for (byte i = 0; i < modMethod(MAX_INDEX); i++)
+    for (byte i = 0; i < modMethod(MAX_INDEX); i++)
     {
       if (modMethod(PressCount)[i] > 0)
       {
@@ -143,7 +136,6 @@ void modMethod(IntercedePress)(char val, byte type)
         Serial.write("\n");
       }
     }
-    */
   }
 }
 
