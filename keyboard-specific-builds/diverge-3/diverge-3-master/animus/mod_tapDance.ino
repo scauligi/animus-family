@@ -25,7 +25,9 @@ const byte modMethod(MAX_INDEX) = 20;
 const byte modMethod(MAX_KEYS) = 3;
 const byte modMethod(PADDING) = 2;
 
-uint16_t modMethod(PressTimer)[modMethod(MAX_INDEX)];
+boolean modMethod(FromHere) = false;
+
+int16_t modMethod(PressTimer)[modMethod(MAX_INDEX)];
 byte modMethod(PressCount)[modMethod(MAX_INDEX)];
 boolean modMethod(KeyIsDown)[modMethod(MAX_INDEX)];
 
@@ -62,17 +64,19 @@ void modMethod(Loop)()
           {
             modMethod(PressTimer)[i]--;
           }
-          else
+          else if (modMethod(PressTimer)[i] == 0)
           {
+            Serial.write("timer expired");
+            modMethod(PressTimer)[i] = -1; // signal that key has fired
+            modMethod(FromHere) = true;
             PressKey(modMethod(GetKeyVal)(i, modMethod(PressCount)[i] - 1), modMethod(GetKeyType)(i, modMethod(PressCount)[i] - 1));
-            if (modMethod(KeyIsDown)[i])
+            modMethod(FromHere) = false;
+            if (!modMethod(KeyIsDown)[i])
             {
-              // do nothing
-            }
-            else
-            {
+              Serial.write(": key was not down");
               modMethod(KeyUp)(i, 19);
             }
+            Serial.write("\n");
           }
         }
       }
@@ -98,11 +102,53 @@ void modMethod(KeyDown)(char val, byte type)
       else
       {
 
+        Serial.write("key down\n");
         modMethod(PressCount)[val]++;
+        Serial.write("new count: ");
+        Serial.println(modMethod(PressCount)[val]);
         modMethod(PressTimer)[val] = modMethod(GetTimeout)(val) * modMethod(TIMER_MULTIPLIER);
         modMethod(KeyIsDown)[val] = true;
       }
 
+    }
+  }
+}
+
+void modMethod(IntercedePress)(char val, byte type)
+{
+  if (IS_MASTER && modMethod(FromHere))
+  {
+    Serial.write("\ntapdance is sending val ");
+    Serial.print((byte)val, DEC);
+    Serial.write(" with type ");
+    Serial.println(type);
+  }
+  else if (IS_MASTER)
+  {
+    Serial.write("\nsent key with val ");
+    Serial.print((byte)val, DEC);
+    Serial.write(" and type ");
+    Serial.println(type);
+  }
+  if (IS_MASTER && !modMethod(FromHere) && type != 19)
+  {
+    for (byte i = 0; i < modMethod(MAX_INDEX); i++)
+    {
+      if (modMethod(PressCount)[i] > 0)
+      {
+        Serial.write("intercede, count ");
+        Serial.print(modMethod(PressCount)[i]);
+        modMethod(PressTimer)[i] = -1; // signal that key has fired
+        modMethod(FromHere) = true;
+        PressKey(modMethod(GetKeyVal)(i, modMethod(PressCount)[i] - 1), modMethod(GetKeyType)(i, modMethod(PressCount)[i] - 1));
+        modMethod(FromHere) = false;
+        if (!modMethod(KeyIsDown)[i])
+        {
+          Serial.write(": key was not down");
+          modMethod(KeyUp)(i, 19);
+        }
+        Serial.write("\n");
+      }
     }
   }
 }
@@ -120,13 +166,9 @@ void modMethod(KeyUp)(char val, byte type)
       // sends the macro sequence with id = val
       ReleaseKey(modMethod(GetKeyVal)(val, modMethod(PressCount)[val] - 1), modMethod(GetKeyType)(val, modMethod(PressCount)[val] - 1));
 
-      if (modMethod(KeyIsDown)[val])
+      // if key has already fired
+      if (modMethod(PressTimer)[val] < 0)
       {
-        // do nothing
-      }
-      else
-      {
-
         modMethod(PressCount)[val] = 0;
         modMethod(PressTimer)[val] = 0;
       }
