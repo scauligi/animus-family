@@ -102,7 +102,7 @@ void receiveEvent(int numBytes)
 5: set KeyLayer
 */
 
-void I2CPrePress(byte x, byte y)
+void I2CSlavePrePress(byte x, byte y)
 {
   if (slaveCount < MAX_SLAVE_COUNT)
   {
