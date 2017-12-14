@@ -23,11 +23,6 @@ void ModKeyDown(char val, byte type)
   builder_mkeydown
 }
 
-void ModPrePress(byte x, byte y)
-{
-  I2CSlavePrePress(x, y);
-}
-
 void ModIntercedePress(char val, byte type)
 {
   shiftedIntercedePress(val, type);
@@ -51,3 +46,7 @@ void ModSerial(String input)
     Serial.print("\r\n");
   }
 }
+
+#ifndef I2CMASTER
+void I2CModSend(byte type, byte num, ...) { }
+#endif

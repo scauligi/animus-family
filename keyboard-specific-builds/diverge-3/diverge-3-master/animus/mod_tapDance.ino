@@ -8,6 +8,8 @@ build process
 BUILDER_REQUIREMENT_START
 EEPROM(842,982)
 Keytype(19)
+I2Ctype(7)
+I2Ctype(8)
 BUILDER_REQUIREMENT_END
 Remeber to change the mod_modname to your mod name
 */
@@ -24,8 +26,6 @@ const int modMethod(MIN_ADDR) = 982;
 const byte modMethod(MAX_INDEX) = 20;
 const byte modMethod(MAX_KEYS) = 3;
 const byte modMethod(PADDING) = 2;
-
-boolean modMethod(FromHere) = false;
 
 int16_t modMethod(PressTimer)[modMethod(MAX_INDEX)];
 byte modMethod(PressCount)[modMethod(MAX_INDEX)];
@@ -68,9 +68,7 @@ void modMethod(Loop)()
           {
             Serial.write("timer expired");
             modMethod(PressTimer)[i] = -1; // signal that key has fired
-            modMethod(FromHere) = true;
             PressKey(modMethod(GetKeyVal)(i, modMethod(PressCount)[i] - 1), modMethod(GetKeyType)(i, modMethod(PressCount)[i] - 1));
-            modMethod(FromHere) = false;
             if (!modMethod(KeyIsDown)[i])
             {
               Serial.write(": key was not down");
@@ -106,8 +104,8 @@ void modMethod(KeyDown)(char val, byte type)
         modMethod(PressCount)[val]++;
         Serial.write("new count: ");
         Serial.println(modMethod(PressCount)[val]);
-        modMethod(PressTimer)[val] = modMethod(GetTimeout)(val) * modMethod(TIMER_MULTIPLIER);
-        modMethod(KeyIsDown)[val] = true;
+        modMethod(I2CSendTap)(val);
+        modMethod(KeyTapped)(val);
       }
 
     }
@@ -116,7 +114,7 @@ void modMethod(KeyDown)(char val, byte type)
 
 void modMethod(IntercedePress)(char val, byte type)
 {
-  if (IS_MASTER && !modMethod(FromHere) && type != 19)
+  if (type != 19)
   {
     for (byte i = 0; i < modMethod(MAX_INDEX); i++)
     {
@@ -124,10 +122,9 @@ void modMethod(IntercedePress)(char val, byte type)
       {
         Serial.write("intercede, count ");
         Serial.print(modMethod(PressCount)[i]);
+        modMethod(I2CResetTap)(i);
         modMethod(PressTimer)[i] = -1; // signal that key has fired
-        modMethod(FromHere) = true;
         PressKey(modMethod(GetKeyVal)(i, modMethod(PressCount)[i] - 1), modMethod(GetKeyType)(i, modMethod(PressCount)[i] - 1));
-        modMethod(FromHere) = false;
         if (!modMethod(KeyIsDown)[i])
         {
           Serial.write(": key was not down");
@@ -228,6 +225,40 @@ void modMethod(Serial)(String input)
   }
 
 }
+
+void modMethod(KeyTapped)(byte val)
+{
+  modMethod(PressTimer)[val] = modMethod(GetTimeout)(val) * modMethod(TIMER_MULTIPLIER);
+  modMethod(KeyIsDown)[val] = true;
+}
+
+void modMethod(I2CSendTap)(byte val)
+{
+  byte type = 7;
+  I2CModSend(type, 1, val);
+}
+
+void modMethod(I2CResetTap)(byte val)
+{
+  byte type = 8;
+  I2CModSend(type, 1, val);
+}
+
+#ifdef I2CSLAVE
+void modMethod(I2CReceive)(byte type)
+{
+  if (type == 7)
+  {
+    byte val = I2CRead();
+    modMethod(KeyTapped)(val);
+  }
+  else if (type = 8)
+  {
+    byte val = I2CRead();
+    modMethod(PressTimer)[val] = -1;
+  }
+}
+#endif
 
 byte modMethod(GetLength)(byte id)
 {

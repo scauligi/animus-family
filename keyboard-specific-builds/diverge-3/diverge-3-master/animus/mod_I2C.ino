@@ -9,7 +9,9 @@ BUILDER_REQUIREMENT_END
 #define mod_modname I2C
 
 #define LEDBRIGHTSETTER I2CSetLEDBrightness
+#define I2CMASTER true
 
+#include <stdarg.h>
 #include "Wire.h"
 
 int I2CKeyLayer = 0;
@@ -52,26 +54,15 @@ void I2CLoop()
   }
   if (slaveExists)
   {
-    byte reX = 0;
-    byte reY = 0;
     slaveCount = slaveArray[0];
     for (int i = 1; i < slaveCount; i=i+3)
     {
       char cinput = slaveArray[i];
       byte tinput = slaveArray[i+1];
       byte type = slaveArray[i+2];
-      if (type == 2)
+      if (type == 5)
       {
-        reX = cinput;
-        reY = tinput;
-      }
-      else if (type == 5)
-      {
-        ModIntercedePress(cinput, tinput);
-        if (TempLayer != I2CTempLayer)
-          I2CRequestPress(reX, reY);
-        else
-          PressKey(cinput, tinput);
+        PressKey(cinput, tinput);
       }
       else if (type == 1)
       {
@@ -245,13 +236,19 @@ void I2CSetEEPROM(int addr, byte val)
   Wire.endTransmission();
 }
 
-void I2CRequestPress(byte x, byte y)
+void I2CModSend(byte type, byte num, ...)
 {
-  byte type = 7;
+  va_list va;
+  va_start(va, num);
   Wire.beginTransmission(8);
-  Wire.write(x);
-  Wire.write(y);
+  Wire.write(type);
+  for (byte i = 0; i < num; i++)
+  {
+    byte val = va_arg(va, byte);
+    Wire.write(val);
+  }
   Wire.endTransmission();
+  va_end(va);
 }
 
 

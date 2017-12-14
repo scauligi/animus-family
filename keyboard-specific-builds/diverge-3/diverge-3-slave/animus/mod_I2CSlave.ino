@@ -8,6 +8,8 @@ BUILDER_REQUIREMENT_END
 
 #define mod_modname I2CSlave
 
+#define I2CSLAVE true
+
 #include "Wire.h"
 
 // slave data
@@ -85,13 +87,17 @@ void receiveEvent(int numBytes)
     BledPWMSetBright(input);
     #endif
   }
-  else if (type == 7)
-  {
-    byte x = Wire.read();
-    byte y = Wire.read();
-    LayerState[x][y] = TempLayer;
-    PressKey(GetValEEPROM(x, y, TempLayer), GetTypeEEPROM(x, y, TempLayer));
-  }
+  I2CModReceive(type);
+}
+
+void I2CModReceive(byte type)
+{
+  tapDanceI2CReceive(type);
+}
+
+byte I2CRead()
+{
+  return Wire.read();
 }
 
 /* references
@@ -101,19 +107,6 @@ void receiveEvent(int numBytes)
 4: set EEPROM
 5: set KeyLayer
 */
-
-void I2CSlavePrePress(byte x, byte y)
-{
-  if (slaveCount < MAX_SLAVE_COUNT)
-  {
-    slaveArray[slaveCount] = x;
-    slaveCount++;
-    slaveArray[slaveCount] = y;
-    slaveCount++;
-    slaveArray[slaveCount] = 2;
-    slaveCount++;
-  }
-}
 
 void I2CSlaveKeyDown(char val, byte type)
 {

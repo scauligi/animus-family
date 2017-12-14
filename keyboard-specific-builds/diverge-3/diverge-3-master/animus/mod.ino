@@ -23,10 +23,6 @@ void ModKeyDown(char val, byte type)
   builder_mkeydown
 }
 
-void ModPrePress(byte x, byte y)
-{
-}
-
 void ModIntercedePress(char val, byte type)
 {
   shiftedIntercedePress(val, type);
