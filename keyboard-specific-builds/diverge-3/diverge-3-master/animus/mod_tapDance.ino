@@ -54,8 +54,6 @@ void modMethod(Loop)()
   {
     for (byte i = 0; i < modMethod(MAX_INDEX); i++)
     {
-
-
       if (modMethod(PressCount)[i] > 0)
       {
         if (modMethod(PressTimer)[i] > 0)
@@ -76,8 +74,6 @@ void modMethod(Loop)()
         }
       }
     }
-
-
   }
 }
 
@@ -96,15 +92,9 @@ void modMethod(KeyDown)(char val, byte type)
       }
       else
       {
-
-        Serial.write("key down\n");
-        modMethod(PressCount)[val]++;
-        Serial.write("new count: ");
-        Serial.println(modMethod(PressCount)[val]);
         modMethod(I2CSendTap)(val);
         modMethod(KeyTapped)(val);
       }
-
     }
   }
 }
@@ -137,24 +127,21 @@ void modMethod(KeyUp)(char val, byte type)
 {
   // ran when a key is pressed up
 
-
-  // ran if this device's IS_MASTER flag is true
-  if (IS_MASTER)
+  if (type == 19)
   {
-    if (type == 19)
+    if (IS_MASTER)
     {
       // sends the macro sequence with id = val
       ReleaseKey(modMethod(GetKeyVal)(val, modMethod(PressCount)[val] - 1), modMethod(GetKeyType)(val, modMethod(PressCount)[val] - 1));
-
-      // if key has already fired
-      if (modMethod(PressTimer)[val] < 0)
-      {
-        modMethod(PressCount)[val] = 0;
-        modMethod(PressTimer)[val] = 0;
-      }
-      modMethod(KeyIsDown)[val] = false;
-
     }
+
+    // if key has already fired
+    if (modMethod(PressTimer)[val] < 0)
+    {
+      modMethod(PressCount)[val] = 0;
+      modMethod(PressTimer)[val] = 0;
+    }
+    modMethod(KeyIsDown)[val] = false;
   }
 }
 
@@ -225,6 +212,10 @@ void modMethod(Serial)(String input)
 
 void modMethod(KeyTapped)(byte val)
 {
+  Serial.write("key down\n");
+  modMethod(PressCount)[val]++;
+  Serial.write("new count: ");
+  Serial.println(modMethod(PressCount)[val]);
   modMethod(PressTimer)[val] = modMethod(GetTimeout)(val) * modMethod(TIMER_MULTIPLIER);
   modMethod(KeyIsDown)[val] = true;
 }
@@ -244,13 +235,16 @@ void modMethod(I2CResetTap)(byte val)
 #ifdef I2CSLAVE
 void modMethod(I2CReceive)(byte type)
 {
+  Serial.write("in i2c recv");
   if (type == 7)
   {
+    Serial.write(": got keytap\n");
     byte val = I2CRead();
     modMethod(KeyTapped)(val);
   }
   else if (type = 8)
   {
+    Serial.write(": got reset\n");
     byte val = I2CRead();
     modMethod(PressTimer)[val] = -1;
   }

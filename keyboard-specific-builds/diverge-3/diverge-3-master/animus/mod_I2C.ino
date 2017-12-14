@@ -62,7 +62,11 @@ void I2CLoop()
       byte type = slaveArray[i+2];
       Serial.write("i2c recv'd type ");
       Serial.println(type);
-      if (type == 5)
+      if (type == 2)
+      {
+        ModIntercedePress(cinput, tinput);
+      }
+      else if (type == 5)
       {
         PressKey(cinput, tinput);
       }

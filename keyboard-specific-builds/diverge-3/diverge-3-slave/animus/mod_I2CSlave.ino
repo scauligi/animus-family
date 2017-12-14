@@ -108,6 +108,20 @@ byte I2CRead()
 5: set KeyLayer
 */
 
+void I2CSlaveIntercedePress(char val, byte type)
+{
+  if (slaveCount < MAX_SLAVE_COUNT)
+  {
+    slaveArray[slaveCount] = val;
+    slaveCount++;
+    slaveArray[slaveCount] = type;
+    slaveCount++;
+    slaveArray[slaveCount] = 2;
+    slaveCount++;
+  }
+}
+
+
 void I2CSlaveKeyDown(char val, byte type)
 {
   if (slaveCount < MAX_SLAVE_COUNT)

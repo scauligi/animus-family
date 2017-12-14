@@ -25,6 +25,7 @@ void ModKeyDown(char val, byte type)
 
 void ModIntercedePress(char val, byte type)
 {
+  I2CSlaveIntercedePress(val, type);
   shiftedIntercedePress(val, type);
   tapDanceIntercedePress(val, type);
 }
