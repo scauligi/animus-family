@@ -87,6 +87,14 @@ void receiveEvent(int numBytes)
     BledPWMSetBright(input);
     #endif
   }
+  else if (type == 10)
+  {
+    byte x = Wire.read();
+    byte y = Wire.read();
+    LayerState[x][y] = TempLayer;
+    I2CSlaveWrite(GetValEEPROM(x, y, TempLayer));
+    I2CSlaveWrite(GetTypeEEPROM(x, y, TempLayer));
+  }
   I2CModReceive(type);
 }
 
@@ -121,6 +129,15 @@ void I2CSlaveIntercedePress(char val, byte type)
   }
 }
 
+void I2CSlaveWrite(byte val)
+{
+  if (slaveCount < MAX_SLAVE_COUNT)
+  {
+    slaveArray[slaveCount] = val;
+    slaveCount++;
+  }
+}
+
 
 void I2CSlaveKeyDown(char val, byte type)
 {
@@ -133,8 +150,6 @@ void I2CSlaveKeyDown(char val, byte type)
     slaveArray[slaveCount] = 5;
     slaveCount++;
   }
-  if (type == 1)
-    TempLayer = val;
 }
 
 void I2CSlaveKeyUp(char val, byte type)

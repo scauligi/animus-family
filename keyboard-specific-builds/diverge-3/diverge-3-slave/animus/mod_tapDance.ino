@@ -49,6 +49,8 @@ void modMethod(Loop)()
 {
   // full speed master loop
 
+  if (!IS_MASTER)
+    return;
 
   // things inside this if statement is ran every RefreshDelay milliseconds
   if (CheckMillis())
@@ -102,7 +104,7 @@ void modMethod(KeyDown)(char val, byte type)
 
 void modMethod(IntercedePress)(char val, byte type)
 {
-  if (type != 19)
+  if (IS_MASTER && type != 19)
   {
     for (byte i = 0; i < modMethod(MAX_INDEX); i++)
     {
@@ -127,6 +129,8 @@ void modMethod(IntercedePress)(char val, byte type)
 void modMethod(KeyUp)(char val, byte type)
 {
   // ran when a key is pressed up
+  if (!IS_MASTER)
+    return;
 
   if (type == 19)
   {

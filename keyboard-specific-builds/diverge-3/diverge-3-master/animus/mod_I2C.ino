@@ -55,6 +55,7 @@ void I2CLoop()
   if (slaveExists)
   {
     slaveCount = slaveArray[0];
+    byte reX, reY;
     for (int i = 1; i < slaveCount; i=i+3)
     {
       char cinput = slaveArray[i];
@@ -70,8 +71,35 @@ void I2CLoop()
       {
         ModIntercedePress(cinput, tinput);
       }
+      else if (type == 3)
+      {
+        reX = cinput;
+        reY = tinput;
+        Serial.print(F("  with x and y: "));
+        Serial.print(reX);
+        Serial.print(F(" "));
+        Serial.println(reY);
+      }
       else if (type == 5)
       {
+        if (TempLayer != I2CTempLayer)
+        {
+          I2CSetTempLayer(TempLayer);
+          I2CTempLayer = TempLayer;
+          I2CBegin(10);
+          I2CWrite(reX);
+          I2CWrite(reY);
+          I2CEnd();
+          Wire.requestFrom(8, 3);
+          Wire.read(); // discard count
+          cinput = Wire.read();
+          tinput = Wire.read();
+          Serial.print(F("  new val/type: "));
+          Serial.print(F("  "));
+          Serial.print((byte)cinput);
+          Serial.print(F(" "));
+          Serial.println(tinput);
+        }
         PressKey(cinput, tinput);
       }
       else if (type == 1)

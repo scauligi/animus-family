@@ -65,6 +65,11 @@ void loop()
       {
         if (KeyStateCountDown[j][i] == 1) // if key is still down after debounce time
         {
+//#ifdef I2CSLAVE
+          I2CSlaveWrite(j);
+          I2CSlaveWrite(i);
+          I2CSlaveWrite(3);
+//#endif
           ModIntercedePress(GetValEEPROM(j, i, TempLayer), GetTypeEEPROM(j, i, TempLayer));
           LayerState[j][i] = TempLayer;
           PressKey(GetValEEPROM(j, i, TempLayer), GetTypeEEPROM(j, i, TempLayer));
