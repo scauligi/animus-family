@@ -65,6 +65,8 @@ void loop()
       {
         if (KeyStateCountDown[j][i] == 1) // if key is still down after debounce time
         {
+          ModPressCoord(j, i);
+          ModPrePress(GetValEEPROM(j, i, TempLayer), GetTypeEEPROM(j, i, TempLayer));
           LayerState[j][i] = TempLayer;
           PressKey(GetValEEPROM(j, i, TempLayer), GetTypeEEPROM(j, i, TempLayer));
           KeyStateCountDown[j][i] = 255;
@@ -163,12 +165,12 @@ void PressKey(char val, byte type)
       }
       //ReleaseAllKey();
     }
-    else if (type == 11)
+    /*else if (type == 11)
     {
       // shifted
       PressKey(225, 0);
       PressKey(val, 0);
-    }
+    }*/
     else if (type == 12)
     {
       // ctrled
@@ -244,12 +246,12 @@ void ReleaseKey(char val, byte type)
       TempLayer = KeyLayer;
       //ReleaseAllKey(); // DEPRECIATED END
     }
-    else if (type == 11)
+    /*else if (type == 11)
     {
       // shifted
       ReleaseKey(225, 0);
       ReleaseKey(val, 0);
-    }
+    }*/
     else if (type == 12)
     {
       // ctrled
