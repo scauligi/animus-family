@@ -60,8 +60,12 @@ void I2CLoop()
       char cinput = slaveArray[i];
       byte tinput = slaveArray[i+1];
       byte type = slaveArray[i+2];
-      Serial.write("i2c recv'd type ");
+      Serial.print(F("i2c recv'd type "));
       Serial.println(type);
+      Serial.print(F("  "));
+      Serial.print((byte)cinput);
+      Serial.print(F(" "));
+      Serial.println(tinput);
       if (type == 2)
       {
         ModIntercedePress(cinput, tinput);
@@ -74,7 +78,6 @@ void I2CLoop()
       {
         ReleaseKey(cinput, tinput);
       }
-      Serial.write("  and made it out\n");
     }
   }
 
@@ -193,6 +196,8 @@ void I2CSetKeyLayer(byte input)
 
 void I2CSetTempLayer(byte input)
 {
+  Serial.print(F("writing templayer: "));
+  Serial.println(input);
   Wire.beginTransmission(8);
   Wire.write(1);
   Wire.write(input);

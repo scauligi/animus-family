@@ -133,6 +133,8 @@ void I2CSlaveKeyDown(char val, byte type)
     slaveArray[slaveCount] = 5;
     slaveCount++;
   }
+  if (type == 1)
+    TempLayer = val;
 }
 
 void I2CSlaveKeyUp(char val, byte type)
