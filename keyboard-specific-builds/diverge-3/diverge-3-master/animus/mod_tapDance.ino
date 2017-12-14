@@ -10,6 +10,7 @@ EEPROM(842,982)
 Keytype(19)
 I2Ctype(7)
 I2Ctype(8)
+I2Ctype(9)
 BUILDER_REQUIREMENT_END
 Remeber to change the mod_modname to your mod name
 */
@@ -156,8 +157,6 @@ void modMethod(Serial)(String input)
   }
   else if (input.startsWith("uniqueksettapdance"))
   {
-    byte key, type, state;
-
     input = input.substring(input.indexOf('(')+1);
     byte id = input.substring(0, input.indexOf('(')).toInt();
     input = input.substring(input.indexOf('(')+1);
@@ -186,6 +185,20 @@ void modMethod(Serial)(String input)
     modMethod(SetKeyType)(id, 1, key1type);
     modMethod(SetKeyType)(id, 2, key2type);
 
+#ifdef I2CMASTER
+    I2CBegin();
+    I2CWrite(9);
+    I2CWrite(id);
+    I2CWrite(length);
+    I2CWrite(delay);
+    I2CWrite(key0val);
+    I2CWrite(key0type);
+    I2CWrite(key1val);
+    I2CWrite(key1type);
+    I2CWrite(key2val);
+    I2CWrite(key2type);
+    I2CEnd();
+#endif
 
 
     Serial.print("set tapdance(");
@@ -223,13 +236,23 @@ void modMethod(KeyTapped)(byte val)
 void modMethod(I2CSendTap)(byte val)
 {
   byte type = 7;
-  I2CModSend(type, 1, val);
+#ifdef I2CMASTER
+  I2CBegin();
+  I2CWrite(type);
+  I2CWrite(val);
+  I2CEnd();
+#endif
 }
 
 void modMethod(I2CResetTap)(byte val)
 {
   byte type = 8;
-  I2CModSend(type, 1, val);
+#ifdef I2CMASTER
+  I2CBegin();
+  I2CWrite(type);
+  I2CWrite(val);
+  I2CEnd();
+#endif
 }
 
 #ifdef I2CSLAVE
@@ -247,6 +270,27 @@ void modMethod(I2CReceive)(byte type)
     Serial.write(": got reset\n");
     byte val = I2CRead();
     modMethod(PressTimer)[val] = -1;
+  }
+  else if (type == 9)
+  {
+    byte id = I2CRead();
+    byte length = I2CRead();
+    byte delay = I2CRead();
+    byte key0val = I2CRead();
+    byte key0type = I2CRead();
+    byte key1val = I2CRead();
+    byte key1type = I2CRead();
+    byte key2val = I2CRead();
+    byte key2type = I2CRead();
+
+    modMethod(SetLength)(id, length);
+    modMethod(SetTimeout)(id, delay);
+    modMethod(SetKeyVal)(id, 0, key0val);
+    modMethod(SetKeyVal)(id, 1, key1val);
+    modMethod(SetKeyVal)(id, 2, key2val);
+    modMethod(SetKeyType)(id, 0, key0type);
+    modMethod(SetKeyType)(id, 1, key1type);
+    modMethod(SetKeyType)(id, 2, key2type);
   }
 }
 #endif

@@ -243,19 +243,19 @@ void I2CSetEEPROM(int addr, byte val)
   Wire.endTransmission();
 }
 
-void I2CModSend(byte type, byte num, byte val)
+void I2CBegin()
 {
-  //va_list va;
-  //va_start(va, num);
   Wire.beginTransmission(8);
-  Wire.write(type);
-  for (byte i = 0; i < num; i++)
-  {
-    //byte val = va_arg(va, byte);
-    Wire.write(val);
-  }
+}
+
+void I2CWrite(byte val)
+{
+  Wire.write(val);
+}
+
+void I2CEnd()
+{
   Wire.endTransmission();
-  //va_end(va);
 }
 
 

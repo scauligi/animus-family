@@ -47,7 +47,3 @@ void ModSerial(String input)
     Serial.print("\r\n");
   }
 }
-
-#ifndef I2CMASTER
-void I2CModSend(byte type, byte num, ...) { }
-#endif
