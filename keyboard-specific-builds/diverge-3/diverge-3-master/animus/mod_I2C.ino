@@ -11,7 +11,7 @@ BUILDER_REQUIREMENT_END
 #define LEDBRIGHTSETTER I2CSetLEDBrightness
 #define I2CMASTER true
 
-#include <stdarg.h>
+//#include <stdarg.h>
 #include "Wire.h"
 
 int I2CKeyLayer = 0;
@@ -60,6 +60,8 @@ void I2CLoop()
       char cinput = slaveArray[i];
       byte tinput = slaveArray[i+1];
       byte type = slaveArray[i+2];
+      Serial.write("i2c recv'd type ");
+      Serial.println(type);
       if (type == 5)
       {
         PressKey(cinput, tinput);
@@ -68,6 +70,7 @@ void I2CLoop()
       {
         ReleaseKey(cinput, tinput);
       }
+      Serial.write("  and made it out\n");
     }
   }
 
@@ -236,19 +239,19 @@ void I2CSetEEPROM(int addr, byte val)
   Wire.endTransmission();
 }
 
-void I2CModSend(byte type, byte num, ...)
+void I2CModSend(byte type, byte num, byte val)
 {
-  va_list va;
-  va_start(va, num);
+  //va_list va;
+  //va_start(va, num);
   Wire.beginTransmission(8);
   Wire.write(type);
   for (byte i = 0; i < num; i++)
   {
-    byte val = va_arg(va, byte);
+    //byte val = va_arg(va, byte);
     Wire.write(val);
   }
   Wire.endTransmission();
-  va_end(va);
+  //va_end(va);
 }
 
 

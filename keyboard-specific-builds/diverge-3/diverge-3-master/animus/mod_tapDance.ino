@@ -52,30 +52,27 @@ void modMethod(Loop)()
   // things inside this if statement is ran every RefreshDelay milliseconds
   if (CheckMillis())
   {
-    if (IS_MASTER)
+    for (byte i = 0; i < modMethod(MAX_INDEX); i++)
     {
-      for (byte i = 0; i < modMethod(MAX_INDEX); i++)
+
+
+      if (modMethod(PressCount)[i] > 0)
       {
-
-
-        if (modMethod(PressCount)[i] > 0)
+        if (modMethod(PressTimer)[i] > 0)
         {
-          if (modMethod(PressTimer)[i] > 0)
+          modMethod(PressTimer)[i]--;
+        }
+        else if (modMethod(PressTimer)[i] == 0)
+        {
+          Serial.write("timer expired");
+          modMethod(PressTimer)[i] = -1; // signal that key has fired
+          PressKey(modMethod(GetKeyVal)(i, modMethod(PressCount)[i] - 1), modMethod(GetKeyType)(i, modMethod(PressCount)[i] - 1));
+          if (!modMethod(KeyIsDown)[i])
           {
-            modMethod(PressTimer)[i]--;
+            Serial.write(": key was not down");
+            modMethod(KeyUp)(i, 19);
           }
-          else if (modMethod(PressTimer)[i] == 0)
-          {
-            Serial.write("timer expired");
-            modMethod(PressTimer)[i] = -1; // signal that key has fired
-            PressKey(modMethod(GetKeyVal)(i, modMethod(PressCount)[i] - 1), modMethod(GetKeyType)(i, modMethod(PressCount)[i] - 1));
-            if (!modMethod(KeyIsDown)[i])
-            {
-              Serial.write(": key was not down");
-              modMethod(KeyUp)(i, 19);
-            }
-            Serial.write("\n");
-          }
+          Serial.write("\n");
         }
       }
     }
