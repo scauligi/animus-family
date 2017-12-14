@@ -243,9 +243,10 @@ void I2CSetEEPROM(int addr, byte val)
   Wire.endTransmission();
 }
 
-void I2CBegin()
+void I2CBegin(byte type)
 {
   Wire.beginTransmission(8);
+  Wire.write(type);
 }
 
 void I2CWrite(byte val)

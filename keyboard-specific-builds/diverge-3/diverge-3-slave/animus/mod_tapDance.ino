@@ -186,8 +186,7 @@ void modMethod(Serial)(String input)
     modMethod(SetKeyType)(id, 2, key2type);
 
 #ifdef I2CMASTER
-    I2CBegin();
-    I2CWrite(9);
+    I2CBegin(9);
     I2CWrite(id);
     I2CWrite(length);
     I2CWrite(delay);
@@ -235,10 +234,8 @@ void modMethod(KeyTapped)(byte val)
 
 void modMethod(I2CSendTap)(byte val)
 {
-  byte type = 7;
 #ifdef I2CMASTER
-  I2CBegin();
-  I2CWrite(type);
+  I2CBegin(7);
   I2CWrite(val);
   I2CEnd();
 #endif
@@ -246,10 +243,8 @@ void modMethod(I2CSendTap)(byte val)
 
 void modMethod(I2CResetTap)(byte val)
 {
-  byte type = 8;
 #ifdef I2CMASTER
-  I2CBegin();
-  I2CWrite(type);
+  I2CBegin(8);
   I2CWrite(val);
   I2CEnd();
 #endif
@@ -286,10 +281,10 @@ void modMethod(I2CReceive)(byte type)
     modMethod(SetLength)(id, length);
     modMethod(SetTimeout)(id, delay);
     modMethod(SetKeyVal)(id, 0, key0val);
-    modMethod(SetKeyVal)(id, 1, key1val);
-    modMethod(SetKeyVal)(id, 2, key2val);
     modMethod(SetKeyType)(id, 0, key0type);
+    modMethod(SetKeyVal)(id, 1, key1val);
     modMethod(SetKeyType)(id, 1, key1type);
+    modMethod(SetKeyVal)(id, 2, key2val);
     modMethod(SetKeyType)(id, 2, key2type);
   }
 }
