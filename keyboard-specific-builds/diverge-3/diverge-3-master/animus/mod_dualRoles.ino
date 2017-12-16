@@ -12,6 +12,7 @@ Keytype(26)
 Keytype(27)
 Keytype(28)
 Keytype(29)
+Keytype(35)
 BUILDER_REQUIREMENT_END
 Remeber to change the mod_modname to your mod name
 */
@@ -72,6 +73,11 @@ void modMethod(KeyDown)(char val, byte type)
       PressedKey = false;
       TempLayer = type - 23;
     }
+    else if (type == 35) // win
+    {
+      PressKey(227, 0);
+      PressedKey = false;
+    }
   }
 }
 
@@ -83,7 +89,7 @@ void modMethod(KeyUp)(char val, byte type)
   // ran if this device's IS_MASTER flag is true
   if (IS_MASTER)
   {
-    if (type >= 20 && type < 30)
+    if (type >= 20 && (type < 30 || type == 35))
     {
 
       // ctrlDualRole
@@ -106,6 +112,10 @@ void modMethod(KeyUp)(char val, byte type)
       else if (type > 23 && type < 30) // fn
       {
         TempLayer = KeyLayer;
+      }
+      else if (type == 35) // win
+      {
+        ReleaseKey(227, 0);
       }
 
 
