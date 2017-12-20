@@ -48,13 +48,13 @@ void modMethod(Loop)()
       if (modMethod(IsRunning))
       {
         modMethod(IsRunning) = false;
-        Mouse.end();
+        //Mouse.end();
       }
       
     }
     else
     {
-      Mouse.begin();
+      //Mouse.begin();
       modMethod(IsRunning) = true;
       Mouse.move(modMethod(XVal)-128,modMethod(YVal)-128,modMethod(WheelVal)-128);
     }
