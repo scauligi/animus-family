@@ -11,7 +11,7 @@ Remeber to change the mod_modname to your mod name
 
 #define modMethod(str) conca(mod_modname, str)
 
-boolean modMethod(WinDown) = false;
+byte modMethod(WinDown) = 0;
 
 void modMethod(Startup)()
 {
@@ -38,12 +38,15 @@ void modMethod(KeyDown)(char val, byte type)
   // ran if this device's IS_MASTER flag is true
   if (IS_MASTER)
   {
-    // if you press a null key while on the sym layer
-    if (type == 255 && val == 0 && TempLayer == 1)
+    // if you press a null key while on any layer
+    if (type == 255 && val == 0)
     {
-      PressKey(227, 0); // win
-      modMethod(WinDown) = true;
-      TempLayer = KeyLayer;
+      if (TempLayer == 1 || TempLayer == 3)
+      {
+        PressKey(TempLayer == 1 ? 227 : 231, 0); // win
+        modMethod(WinDown) = TempLayer;
+        TempLayer = KeyLayer;
+      }
     }
   }
 }
@@ -56,14 +59,11 @@ void modMethod(KeyUp)(char val, byte type)
   // ran if this device's IS_MASTER flag is true
   if (IS_MASTER)
   {
-    // if release sym
-    if (type == 1 && val == 1)
+    // when you release that layer key
+    if (type == 1 && val == modMethod(WinDown))
     {
-      if (modMethod(WinDown))
-      {
-        ReleaseKey(227, 0); // win
-        modMethod(WinDown) = false;
-      }
+      ReleaseKey(modMethod(WinDown) == 1 ? 227 : 231, 0); // win
+      modMethod(WinDown) = 0;
     }
   }
 }
