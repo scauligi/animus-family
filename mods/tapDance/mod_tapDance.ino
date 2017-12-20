@@ -120,7 +120,7 @@ void modMethod(PrePress)(char val, byte type)
   {
     for (byte i = 0; i < modMethod(MAX_INDEX); i++)
     {
-      if ((type != 19 || val != i) && modMethod(PressCount)[i] > 0)
+      if ((type != 19 || val != i) && modMethod(PressTimer)[i] > 0)
       {
         modMethod(FireTapDance)(i);
         if (!modMethod(KeyIsDown)[i])
