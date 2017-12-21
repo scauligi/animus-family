@@ -425,6 +425,7 @@ void KeyScan()
   for (byte i = 0; i < COL; i++)
   {
     pinMode(HPins[i], OUTPUT);
+    delayMicroseconds(30); // wait for inputs to settle (stolen from TMK)
 
     for (byte j = 0; j < ROW; j++)
     {
