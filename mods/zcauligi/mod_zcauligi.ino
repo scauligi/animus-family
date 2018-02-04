@@ -14,6 +14,8 @@ Remeber to change the mod_modname to your mod name
 byte modMethod(WinDown) = 0;
 int16_t modMethod(MouseTimer)[4];
 byte modMethod(MouseCount)[4];
+byte modMethod(SafeEnterLayer) = -1;
+boolean modMethod(SafeToEnter) = true;
 
 void modMethod(Startup)()
 {
@@ -44,6 +46,11 @@ void modMethod(Loop)()
         modMethod(MouseTimer)[i] = -1;
       }
     }
+
+    if (TempLayer != modMethod(SafeEnterLayer))
+    {
+      modMethod(SafeToEnter) = true;
+    }
   }
 }
 
@@ -55,6 +62,14 @@ void modMethod(KeyDown)(char val, byte type)
   // ran if this device's IS_MASTER flag is true
   if (IS_MASTER)
   {
+    if (TempLayer == modMethod(SafeEnterLayer))
+    {
+      if (type == 0 && val != 40)
+      {
+        modMethod(SafeToEnter) = false;
+      }
+    }
+
     // if you press a null key while on any layer
     if (type == 255 && val == 0)
     {
@@ -78,6 +93,22 @@ void modMethod(KeyDown)(char val, byte type)
       byte mouseSpeed = 1 << (modMethod(MouseCount)[i] - 1);
       modMethod(AdjustMouse)(i, mouseSpeed - 1);
     }
+
+    // safe enter
+    else if (type == 36 && val == 1)
+    {
+      if (modMethod(SafeToEnter))
+      {
+        modMethod(SafeEnterLayer) = TempLayer;
+        PressKey(40, 0); // enter
+      }
+      else
+      {
+        PressKey(44, 0); // space
+      }
+    }
+    else if (type == 0 && val == 41)
+      modMethod(SafeToEnter) = true;
   }
 }
 
@@ -105,6 +136,12 @@ void modMethod(KeyUp)(char val, byte type)
       modMethod(AdjustMouse)(i, -(mouseSpeed - 1));
 
       modMethod(MouseTimer)[i] = 5 * tapDanceTIMER_MULTIPLIER;
+    }
+
+    else if (type == 36 && val == 1)
+    {
+      ReleaseKey(40, 0);
+      ReleaseKey(44, 0);
     }
   }
 }
