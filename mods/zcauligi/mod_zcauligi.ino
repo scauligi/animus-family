@@ -75,7 +75,8 @@ void modMethod(KeyDown)(char val, byte type)
       if (modMethod(MouseTimer)[i] < 0)
         modMethod(MouseCount)[i] = 0;
       modMethod(MouseCount)[i]++;
-      modMethod(AdjustMouse)(i, modMethod(MouseCount)[i] - 1);
+      byte mouseSpeed = 1 << (modMethod(MouseCount)[i] - 1);
+      modMethod(AdjustMouse)(i, mouseSpeed - 1);
     }
   }
 }
@@ -100,7 +101,8 @@ void modMethod(KeyUp)(char val, byte type)
       int8_t m = modMethod(KeyToMouse)(val, type);
       byte i = m & B11;
 
-      modMethod(AdjustMouse)(i, -(modMethod(MouseCount)[i] - 1));
+      byte mouseSpeed = 1 << (modMethod(MouseCount)[i] - 1);
+      modMethod(AdjustMouse)(i, -(mouseSpeed - 1));
 
       modMethod(MouseTimer)[i] = 5 * tapDanceTIMER_MULTIPLIER;
     }
