@@ -46,11 +46,6 @@ void modMethod(Loop)()
         modMethod(MouseTimer)[i] = -1;
       }
     }
-
-    if (TempLayer != modMethod(SafeEnterLayer))
-    {
-      modMethod(SafeToEnter) = true;
-    }
   }
 }
 
@@ -62,16 +57,25 @@ void modMethod(KeyDown)(char val, byte type)
   // ran if this device's IS_MASTER flag is true
   if (IS_MASTER)
   {
-    if (TempLayer == modMethod(SafeEnterLayer))
+    if (type != 1 && type != 5) // not switching layers
     {
-      if (type == 0 && val != 40)
+      if (TempLayer == modMethod(SafeEnterLayer))
       {
-        modMethod(SafeToEnter) = false;
+        if (!(type == 36 && val == 1)) // not the safe enter key
+        {
+          modMethod(SafeToEnter) = false;
+        }
+      }
+    }
+
+    if (type == 1 || type == 5) { // switching layers
+      if (val == modMethod(SafeEnterLayer)) {
+        modMethod(SafeToEnter) = true;
       }
     }
 
     // if you press a null key while on any layer
-    if (type == 255 && val == 0)
+    else if (type == 255 && val == 0)
     {
       if (TempLayer == 1 || TempLayer == 3)
       {
@@ -99,16 +103,15 @@ void modMethod(KeyDown)(char val, byte type)
     {
       if (modMethod(SafeToEnter))
       {
-        modMethod(SafeEnterLayer) = TempLayer;
-        PressKey(40, 0); // enter
+        if (modMethod(SafeEnterLayer) != TempLayer)
+          modMethod(SafeEnterLayer) = TempLayer;
+        AnimusKeyboard.press(40); // enter
       }
       else
       {
-        PressKey(44, 0); // space
+        AnimusKeyboard.press(44); // space
       }
     }
-    else if (type == 0 && val == 41)
-      modMethod(SafeToEnter) = true;
   }
 }
 
@@ -140,8 +143,8 @@ void modMethod(KeyUp)(char val, byte type)
 
     else if (type == 36 && val == 1)
     {
-      ReleaseKey(40, 0);
-      ReleaseKey(44, 0);
+      AnimusKeyboard.release(40);
+      AnimusKeyboard.release(44);
     }
   }
 }
