@@ -69,9 +69,7 @@ void modMethod(KeyDown)(char val, byte type)
     }
 
     if (type == 1 || type == 5) { // switching layers
-      if (val == modMethod(SafeEnterLayer)) {
-        modMethod(SafeToEnter) = true;
-      }
+      modMethod(SafeToEnter) = true;
     }
 
     // if you press a null key while on any layer
