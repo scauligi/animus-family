@@ -96,12 +96,12 @@ void modMethod(KeyDown)(char val, byte type)
       modMethod(SafeToEnter) = true;
     }
 
-    // if you press a null key while on any layer
+    // if you press a null key while on sym or fn layers
     else if (type == 255 && val == 0)
     {
-      if (TempLayer == 1 || TempLayer == 3)
+      if (TempLayer == 2 || TempLayer == 4)
       {
-        PressKey(TempLayer == 1 ? 227 : 231, 0); // win
+        PressKey(TempLayer == 2 ? 227 : 231, 0); // win
         modMethod(WinDown) = TempLayer;
         TempLayer = KeyLayer;
       }
@@ -183,7 +183,7 @@ void modMethod(KeyUp)(char val, byte type)
     // when you release that layer key
     else if (type == 1 && val == modMethod(WinDown))
     {
-      ReleaseKey(modMethod(WinDown) == 1 ? 227 : 231, 0); // win
+      ReleaseKey(modMethod(WinDown) == 2 ? 227 : 231, 0); // win
       modMethod(WinDown) = 0;
     }
 
