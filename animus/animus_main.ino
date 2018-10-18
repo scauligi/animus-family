@@ -371,8 +371,6 @@ void RotateLayers(byte val)
    */
   for (byte i = 0; i < 10; i++)
   {
-    newLayer++;
-    mask <<= 1;
     if ((! mask) || (newLayer >= Lay))
     {
       newLayer = 0;
@@ -384,6 +382,8 @@ void RotateLayers(byte val)
       /* newLayer is an allowed layer within the bitfield. */
       break;
     }
+    newLayer++;
+    mask <<= 1;
   }
 
   KeyLayer = newLayer;
