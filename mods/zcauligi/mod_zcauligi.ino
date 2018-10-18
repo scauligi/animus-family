@@ -49,6 +49,22 @@ void modMethod(Loop)()
   }
 }
 
+void modMethod(RestoreShiftiness)() {
+  modMethod(Shiftiness) = 0;
+  if (modMethod(LshiftDown))
+    AnimusKeyboard.press(225);
+  if (modMethod(RshiftDown))
+    AnimusKeyboard.press(229);
+}
+
+void modMethod(PrePress)(char val, byte type) {
+  if (IS_MASTER) {
+    if (modMethod(Shiftiness))
+      modMethod(RestoreShiftiness)();
+  }
+}
+
+
 void modMethod(KeyDown)(char val, byte type)
 {
   // ran when a key is pressed down
@@ -68,7 +84,15 @@ void modMethod(KeyDown)(char val, byte type)
       }
     }
 
-    if (type == 1 || type == 5) { // switching layers
+    if (type == 0) {
+      if (val == 225) {
+        modMethod(LshiftDown) = true;
+      } else if (val == 229) {
+        modMethod(RshiftDown) = true;
+      }
+    }
+
+    else if (type == 1 || type == 5) { // switching layers
       modMethod(SafeToEnter) = true;
     }
 
@@ -96,18 +120,45 @@ void modMethod(KeyDown)(char val, byte type)
       modMethod(AdjustMouse)(i, mouseSpeed - 1);
     }
 
-    // safe enter
-    else if (type == 36 && val == 1)
+    // custom keys
+    else if (type == 36)
     {
-      if (modMethod(SafeToEnter))
-      {
-        if (modMethod(SafeEnterLayer) != TempLayer)
-          modMethod(SafeEnterLayer) = TempLayer;
-        AnimusKeyboard.press(40); // enter
+      // safe enter
+      if (val == 1) {
+        if (modMethod(SafeToEnter))
+        {
+          if (modMethod(SafeEnterLayer) != TempLayer)
+            modMethod(SafeEnterLayer) = TempLayer;
+          AnimusKeyboard.press(40); // enter
+        }
+        else
+        {
+          AnimusKeyboard.press(44); // space
+        }
       }
-      else
-      {
-        AnimusKeyboard.press(44); // space
+
+      // slasher
+      else if (val == 2) {
+        if (modMethod(LshiftDown) || modMethod(RshiftDown)) {
+          AnimusKeyboard.release(225);
+          AnimusKeyboard.release(229);
+          modMethod(Shiftiness) = true;
+          PressKey(49, 0); // backslash
+        } else {
+          PressKey(56, 0); // forward slash
+        }
+      }
+
+      // dotcomm
+      else if (val == 3) {
+        if (modMethod(LshiftDown) || modMethod(RshiftDown)) {
+          AnimusKeyboard.release(225);
+          AnimusKeyboard.release(229);
+          modMethod(Shiftiness) = true;
+          PressKey(54, 0); // comma
+        } else {
+          PressKey(55, 0); // period
+        }
       }
     }
   }
@@ -121,8 +172,16 @@ void modMethod(KeyUp)(char val, byte type)
   // ran if this device's IS_MASTER flag is true
   if (IS_MASTER)
   {
+    if (type == 0) {
+      if (val == 225) {
+        modMethod(LshiftDown) = false;
+      } else if (val == 229) {
+        modMethod(RshiftDown) = false;
+      }
+    }
+
     // when you release that layer key
-    if (type == 1 && val == modMethod(WinDown))
+    else if (type == 1 && val == modMethod(WinDown))
     {
       ReleaseKey(modMethod(WinDown) == 1 ? 227 : 231, 0); // win
       modMethod(WinDown) = 0;
@@ -139,10 +198,25 @@ void modMethod(KeyUp)(char val, byte type)
       modMethod(MouseTimer)[i] = 5 * tapDanceTIMER_MULTIPLIER;
     }
 
-    else if (type == 36 && val == 1)
-    {
-      AnimusKeyboard.release(40);
-      AnimusKeyboard.release(44);
+    else if (type == 36) {
+      if (val == 1) {
+        AnimusKeyboard.release(40);
+        AnimusKeyboard.release(44);
+      }
+
+      // slasher
+      else if (val == 2) {
+        ReleaseKey(49, 0); // backslash
+        ReleaseKey(56, 0); // forward slash
+        modMethod(RestoreShiftiness)();
+      }
+
+      // dotcomm
+      else if (val == 3) {
+        ReleaseKey(54, 0); // comma
+        ReleaseKey(55, 0); // period
+        modMethod(RestoreShiftiness)();
+      }
     }
   }
 }
