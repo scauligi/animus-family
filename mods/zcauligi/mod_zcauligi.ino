@@ -16,6 +16,9 @@ int16_t modMethod(MouseTimer)[4];
 byte modMethod(MouseCount)[4];
 byte modMethod(SafeEnterLayer) = -1;
 boolean modMethod(SafeToEnter) = true;
+boolean modMethod(Shiftiness) = false;
+boolean modMethod(LshiftDown) = false;
+boolean modMethod(RshiftDown) = false;
 
 void modMethod(Startup)()
 {
