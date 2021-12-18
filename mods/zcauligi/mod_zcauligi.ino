@@ -80,7 +80,8 @@ void modMethod(KeyDown)(char val, byte type)
     {
       if (TempLayer == modMethod(SafeEnterLayer))
       {
-        if (!(type == 36 && val == 1)) // not the safe enter key
+        if (!((type == 36 && val == 1) // not the safe enter key
+              || (type == 0 && val == 43))) // not the tab key
         {
           modMethod(SafeToEnter) = false;
         }
@@ -97,17 +98,6 @@ void modMethod(KeyDown)(char val, byte type)
 
     else if (type == 1 || type == 5) { // switching layers
       modMethod(SafeToEnter) = true;
-    }
-
-    // if you press a null key while on sym or fn layers
-    else if (type == 255 && val == 0)
-    {
-      if (TempLayer == 2 || TempLayer == 4)
-      {
-        PressKey(TempLayer == 2 ? 227 : 231, 0); // win
-        modMethod(WinDown) = TempLayer;
-        TempLayer = KeyLayer;
-      }
     }
 
     // double tap mouse keys
@@ -163,6 +153,14 @@ void modMethod(KeyDown)(char val, byte type)
           PressKey(55, 0); // period
         }
       }
+
+      // nullwin
+      else if (val == 4)
+      {
+        PressKey(227, 0); // Lwin
+        modMethod(WinDown) = TempLayer;
+        TempLayer = KeyLayer;
+      }
     }
   }
 }
@@ -186,7 +184,7 @@ void modMethod(KeyUp)(char val, byte type)
     // when you release that layer key
     else if (type == 1 && val == modMethod(WinDown))
     {
-      ReleaseKey(modMethod(WinDown) == 2 ? 227 : 231, 0); // win
+      ReleaseKey(227, 0); // Lwin
       modMethod(WinDown) = 0;
     }
 
