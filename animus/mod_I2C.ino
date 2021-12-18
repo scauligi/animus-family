@@ -94,11 +94,6 @@ void OuterLoop()
 }
 
 
-void KeyDown(char val, byte type)
-{
-}
-
-
 void SerialCommand(String input)
 {
   if (input.startsWith("uniqueksetsubkey"))

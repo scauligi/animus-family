@@ -19,10 +19,11 @@ byte subArray[MAX_SUB_COUNT];
 
 void Startup()
 {
-  Wire.begin(8);
-  IS_PRIME = false;
-  Wire.onRequest(wire_onrequest);
-  Wire.onReceive(wire_onreceive);
+  if (!IS_PRIME) {
+    Wire.begin(8);
+    Wire.onRequest(wire_onrequest);
+    Wire.onReceive(wire_onreceive);
+  }
 }
 
 
@@ -103,53 +104,61 @@ void receiveEvent(int numBytes)
 
 void PressCoord(byte x, byte y)
 {
-  if (subCount < MAX_SUB_COUNT)
-  {
-    subArray[subCount] = x;
-    subCount++;
-    subArray[subCount] = y;
-    subCount++;
-    subArray[subCount] = 3;
-    subCount++;
+  if (!IS_PRIME) {
+    if (subCount < MAX_SUB_COUNT)
+    {
+      subArray[subCount] = x;
+      subCount++;
+      subArray[subCount] = y;
+      subCount++;
+      subArray[subCount] = 3;
+      subCount++;
+    }
   }
 }
 
 void PrePress(char val, byte type)
 {
-  if (subCount < MAX_SUB_COUNT)
-  {
-    subArray[subCount] = val;
-    subCount++;
-    subArray[subCount] = type;
-    subCount++;
-    subArray[subCount] = 2;
-    subCount++;
+  if (!IS_PRIME) {
+    if (subCount < MAX_SUB_COUNT)
+    {
+      subArray[subCount] = val;
+      subCount++;
+      subArray[subCount] = type;
+      subCount++;
+      subArray[subCount] = 2;
+      subCount++;
+    }
   }
 }
 
 void KeyDown(char val, byte type)
 {
-  if (subCount < MAX_SUB_COUNT)
-  {
-    subArray[subCount] = val;
-    subCount++;
-    subArray[subCount] = type;
-    subCount++;
-    subArray[subCount] = 5;
-    subCount++;
+  if (!IS_PRIME) {
+    if (subCount < MAX_SUB_COUNT)
+    {
+      subArray[subCount] = val;
+      subCount++;
+      subArray[subCount] = type;
+      subCount++;
+      subArray[subCount] = 5;
+      subCount++;
+    }
   }
 }
 
 void KeyUp(char val, byte type)
 {
-  if (subCount < MAX_SUB_COUNT)
-  {
-    subArray[subCount] = val;
-    subCount++;
-    subArray[subCount] = type;
-    subCount++;
-    subArray[subCount] = 1;
-    subCount++;
+  if (!IS_PRIME) {
+    if (subCount < MAX_SUB_COUNT)
+    {
+      subArray[subCount] = val;
+      subCount++;
+      subArray[subCount] = type;
+      subCount++;
+      subArray[subCount] = 1;
+      subCount++;
+    }
   }
 }
 
