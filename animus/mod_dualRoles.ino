@@ -14,38 +14,20 @@ Keytype(28)
 Keytype(29)
 Keytype(35)
 BUILDER_REQUIREMENT_END
-Remeber to change the mod_modname to your mod name
 */
 
 
-#define mod_modname dualRoles
-
-#define modMethod(str) conca(mod_modname, str)
-
-void modMethod(Startup)()
-{
-  // things to run during hardware startup
-}
-
-void modMethod(Loop)()
-{
-  // full speed master loop
+class DualRoles_ : public ModBase {
+public:
 
 
-  // things inside this if statement is ran every RefreshDelay milliseconds
-  if (CheckMillis())
-  {
-
-  }
-}
-
-void modMethod(KeyDown)(char val, byte type)
+void KeyDown(char val, byte type)
 {
   // ran when a key is pressed down
 
 
-  // ran if this device's IS_MASTER flag is true
-  if (IS_MASTER)
+  // ran if this device's IS_PRIME flag is true
+  if (IS_PRIME)
   {
     // ctrlDualRole
     if (type == 20)
@@ -81,13 +63,13 @@ void modMethod(KeyDown)(char val, byte type)
   }
 }
 
-void modMethod(KeyUp)(char val, byte type)
+void KeyUp(char val, byte type)
 {
   // ran when a key is pressed up
 
 
-  // ran if this device's IS_MASTER flag is true
-  if (IS_MASTER)
+  // ran if this device's IS_PRIME flag is true
+  if (IS_PRIME)
   {
     if (type >= 20 && (type < 30 || type == 35))
     {
@@ -128,17 +110,17 @@ void modMethod(KeyUp)(char val, byte type)
   }
 }
 
-void modMethod(Serial)(String input)
+void SerialCommand(String input)
 {
   // ran when serial command of input is sent to device from host
 
   // do not delete this as this is for the identifier
   if (input.startsWith("uniquekgetmods"))
   {
-    Serial.print(tokenToString(mod_modname));
+    Serial.print("dualRoles");
   }
 
 }
 
-#undef mod_modname
-#undef modMethod
+};
+DualRoles_ DualRoles;

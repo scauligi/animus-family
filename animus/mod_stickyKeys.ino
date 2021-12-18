@@ -4,52 +4,33 @@ build process
 BUILDER_REQUIREMENT_START
 keyType(30)
 BUILDER_REQUIREMENT_END
-Remeber to change the mod_modname to your mod name
 */
 
-
-#define mod_modname stickyKeys
-
-#define modMethod(str) conca(mod_modname, str)
-
-#define STICKY_KEY_MAX 20
-
-boolean modMethod(State)[STICKY_KEY_MAX] = {false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false};
-
-boolean modMethod(PressedKey) = false;
-
-void modMethod(Startup)()
-{
-  // things to run during hardware startup
-}
-
-void modMethod(Loop)()
-{
-  // full speed master loop
+class StickyKeys_ : public ModBase {
+public:
 
 
-  // things inside this if statement is ran every RefreshDelay milliseconds
-  if (CheckMillis())
-  {
+static const int STICKY_KEY_MAX = 20;
 
-  }
-}
+boolean State[STICKY_KEY_MAX] = {false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false};
 
-void modMethod(KeyDown)(char val, byte type)
+boolean PressedKey = false;
+
+void KeyDown(char val, byte type)
 {
   // ran when a key is pressed down
 
 
-  // ran if this device's IS_MASTER flag is true
-  if (IS_MASTER)
+  // ran if this device's IS_PRIME flag is true
+  if (IS_PRIME)
   {
     // ctrlDualRole
     if (type == 30)
     {
 
 
-      modMethod(State)[val] = !modMethod(State)[val];
-      if (modMethod(State)[val])
+      State[val] = !State[val];
+      if (State[val])
       {
 
 
@@ -73,29 +54,29 @@ void modMethod(KeyDown)(char val, byte type)
         {
           TempLayer = val-3;
         }
-        modMethod(PressedKey) = false;
+        PressedKey = false;
       }
       else
       {
-        modMethod(ReleaseAll)();
+        ReleaseAll();
       }
 
 
     }
     else
     {
-      modMethod(ReleaseAll)();
+      ReleaseAll();
     }
   }
 }
 
-void modMethod(ReleaseAll)()
+void ReleaseAll()
 {
 
-    modMethod(PressedKey) = true;
+    PressedKey = true;
     for (byte i = 0; i < STICKY_KEY_MAX; i++)
     {
-      if (modMethod(State)[i])
+      if (State[i])
       {
         if (i == 0)
         {
@@ -117,33 +98,22 @@ void modMethod(ReleaseAll)()
         {
           TempLayer = KeyLayer;
         }
-        modMethod(State)[i] = false;
+        State[i] = false;
       }
     }
 }
 
-void modMethod(KeyUp)(char val, byte type)
-{
-  // ran when a key is pressed up
-
-
-  // ran if this device's IS_MASTER flag is true
-  if (IS_MASTER)
-  {
-  }
-}
-
-void modMethod(Serial)(String input)
+void SerialCommand(String input)
 {
   // ran when serial command of input is sent to device from host
 
   // do not delete this as this is for the identifier
   if (input.startsWith("uniquekgetmods"))
   {
-    Serial.print(tokenToString(mod_modname));
+    Serial.print("StickyKeys");
   }
 
 }
 
-#undef mod_modname
-#undef modMethod
+};
+StickyKeys_ StickyKeys;

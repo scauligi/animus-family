@@ -10,7 +10,6 @@ keyType(32)
 keyType(33)
 keyType(34)
 BUILDER_REQUIREMENT_END
-Remeber to change the mod_modname to your mod name
 */
 
 /* keytype index
@@ -19,72 +18,61 @@ Remeber to change the mod_modname to your mod name
 26: wheel movement
 27: click type (bitwise)
 */
-#define mod_modname mouseKeys
-
-#define modMethod(str) conca(mod_modname, str)
 
 
-byte modMethod(XVal) = 128;
-byte modMethod(YVal) = 128;
-byte modMethod(WheelVal) = 128;
-boolean modMethod(IsRunning) = false;
+class MouseKeys_ : public ModBase {
+public:
 
-void modMethod(Startup)()
+
+byte XVal = 128;
+byte YVal = 128;
+byte WheelVal = 128;
+boolean IsRunning = false;
+
+void Loop()
 {
-  // things to run during hardware startup
-}
-
-void modMethod(Loop)()
-{
-  // full speed master loop
-
-
-  // things inside this if statement is ran every RefreshDelay milliseconds
-  if (CheckMillis())
+  if (XVal == 128 && YVal == 128 && WheelVal == 128)
   {
-    if (modMethod(XVal) == 128 && modMethod(YVal) == 128 && modMethod(WheelVal) == 128)
+    // do nothing
+    if (IsRunning)
     {
-      // do nothing
-      if (modMethod(IsRunning))
-      {
-        modMethod(IsRunning) = false;
-        //Mouse.end();
-      }
-      
-    }
-    else
-    {
-      //Mouse.begin();
-      modMethod(IsRunning) = true;
-      Mouse.move(modMethod(XVal)-128,modMethod(YVal)-128,modMethod(WheelVal)-128);
+      IsRunning = false;
+      //Mouse.end();
     }
 
   }
+  else
+  {
+    //Mouse.begin();
+    IsRunning = true;
+    Mouse.move(XVal-128,YVal-128,WheelVal-128);
+  }
+
 }
 
-void modMethod(KeyDown)(char val, byte type)
+void KeyDown(char val, byte type)
 {
   // ran when a key is pressed down
 
 
-  // ran if this device's IS_MASTER flag is true
-  if (IS_MASTER)
+  // ran if this device's IS_PRIME flag is true
+  if (IS_PRIME)
   {
     if (type == 31)
     {
-      modMethod(XVal) += val - 128;
+      XVal += val - 128;
 
 
     }
     else if (type == 32)
     {
-      modMethod(YVal) += val - 128;
+      YVal += val - 128;
 
 
     }
     else if (type == 33)
     {
-      modMethod(WheelVal) += val - 128;
+      WheelVal += val - 128;
 
     }
     else if (type == 34)
@@ -115,27 +103,27 @@ void modMethod(KeyDown)(char val, byte type)
 }
 
 
-void modMethod(KeyUp)(char val, byte type)
+void KeyUp(char val, byte type)
 {
   // ran when a key is pressed up
 
 
-  // ran if this device's IS_MASTER flag is true
-  if (IS_MASTER)
+  // ran if this device's IS_PRIME flag is true
+  if (IS_PRIME)
   {
     if (type == 31)
     {
-      modMethod(XVal) -= val - 128;
+      XVal -= val - 128;
 
     }
     else if (type == 32)
     {
-      modMethod(YVal) -= val -128;
+      YVal -= val -128;
 
     }
     else if (type == 33)
     {
-      modMethod(WheelVal) -= val -128;
+      WheelVal -= val -128;
 
     }
     else if (type == 34)
@@ -165,17 +153,17 @@ void modMethod(KeyUp)(char val, byte type)
   }
 }
 
-void modMethod(Serial)(String input)
+void SerialCommand(String input)
 {
   // ran when serial command of input is sent to device from host
 
   // do not delete this as this is for the identifier
   if (input.startsWith("uniquekgetmods"))
   {
-    Serial.print(tokenToString(mod_modname));
+    Serial.print("MouseKeys");
   }
 
 }
 
-#undef mod_modname
-#undef modMethod
+};
+MouseKeys_ MouseKeys;

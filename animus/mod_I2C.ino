@@ -6,60 +6,57 @@ I2C
 BUILDER_REQUIREMENT_END
 */
 
-#define mod_modname I2C
-#define modMethod(str) conca(mod_modname, str)
 
-#define LEDBRIGHTSETTER I2CSetLEDBrightness
 
 #include "Wire.h"
+
+class I2C_ : public ModBase {
+  public:
 
 int I2CKeyLayer = 0;
 int I2CTempLayer = 0;
 
-void I2CStartup()
+void Startup()
 {
   Wire.begin();
 }
 
-void I2CLoop()
+void OuterLoop()
 {
-
-
-
   if (KeyLayer != I2CKeyLayer)
   {
-    I2CSetKeyLayer(KeyLayer);
+    SetKeyLayer(KeyLayer);
     I2CKeyLayer = KeyLayer;
   }
 
   if (TempLayer != I2CTempLayer)
   {
-    I2CSetTempLayer(TempLayer);
+    SetTempLayer(TempLayer);
     I2CTempLayer = TempLayer;
   }
 
 
-  byte slaveArray[31];
-  byte slaveCount = 0;
-  boolean slaveExists = false;
-  Wire.requestFrom(8, 31);    // request 31 bytes from slave device #8
+  byte subArray[31];
+  byte subCount = 0;
+  boolean subExists = false;
+  Wire.requestFrom(8, 31);    // request 31 bytes from sub device #8
   while (Wire.available())
   {
-    // slave may send less than requested
+    // sub may send less than requested
     byte out = Wire.read(); // receive a byte
-    slaveArray[slaveCount] = out;
-    slaveExists = true;
-    slaveCount++;
+    subArray[subCount] = out;
+    subExists = true;
+    subCount++;
   }
-  if (slaveExists)
+  if (subExists)
   {
     byte reX, reY;
-    slaveCount = slaveArray[0];
-    for (int i = 1; i < slaveCount; i=i+3)
+    subCount = subArray[0];
+    for (int i = 1; i < subCount; i=i+3)
     {
-      char cinput = slaveArray[i];
-      byte tinput = slaveArray[i+1];
-      byte type = slaveArray[i+2];
+      char cinput = subArray[i];
+      byte tinput = subArray[i+1];
+      byte type = subArray[i+2];
       if (type == 3)
       {
         reX = cinput;
@@ -67,20 +64,20 @@ void I2CLoop()
       }
       else if (type == 2)
       {
-        ModPrePress(cinput, tinput);
+        Mod.PrePress(cinput, tinput);
       }
       else if (type == 5)
       {
         if (TempLayer != I2CTempLayer)
         {
-          I2CSetTempLayer(TempLayer);
+          SetTempLayer(TempLayer);
           I2CTempLayer = TempLayer;
           Wire.beginTransmission(8);
           Wire.write(7);    // request updated key press due to layer change
           Wire.write(reX);
           Wire.write(reY);
           Wire.endTransmission();
-          Wire.requestFrom(8, 3);    // request 3 bytes from slave device #8
+          Wire.requestFrom(8, 3);    // request 3 bytes from sub device #8
           Wire.read();    // discard count; we don't need it
           cinput = Wire.read();
           tinput = Wire.read();
@@ -94,32 +91,15 @@ void I2CLoop()
     }
   }
 
-  if (CheckMillis())
-  {
-
-  }
-
 }
 
 
-void I2CKeyDown(char val, byte type)
+void KeyDown(char val, byte type)
 {
-
-  #ifdef LEDEXISTS
-  if (type == 10)
-  {
-
-    I2CSetLEDBrightness(BledPWMBrightness);
-  }
-  #endif
 }
 
-void I2CKeyUp(char val, byte type)
-{
 
-}
-
-void I2CSerial(String input)
+void SerialCommand(String input)
 {
   if (input.startsWith("uniqueksetsubkey"))
   {
@@ -133,7 +113,7 @@ void I2CSerial(String input)
     byte val = input.substring(0, input.indexOf('(')).toInt();
     input = input.substring(input.indexOf('(')+1);
     byte type = input.toInt();
-    I2CSetKey(x, y, z, val, type);
+    SetKey(x, y, z, val, type);
     Serial.print("sub key set: ");
     Serial.print(x);
     Serial.print(", ");
@@ -151,7 +131,7 @@ void I2CSerial(String input)
     int addr = input.substring(0, input.indexOf('(')).toInt();
     input = input.substring(input.indexOf('(')+1);
     byte val = input.toInt();
-    I2CSetEEPROM(addr, val);
+    SetEEPROM(addr, val);
     Serial.print("Wrote to sub EEPROM: ");
     Serial.print(addr);
     Serial.print(", ");
@@ -164,7 +144,7 @@ void I2CSerial(String input)
 
     if (val <= (500  / (ROW * COL)))
     {
-      I2CSetEEPROM(1023, val);
+      SetEEPROM(1023, val);
       Serial.print("Edited layer count to: ");
       Serial.println(val);
     }
@@ -178,7 +158,7 @@ void I2CSerial(String input)
   {
     input = input.substring(input.indexOf('(')+1);
     byte val = input.toInt();
-    I2CSetLEDBrightness(val);
+    SetLEDBrightness(val);
     Serial.println("Set sub brightness");
   }
   else if (input.startsWith("uniquekgetmods"))
@@ -198,7 +178,7 @@ void I2CSerial(String input)
 6: set brightness
 7: request key press
 */
-void I2CSetKeyLayer(byte input)
+void SetKeyLayer(byte input)
 {
   Wire.beginTransmission(8);
   Wire.write(5);
@@ -207,7 +187,7 @@ void I2CSetKeyLayer(byte input)
 }
 
 
-void I2CSetTempLayer(byte input)
+void SetTempLayer(byte input)
 {
   Wire.beginTransmission(8);
   Wire.write(1);
@@ -215,7 +195,7 @@ void I2CSetTempLayer(byte input)
   Wire.endTransmission();
 }
 
-void I2CSetLEDBrightness(byte input)
+void SetLEDBrightness(byte input)
 {
   Wire.beginTransmission(8);
   Wire.write(6);
@@ -223,7 +203,7 @@ void I2CSetLEDBrightness(byte input)
   Wire.endTransmission();
 }
 
-void I2CSetKey(byte x, byte y, byte z, char inputChar, byte inputType)
+void SetKey(byte x, byte y, byte z, char inputChar, byte inputType)
 {
   byte type = 2;
   Wire.beginTransmission(8);
@@ -236,7 +216,7 @@ void I2CSetKey(byte x, byte y, byte z, char inputChar, byte inputType)
   Wire.endTransmission();
 }
 
-void I2CSetLayer(byte input)
+void SetLayer(byte input)
 {
   Wire.beginTransmission(8);
   Wire.write(3);
@@ -244,7 +224,7 @@ void I2CSetLayer(byte input)
   Wire.endTransmission();
 }
 
-void I2CSetEEPROM(int addr, byte val)
+void SetEEPROM(int addr, byte val)
 {
 
   Wire.beginTransmission(8);
@@ -261,7 +241,8 @@ void I2CSetEEPROM(int addr, byte val)
 
 
 
-#undef mod_modname
-#undef modMethod
 // TODO
 // bool I2CDetectDevice(byte addr)
+
+};
+I2C_ I2C;

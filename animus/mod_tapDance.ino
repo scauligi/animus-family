@@ -9,104 +9,97 @@ BUILDER_REQUIREMENT_START
 EEPROM(842,982)
 Keytype(19)
 BUILDER_REQUIREMENT_END
-Remeber to change the mod_modname to your mod name
 */
 
 
-#define mod_modname tapDance
-
-#define modMethod(str) conca(mod_modname, str)
 
 
-const byte modMethod(TIMER_MULTIPLIER) = 10;
-const int modMethod(MAX_ADDR) = 842;
-const int modMethod(MIN_ADDR) = 982;
-const byte modMethod(MAX_INDEX) = 20;
-const byte modMethod(MAX_KEYS) = 3;
-const byte modMethod(PADDING) = 2;
-
-int16_t modMethod(PressTimer)[modMethod(MAX_INDEX)];
-byte modMethod(PressCount)[modMethod(MAX_INDEX)];
-boolean modMethod(KeyIsDown)[modMethod(MAX_INDEX)];
+class TapDance_ : public ModBase {
+public:
 
 
+static const byte TIMER_MULTIPLIER = 10;
+static const int MAX_ADDR = 842;
+static const int MIN_ADDR = 982;
+static const byte MAX_INDEX = 20;
+static const byte MAX_KEYS = 3;
+static const byte PADDING = 2;
 
-void modMethod(Startup)()
+int16_t PressTimer[MAX_INDEX];
+byte PressCount[MAX_INDEX];
+boolean KeyIsDown[MAX_INDEX];
+
+
+
+void Startup()
 {
   // things to run during hardware startup
-  for (byte i = 0; i < modMethod(MAX_INDEX); i++)
+  for (byte i = 0; i < MAX_INDEX; i++)
   {
-    modMethod(PressCount)[i] = 0;
-    modMethod(PressTimer)[i] = 0;
-    modMethod(KeyIsDown)[i] = false;
+    PressCount[i] = 0;
+    PressTimer[i] = 0;
+    KeyIsDown[i] = false;
   }
 }
 
-void modMethod(Loop)()
+void Loop()
 {
-  // full speed master loop
-
-
-  // things inside this if statement is ran every RefreshDelay milliseconds
-  if (CheckMillis())
+  if (IS_PRIME)
   {
-    if (IS_MASTER)
+    for (byte i = 0; i < MAX_INDEX; i++)
     {
-      for (byte i = 0; i < modMethod(MAX_INDEX); i++)
+
+
+      if (PressCount[i] > 0)
       {
-
-
-        if (modMethod(PressCount)[i] > 0)
+        if (PressTimer[i] > 0)
         {
-          if (modMethod(PressTimer)[i] > 0)
+          PressTimer[i]--;
+        }
+        else if (PressTimer[i] == 0)
+        {
+          FireTapDance(i);
+          if (!KeyIsDown[i])
           {
-            modMethod(PressTimer)[i]--;
-          }
-          else if (modMethod(PressTimer)[i] == 0)
-          {
-            modMethod(FireTapDance)(i);
-            if (!modMethod(KeyIsDown)[i])
-            {
-              modMethod(KeyUp)(i, 19);
-            }
+            KeyUp(i, 19);
           }
         }
       }
     }
-
-
   }
+
+
 }
 
-void modMethod(KeyDown)(char val, byte type)
+void KeyDown(char val, byte type)
 {
   // ran when a key is pressed down
-  // ran if this device's IS_MASTER flag is true
-  if (IS_MASTER)
+  // ran if this device's IS_PRIME flag is true
+  if (IS_PRIME)
   {
     if (type == 19)
     {
-      if (modMethod(PressCount)[val] < modMethod(MAX_KEYS))
+      if (PressCount[val] < MAX_KEYS)
       {
-        byte count = ++modMethod(PressCount)[val]; // count gets the *new* count value
-        modMethod(PressTimer)[val] = modMethod(GetTimeout)(val) * modMethod(TIMER_MULTIPLIER);
-        modMethod(KeyIsDown)[val] = true;
+        byte count = ++PressCount[val]; // count gets the *new* count value
+        PressTimer[val] = GetTimeout(val) * TIMER_MULTIPLIER;
+        KeyIsDown[val] = true;
 
-        if (count == modMethod(MAX_KEYS))
+        if (count == MAX_KEYS)
         {
           // no more tap dance keys; fire immediately
-          modMethod(FireTapDance)(val);
+          FireTapDance(val);
         }
         else
         {
           // check the key that would come after this one
-          char tdVal = modMethod(GetKeyVal)(val, count);
-          byte tdType = modMethod(GetKeyType)(val, count);
+          char tdVal = GetKeyVal(val, count);
+          byte tdType = GetKeyType(val, count);
 
           if (tdVal == 0 && tdType == 0)
           {
             // no more tap dance keys; fire immediately
-            modMethod(FireTapDance)(val);
+            FireTapDance(val);
           }
         }
       }
@@ -114,58 +107,58 @@ void modMethod(KeyDown)(char val, byte type)
   }
 }
 
-void modMethod(PrePress)(char val, byte type)
+void PrePress(char val, byte type)
 {
-  if (IS_MASTER)
+  if (IS_PRIME)
   {
-    for (byte i = 0; i < modMethod(MAX_INDEX); i++)
+    for (byte i = 0; i < MAX_INDEX; i++)
     {
-      if ((type != 19 || val != i) && modMethod(PressTimer)[i] > 0)
+      if ((type != 19 || val != i) && PressTimer[i] > 0)
       {
-        modMethod(FireTapDance)(i);
-        if (!modMethod(KeyIsDown)[i])
+        FireTapDance(i);
+        if (!KeyIsDown[i])
         {
-          modMethod(KeyUp)(i, 19);
+          KeyUp(i, 19);
         }
       }
     }
   }
 }
 
-void modMethod(KeyUp)(char val, byte type)
+void KeyUp(char val, byte type)
 {
   // ran when a key is pressed up
 
 
-  // ran if this device's IS_MASTER flag is true
-  if (IS_MASTER)
+  // ran if this device's IS_PRIME flag is true
+  if (IS_PRIME)
   {
     if (type == 19)
     {
       // if key has been fired
-      if (modMethod(PressTimer)[val] < 0)
+      if (PressTimer[val] < 0)
       {
-        byte count = modMethod(PressCount)[val] - 1;
-        char tdVal = modMethod(GetKeyVal)(val, count);
-        byte tdType = modMethod(GetKeyType)(val, count);
+        byte count = PressCount[val] - 1;
+        char tdVal = GetKeyVal(val, count);
+        byte tdType = GetKeyType(val, count);
 
         ReleaseKey(tdVal, tdType);
-        modMethod(PressCount)[val] = 0;
-        modMethod(PressTimer)[val] = 0;
+        PressCount[val] = 0;
+        PressTimer[val] = 0;
       }
-      modMethod(KeyIsDown)[val] = false;
+      KeyIsDown[val] = false;
     }
   }
 }
 
-void modMethod(Serial)(String input)
+void SerialCommand(String input)
 {
   // ran when serial command of input is sent to device from host
 
   // do not delete this as this is for the identifier
   if (input.startsWith("uniquekgetmods"))
   {
-    Serial.print(tokenToString(mod_modname));
+    Serial.print("tapDance");
   }
   else if (input.startsWith("uniqueksettapdance"))
   {
@@ -188,14 +181,14 @@ void modMethod(Serial)(String input)
     input = input.substring(input.indexOf('(')+1);
     byte key2type = input.toInt();
 
-    modMethod(SetLength)(id, length);
-    modMethod(SetTimeout)(id, delay);
-    modMethod(SetKeyVal)(id, 0, key0val);
-    modMethod(SetKeyVal)(id, 1, key1val);
-    modMethod(SetKeyVal)(id, 2, key2val);
-    modMethod(SetKeyType)(id, 0, key0type);
-    modMethod(SetKeyType)(id, 1, key1type);
-    modMethod(SetKeyType)(id, 2, key2type);
+    SetLength(id, length);
+    SetTimeout(id, delay);
+    SetKeyVal(id, 0, key0val);
+    SetKeyVal(id, 1, key1val);
+    SetKeyVal(id, 2, key2val);
+    SetKeyType(id, 0, key0type);
+    SetKeyType(id, 1, key1type);
+    SetKeyType(id, 2, key2type);
 
 
 
@@ -221,132 +214,132 @@ void modMethod(Serial)(String input)
 
 }
 
-void modMethod(FireTapDance)(byte id)
+void FireTapDance(byte id)
 {
-  byte count = modMethod(PressCount)[id] - 1;
-  char val = modMethod(GetKeyVal)(id, count);
-  byte type = modMethod(GetKeyType)(id, count);
-  modMethod(PressTimer)[id] = -1; // signal that the key has fired
+  byte count = PressCount[id] - 1;
+  char val = GetKeyVal(id, count);
+  byte type = GetKeyType(id, count);
+  PressTimer[id] = -1; // signal that the key has fired
   PressKey(val, type);
 }
 
-byte modMethod(GetLength)(byte id)
+byte GetLength(byte id)
 {
 
   byte output = 0;
-  if (id < modMethod(MAX_INDEX))
+  if (id < MAX_INDEX)
   {
-    int addr = modMethod(GetStartAddr)(id);
+    int addr = GetStartAddr(id);
     byte main = EEPROM.read(addr);
     output = main & 3;
   }
   return output;
 }
 
-void modMethod(SetLength)(byte id, byte val)
+void SetLength(byte id, byte val)
 {
 
-  if (id < modMethod(MAX_INDEX))
+  if (id < MAX_INDEX)
   {
-    int addr = modMethod(GetStartAddr)(id);
-    EEPROM.update(addr, val + (modMethod(GetTimeout)(id) << 2) );
+    int addr = GetStartAddr(id);
+    EEPROM.update(addr, val + (GetTimeout(id) << 2) );
   }
 }
 
-byte modMethod(GetTimeout)(byte id)
+byte GetTimeout(byte id)
 {
 
   byte output = 0;
-  if (id < modMethod(MAX_INDEX))
+  if (id < MAX_INDEX)
   {
-    int addr = modMethod(GetStartAddr)(id);
+    int addr = GetStartAddr(id);
     byte main = EEPROM.read(addr);
     output = (main >> 2) & 63;
   }
   return output;
 }
 
-void modMethod(SetTimeout)(byte id, byte val)
+void SetTimeout(byte id, byte val)
 {
 
-  if (id < modMethod(MAX_INDEX))
+  if (id < MAX_INDEX)
   {
-    int addr = modMethod(GetStartAddr)(id);
-    EEPROM.update(addr, modMethod(GetLength)(id) + (val << 2) );
+    int addr = GetStartAddr(id);
+    EEPROM.update(addr, GetLength(id) + (val << 2) );
   }
 }
 
 
 // key LL functions start
-char modMethod(GetKeyVal)(byte id, byte key)
+char GetKeyVal(byte id, byte key)
 {
   byte output = 0;
-  if (id < modMethod(MAX_INDEX) && key < modMethod(MAX_KEYS))
+  if (id < MAX_INDEX && key < MAX_KEYS)
   {
-    int addr = modMethod(GetStartAddr)(id);
-    output = EEPROM.read(addr + modMethod(PADDING) + key * 2);
+    int addr = GetStartAddr(id);
+    output = EEPROM.read(addr + PADDING + key * 2);
   }
   return output;
 }
 
-void modMethod(SetKeyVal)(byte id, byte key, byte val)
+void SetKeyVal(byte id, byte key, byte val)
 {
-  if (id < modMethod(MAX_INDEX) && key < modMethod(MAX_KEYS))
+  if (id < MAX_INDEX && key < MAX_KEYS)
   {
-    int addr = modMethod(GetStartAddr)(id);
-    EEPROM.update(addr + modMethod(PADDING) + key * 2, val);
+    int addr = GetStartAddr(id);
+    EEPROM.update(addr + PADDING + key * 2, val);
   }
 }
 
-byte modMethod(GetKeyType)(byte id, byte key)
+byte GetKeyType(byte id, byte key)
 {
   byte output = 0;
-  if (id < modMethod(MAX_INDEX) && key < modMethod(MAX_KEYS))
+  if (id < MAX_INDEX && key < MAX_KEYS)
   {
-    int addr = modMethod(GetStartAddr)(id);
-    output = EEPROM.read(addr + modMethod(PADDING) + key * 2 + 1);
+    int addr = GetStartAddr(id);
+    output = EEPROM.read(addr + PADDING + key * 2 + 1);
   }
   return output;
 }
 
-void modMethod(SetKeyType)(byte id, byte key, byte val)
+void SetKeyType(byte id, byte key, byte val)
 {
-  if (id < modMethod(MAX_INDEX) && key < modMethod(MAX_KEYS))
+  if (id < MAX_INDEX && key < MAX_KEYS)
   {
-    int addr = modMethod(GetStartAddr)(id);
-    EEPROM.update(addr + modMethod(PADDING) + key * 2 + 1, val);
+    int addr = GetStartAddr(id);
+    EEPROM.update(addr + PADDING + key * 2 + 1, val);
   }
 }
 
 /* not used for this set
-byte modMethod(GetLength)(int id)
+byte GetLength(int id)
 {
 byte output = 0;
-if (id < modMethod(MAX_INDEX))
+if (id < MAX_INDEX)
 {
-int addr = modMethod(GetStartAddr)(id);
+int addr = GetStartAddr(id);
 output = EEPROM.read(addr + 1);
 }
 return output;
 }
 
-void modMethod(SetLength)(int id, byte newLength)
+void SetLength(int id, byte newLength)
 {
-if (id < modMethod(MAX_INDEX) && newLength <= modMethod(MAX_KEYS))
+if (id < MAX_INDEX && newLength <= MAX_KEYS)
 {
-int addr = modMethod(GetStartAddr)(id);
+int addr = GetStartAddr(id);
 EEPROM.update(addr + 1, newLength);
 }
 }
 */
 
-int modMethod(GetStartAddr)(byte id)
+int GetStartAddr(byte id)
 {
-  int addr = modMethod(MAX_ADDR) + (id * (modMethod(MAX_KEYS) * 2 + modMethod(PADDING)));
+  int addr = MAX_ADDR + (id * (MAX_KEYS * 2 + PADDING));
   return addr;
 }
 
 // key LL functions stop
 
-#undef mod_modname
-#undef modMethod
+};
+TapDance_ TapDance;

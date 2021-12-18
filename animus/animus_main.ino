@@ -17,8 +17,8 @@ byte KeyState[COL][ROW];
 byte KeyStateCountDown[COL][ROW];
 byte LayerState[COL][ROW];
 
-// slave states
-boolean IS_MASTER = true;
+// sub states
+boolean IS_PRIME = true;
 
 // spacefn keys
 boolean PressedKey = false;
@@ -31,8 +31,7 @@ void setup()
 {
   AnimusKeyboard.begin();
   Serial.begin(BaudRate);
-  NKROStartup();
-  ModStartup();
+  Mod.Startup();
   ResetPins();
 
   // serial delay
@@ -65,8 +64,8 @@ void loop()
       {
         if (KeyStateCountDown[j][i] == 1) // if key is still down after debounce time
         {
-          ModPressCoord(j, i);
-          ModPrePress(GetValEEPROM(j, i, TempLayer), GetTypeEEPROM(j, i, TempLayer));
+          Mod.PressCoord(j, i);
+          Mod.PrePress(GetValEEPROM(j, i, TempLayer), GetTypeEEPROM(j, i, TempLayer));
           LayerState[j][i] = TempLayer;
           PressKey(GetValEEPROM(j, i, TempLayer), GetTypeEEPROM(j, i, TempLayer));
           KeyStateCountDown[j][i] = 255;
@@ -96,7 +95,9 @@ void loop()
     // main loop ends
   }
 
-  if (CheckMillis())
+  bool do_inner = CheckMillis();
+
+  if (do_inner)
   {
     for (byte i = 0; i < ROW; i++)
     {
@@ -110,8 +111,10 @@ void loop()
     }
   }
 
-  ModLoop();
-  NKROLoop();
+  if (do_inner) {
+    Mod.Loop();
+  }
+  Mod.OuterLoop();  // XXX so far, just i2c that does this; double check the ordering here
 }
 
 
@@ -120,7 +123,7 @@ void loop()
 void PressKey(char val, byte type)
 {
   PressedKey = true;
-  if (IS_MASTER)
+  if (IS_PRIME)
   {
     if (type == 0)
     {
@@ -214,13 +217,12 @@ void PressKey(char val, byte type)
     }
   }
 
-  NKROKeyDown(val, type);
-  ModKeyDown(val, type);
+  Mod.KeyDown(val, type);
 }
 
 void ReleaseKey(char val, byte type)
 {
-  if (IS_MASTER)
+  if (IS_PRIME)
   {
     if (type == 0)
     {
@@ -288,8 +290,7 @@ void ReleaseKey(char val, byte type)
       ReleaseKey(val, 0);
     }
   }
-  NKROKeyUp(val, type);
-  ModKeyUp(val, type);
+  Mod.KeyUp(val, type);
 }
 
 

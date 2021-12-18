@@ -9,79 +9,48 @@ BUILDER_REQUIREMENT_START
 EEPROM(600,800)
 Keytype(7)
 BUILDER_REQUIREMENT_END
-Remeber to change the mod_modname to your mod name
 */
 
 
-#define mod_modname macro
+class Macro_ : public ModBase {
+public:
 
+static const int macroMinAddr = 600;
+static const int macroMaxAddr = 800;
+static const byte macroMAX_MACROS = 12;
+static const byte macroMAX_KEYS = 8;
+static const byte macroSERIES_PADDING = 2;
+static const byte macroKEY_DOWN = 0;
+static const byte macroKEY_UP = 1;
 
-const int macroMinAddr = 600;
-const int macroMaxAddr = 800;
-const byte macroMAX_MACROS = 12;
-const byte macroMAX_KEYS = 8;
-const byte macroSERIES_PADDING = 2;
-const byte macroKEY_DOWN = 0;
-const byte macroKEY_UP = 1;
-
-byte macroDelay = 5;
-
-#define modMethod(str) conca(mod_modname, str)
+static const byte macroDelay = 5;
 
 
 
-void modMethod(Startup)()
-{
-  // things to run during hardware startup
-}
-
-void modMethod(Loop)()
-{
-  // full speed master loop
-
-
-  // things inside this if statement is ran every RefreshDelay milliseconds
-  if (CheckMillis())
-  {
-
-  }
-}
-
-void modMethod(KeyDown)(char val, byte type)
+void KeyDown(char val, byte type)
 {
   // ran when a key is pressed down
 
 
-  // ran if this device's IS_MASTER flag is true
-  if (IS_MASTER)
+  // ran if this device's IS_PRIME flag is true
+  if (IS_PRIME)
   {
     if (type == 7)
     {
       // sends the macro sequence with id = val
-      modMethod(Send)(val);
+      Send(val);
     }
   }
 }
 
-void modMethod(KeyUp)(char val, byte type)
-{
-  // ran when a key is pressed up
-
-
-  // ran if this device's IS_MASTER flag is true
-  if (IS_MASTER)
-  {
-  }
-}
-
-void modMethod(Serial)(String input)
+void SerialCommand(String input)
 {
   // ran when serial command of input is sent to device from host
 
   // do not delete this as this is for the identifier
   if (input.startsWith("uniquekgetmods"))
   {
-    Serial.print(tokenToString(mod_modname));
+    Serial.print(tokenToString("macro"));
   }
   else if (input.startsWith("uniqueksetmacro"))
   {
@@ -92,19 +61,19 @@ void modMethod(Serial)(String input)
     input = input.substring(input.indexOf('(')+1);
     byte length = input.substring(0, input.indexOf('(')).toInt();
 
-    modMethod(SetMacroLength)(id, length);
+    SetMacroLength(id, length);
 
     for (int i = 0; i < macroMAX_KEYS; i++)
     {
       input = input.substring(input.indexOf('(')+1);
       key = input.substring(0, input.indexOf('(')).toInt();
-      modMethod(SetKeyVal)(id, i, key);
+      SetKeyVal(id, i, key);
       input = input.substring(input.indexOf('(')+1);
       type = input.substring(0, input.indexOf('(')).toInt();
-      modMethod(SetKeyType)(id, i, type);
+      SetKeyType(id, i, type);
       input = input.substring(input.indexOf('(')+1);
       state = input.substring(0, input.indexOf('(')).toInt();
-      modMethod(SetKeyDownUp)(id, i, state);
+      SetKeyDownUp(id, i, state);
     }
 
     input = input.substring(input.indexOf('(')+1);
@@ -118,20 +87,20 @@ void modMethod(Serial)(String input)
 
 }
 
-void modMethod(Send)(byte id)
+void Send(byte id)
 {
   if (id < macroMAX_MACROS)
   {
-    byte length = modMethod(GetMacroLength)(id);
+    byte length = GetMacroLength(id);
     for (byte i = 0; i < length; i++)
     {
-      if (modMethod(GetKeyDownUp)(id, i) == macroKEY_DOWN)
+      if (GetKeyDownUp(id, i) == macroKEY_DOWN)
       {
-        PressKey( modMethod(GetKeyVal)(id, i), modMethod(GetKeyType)(id, i) );
+        PressKey( GetKeyVal(id, i), GetKeyType(id, i) );
       }
-      else if (modMethod(GetKeyDownUp)(id, i) == macroKEY_UP)
+      else if (GetKeyDownUp(id, i) == macroKEY_UP)
       {
-        ReleaseKey( modMethod(GetKeyVal)(id, i), modMethod(GetKeyType)(id, i) );
+        ReleaseKey( GetKeyVal(id, i), GetKeyType(id, i) );
       }
       delay(macroDelay);
     }
@@ -139,95 +108,95 @@ void modMethod(Send)(byte id)
   }
 }
 
-char modMethod(GetKeyVal)(byte id, byte key)
+char GetKeyVal(byte id, byte key)
 {
   char output = 0;
   if (id < macroMAX_MACROS)
   {
-    int addr = modMethod(GetMacroStartAddr)(id);
+    int addr = GetMacroStartAddr(id);
     output = EEPROM.read(addr + macroSERIES_PADDING + key * 2);
   }
   return output;
 }
 
-void modMethod(SetKeyVal)(byte id, byte key, byte val)
+void SetKeyVal(byte id, byte key, byte val)
 {
   if (id < macroMAX_MACROS && key < macroMAX_KEYS)
   {
-    int addr = modMethod(GetMacroStartAddr)(id);
+    int addr = GetMacroStartAddr(id);
     EEPROM.update(addr + macroSERIES_PADDING + key * 2, val);
   }
 }
 
-byte modMethod(GetKeyType)(byte id, byte key)
+byte GetKeyType(byte id, byte key)
 {
   char output = 0;
   if (id < macroMAX_MACROS && key < macroMAX_KEYS)
   {
-    int addr = modMethod(GetMacroStartAddr)(id);
+    int addr = GetMacroStartAddr(id);
     output = EEPROM.read(addr + macroSERIES_PADDING + key * 2 + 1);
   }
   return output;
 }
 
-void modMethod(SetKeyType)(byte id, byte key, byte val)
+void SetKeyType(byte id, byte key, byte val)
 {
   if (id < macroMAX_MACROS && key < macroMAX_KEYS)
   {
-    int addr = modMethod(GetMacroStartAddr)(id);
+    int addr = GetMacroStartAddr(id);
     EEPROM.update(addr + macroSERIES_PADDING + key * 2 + 1, val);
   }
 }
 
 
-byte modMethod(GetKeyDownUp)(byte id, byte key)
+byte GetKeyDownUp(byte id, byte key)
 {
   byte output = 2;
   if (id < macroMAX_MACROS)
   {
-    int addr = modMethod(GetMacroStartAddr)(id);
+    int addr = GetMacroStartAddr(id);
     output = bitRead(EEPROM.read(addr), key);
   }
   return output;
 }
 
-void modMethod(SetKeyDownUp)(byte id, byte key, byte bitState)
+void SetKeyDownUp(byte id, byte key, byte bitState)
 {
   if (id < macroMAX_MACROS && key < macroMAX_KEYS)
   {
-    int addr = modMethod(GetMacroStartAddr)(id);
+    int addr = GetMacroStartAddr(id);
     byte keyStates = EEPROM.read(addr);
     bitWrite(keyStates, key, bitState);
     EEPROM.update(addr, keyStates);
   }
 }
 
-byte modMethod(GetMacroLength)(byte id)
+byte GetMacroLength(byte id)
 {
   byte output = 0;
   if (id < macroMAX_MACROS)
   {
-    int addr = modMethod(GetMacroStartAddr)(id);
+    int addr = GetMacroStartAddr(id);
     output = EEPROM.read(addr + 1);
   }
   return output;
 }
 
-void modMethod(SetMacroLength)(byte id, byte newLength)
+void SetMacroLength(byte id, byte newLength)
 {
   if (id < macroMAX_MACROS && newLength <= macroMAX_KEYS)
   {
-    int addr = modMethod(GetMacroStartAddr)(id);
+    int addr = GetMacroStartAddr(id);
     EEPROM.update(addr + 1, newLength);
   }
 }
 
-int modMethod(GetMacroStartAddr)(byte id)
+int GetMacroStartAddr(byte id)
 {
     int addr = macroMinAddr + (id * (macroMAX_KEYS * 2 + macroSERIES_PADDING));
     return addr;
 }
 
 
-#undef mod_modname
-#undef modMethod
+};
+Macro_ Macro;

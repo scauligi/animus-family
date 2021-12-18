@@ -5,75 +5,49 @@ BUILDER_REQUIREMENT_START
 BUILDER_REQUIREMENT_END
 */
 
-#define mod_modname media
-#define modMethod(str) conca(mod_modname, str)
 
-#include "AnimusMedia.h"
-
-void mediaStartup()
+class Media_ : public ModBase
 {
-
-}
-
-void mediaLoop()
+public:
+void KeyDown(char val, byte type)
 {
-  if (CheckMillis())
-  {
-
-  }
-}
-
-void mediaKeyDown(char val, byte type)
-{
-  if (IS_MASTER)
+  if (IS_PRIME)
   {
     if (type == 4)
     {
       if (val == 0)
       {
-        Remote.increase();
-        Remote.clear();
+        Consumer.write(MEDIA_VOL_UP);
       }
       else if (val == 1)
       {
-        Remote.decrease();
-        Remote.clear();
+        Consumer.write(MEDIA_VOL_DOWN);
       }
       else if (val == 2)
       {
-        Remote.mute();
-        Remote.clear();
+        Consumer.write(MEDIA_VOL_MUTE);
       }
       else if (val == 3)
       {
-        Remote.play();
-        Remote.clear();
+        Consumer.write(MEDIA_PLAY_PAUSE);
       }
       else if (val == 4)
       {
-        Remote.pause();
-        Remote.clear();
+        Consumer.write(MEDIA_PAUSE);
       }
       else if (val == 5)
       {
-        Remote.next();
-        Remote.clear();
+        Consumer.write(MEDIA_NEXT);
       }
       else if (val == 6)
       {
-        Remote.previous();
-        Remote.clear();
+        Consumer.write(MEDIA_PREV);
       }
     }
   }
 }
 
-void mediaKeyUp(char val, byte type)
-{
-
-}
-
-void mediaSerial(String input)
+void SerialCommand(String input)
 {
   if (input.startsWith("uniquekgetmods"))
   {
@@ -82,5 +56,5 @@ void mediaSerial(String input)
 
 }
 
-#undef mod_modname
-#undef modMethod
+};
+Media_ Media;

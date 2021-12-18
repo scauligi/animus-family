@@ -135,23 +135,22 @@ void SerialCommand(String input)
   {
     Serial.println(COL);
   }
-  else if (input.startsWith("uniqueksetmaster"))
+  else if (input.startsWith("uniqueksetprime"))
   {
     input = input.substring(input.indexOf('(')+1);
     byte out = input.toInt();
     if (out == 0)
     {
-      IS_MASTER = false;
+      IS_PRIME = false;
     }
     else
     {
-      IS_MASTER = true;
+      IS_PRIME = true;
     }
-    Serial.print("set master(");
-    Serial.print(IS_MASTER);
+    Serial.print("set prime(");
+    Serial.print(IS_PRIME);
   }
-  NKROSerial(input);
-  ModSerial(input);
+  Mod.SerialCommand(input);
 }
 
 // serial functions end

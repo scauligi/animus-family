@@ -1,31 +1,21 @@
+class NKRO_ : public ModBase {
+  public:
 
-#define NKROMAX 3
+static const int NKROMAX = 3;
 
-void NKROStartup()
+void Startup()
 {
   // things to run during hardware startup
   AnimusKeyboard.setNKROMode(EEPROM.read(1022));
 }
 
-void NKROLoop()
-{
-  // full speed master loop
-
-
-  // things inside this if statement is ran every RefreshDelay milliseconds
-  if (CheckMillis())
-  {
-
-  }
-}
-
-void NKROKeyDown(char val, byte type)
+void KeyDown(char val, byte type)
 {
   // ran when a key is pressed down
 
 
-  // ran if this device's IS_MASTER flag is true
-  if (IS_MASTER)
+  // ran if this device's IS_PRIME flag is true
+  if (IS_PRIME)
   {
     if (type == 6)
     {
@@ -38,18 +28,8 @@ void NKROKeyDown(char val, byte type)
   }
 }
 
-void NKROKeyUp(char val, byte type)
-{
-  // ran when a key is pressed up
 
-
-  // ran if this device's IS_MASTER flag is true
-  if (IS_MASTER)
-  {
-  }
-}
-
-void NKROSetMode(byte val)
+void SetMode(byte val)
 {
   if (val < NKROMAX)
   {
@@ -58,7 +38,7 @@ void NKROSetMode(byte val)
   }
 }
 
-void NKROSerial(String input)
+void SerialCommand(String input)
 {
   // ran when serial command of input is sent to device from host
 
@@ -69,7 +49,7 @@ void NKROSerial(String input)
 
     if (val < NKROMAX)
     {
-      NKROSetMode(val);
+      SetMode(val);
       Serial.print("set NKRO mode(");
       Serial.println(val);
     }
@@ -85,4 +65,6 @@ void NKROSerial(String input)
   }
 
 }
-#undef NKROMAX
+
+};
+NKRO_ NKRO;
