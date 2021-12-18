@@ -75,9 +75,6 @@ void receiveEvent(int numBytes)
   else if (type == 6)
   {
     byte input = Wire.read();
-    #ifdef LEDEXISTS
-    BledPWMSetBright(input);
-    #endif
   }
   else if (type == 7)
   {

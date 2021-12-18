@@ -149,13 +149,6 @@ void SerialCommand(String input)
     }
 
   }
-  else if (input.startsWith("uniqueksetsubbright"))
-  {
-    input = input.substring(input.indexOf('(')+1);
-    byte val = input.toInt();
-    SetLEDBrightness(val);
-    Serial.println("Set sub brightness");
-  }
   else if (input.startsWith("uniquekgetmods"))
   {
     Serial.print("I2C");
@@ -186,14 +179,6 @@ void SetTempLayer(byte input)
 {
   Wire.beginTransmission(8);
   Wire.write(1);
-  Wire.write(input);
-  Wire.endTransmission();
-}
-
-void SetLEDBrightness(byte input)
-{
-  Wire.beginTransmission(8);
-  Wire.write(6);
   Wire.write(input);
   Wire.endTransmission();
 }
