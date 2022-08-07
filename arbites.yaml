@@ -1,0 +1,2886 @@
+pair_to_name:
+  (0, 0): -Scncde 0
+  (0, 1): -Scncde 1
+  (0, 2): -Scncde 2
+  (0, 3): -Scncde 3
+  (0, 4): a
+  (0, 5): b
+  (0, 6): c
+  (0, 7): d
+  (0, 8): e
+  (0, 9): f
+  (0, 10): g
+  (0, 11): h
+  (0, 12): i
+  (0, 13): j
+  (0, 14): k
+  (0, 15): l
+  (0, 16): m
+  (0, 17): n
+  (0, 18): o
+  (0, 19): p
+  (0, 20): q
+  (0, 21): r
+  (0, 22): s
+  (0, 23): t
+  (0, 24): u
+  (0, 25): v
+  (0, 26): w
+  (0, 27): x
+  (0, 28): y
+  (0, 29): z
+  (0, 30): 1 !
+  (0, 31): 2 @
+  (0, 32): '3 #'
+  (0, 33): 4 $
+  (0, 34): 5 %
+  (0, 35): 6 ^
+  (0, 36): 7 &
+  (0, 37): 8 *
+  (0, 38): 9 (
+  (0, 39): 0 )
+  (0, 40): Enter
+  (0, 41): Esc
+  (0, 42): Backspace
+  (0, 43): Tab
+  (0, 44): Space
+  (0, 45): '- _'
+  (0, 46): = +
+  (0, 47): '[ {'
+  (0, 48): '] }'
+  (0, 49): \ |
+  (0, 50): 'Non-US # ~'
+  (0, 51): '; :'
+  (0, 52): ''' "'
+  (0, 53): '` ~'
+  (0, 54): ', <'
+  (0, 55): . >
+  (0, 56): / ?
+  (0, 57): Capslock
+  (0, 58): F1
+  (0, 59): F2
+  (0, 60): F3
+  (0, 61): F4
+  (0, 62): F5
+  (0, 63): F6
+  (0, 64): F7
+  (0, 65): F8
+  (0, 66): F9
+  (0, 67): F10
+  (0, 68): F11
+  (0, 69): F12
+  (0, 70): PrntScn
+  (0, 71): ScrlLck
+  (0, 72): Pause
+  (0, 73): Insert
+  (0, 74): Home
+  (0, 75): Page Up
+  (0, 76): Delete
+  (0, 77): End
+  (0, 78): Page Down
+  (0, 79): Right
+  (0, 80): Left
+  (0, 81): Down
+  (0, 82): Up
+  (0, 83): NumLock
+  (0, 84): Num /
+  (0, 85): Num *
+  (0, 86): Num -
+  (0, 87): Num +
+  (0, 88): Num Enter
+  (0, 89): Num 1
+  (0, 90): Num 2
+  (0, 91): Num 3
+  (0, 92): Num 4
+  (0, 93): Num 5
+  (0, 94): Num 6
+  (0, 95): Num 7
+  (0, 96): Num 8
+  (0, 97): Num 9
+  (0, 98): Num 0
+  (0, 99): Num .
+  (0, 100): Non-US \ |
+  (0, 101): App
+  (0, 102): Power Off
+  (0, 103): Num =
+  (0, 104): F13
+  (0, 105): F14
+  (0, 106): F15
+  (0, 107): F16
+  (0, 108): F17
+  (0, 109): F18
+  (0, 110): F19
+  (0, 111): F20
+  (0, 112): F21
+  (0, 113): F22
+  (0, 114): F23
+  (0, 115): F24
+  (0, 116): -Scncde 116
+  (0, 117): KB Help
+  (0, 118): Menu
+  (0, 119): KB Select
+  (0, 120): KB Stop
+  (0, 121): KB Again
+  (0, 122): KB Undo
+  (0, 123): KB Cut
+  (0, 124): KB Copy
+  (0, 125): KB Paste
+  (0, 126): KB Find
+  (0, 127): KB Mute
+  (0, 128): KB Vol Up
+  (0, 129): KB Vol Dn
+  (0, 224): L Ctrl
+  (0, 225): L Shift
+  (0, 226): L Alt
+  (0, 227): L Win
+  (0, 228): R Ctrl
+  (0, 229): R Shift
+  (0, 230): R Alt
+  (0, 231): R Win
+  (1, 1): Fn
+  (1, 2): Fn2
+  (1, 3): Fn3
+  (1, 4): Fn4
+  (1, 5): Fn5
+  (1, 6): Fn6
+  (1, 7): Fn7
+  (1, 8): Fn8
+  (1, 9): Fn9
+  (1, 10): Fn10
+  (1, 11): Fn11
+  (1, 12): Fn12
+  (1, 13): Fn13
+  (1, 14): Fn14
+  (1, 15): Fn15
+  (1, 16): Fn16
+  (1, 17): Fn17
+  (1, 18): Fn18
+  (1, 19): Fn19
+  (4, 0): Vol Up
+  (4, 1): Vol Dn
+  (4, 2): Mute
+  (4, 3): M Play
+  (4, 4): M Pause
+  (4, 5): M Next
+  (4, 6): M Back
+  (5, 1): toggleFn
+  (5, 2): toggleFn2
+  (5, 3): toggleFn3
+  (5, 4): toggleFn4
+  (5, 5): toggleFn5
+  (5, 6): toggleFn6
+  (5, 7): toggleFn7
+  (5, 8): toggleFn8
+  (5, 9): toggleFn9
+  (5, 10): toggleFn10
+  (5, 11): toggleFn11
+  (5, 12): toggleFn12
+  (5, 13): toggleFn13
+  (5, 14): toggleFn14
+  (5, 15): toggleFn15
+  (5, 16): toggleFn16
+  (5, 17): toggleFn17
+  (5, 18): toggleFn18
+  (5, 19): toggleFn19
+  (6, 0): Set 6KRO
+  (6, 1): Set NKRO
+  (6, 2): Deprecated
+  (7, 0): macro0
+  (7, 1): macro1
+  (7, 2): macro2
+  (7, 3): macro3
+  (7, 4): macro4
+  (7, 5): macro5
+  (7, 6): macro6
+  (7, 7): macro7
+  (7, 8): macro8
+  (7, 9): macro9
+  (10, 10): LED+
+  (10, 20): LED++
+  (10, 101): LED Off
+  (10, 236): LED--
+  (10, 246): LED-
+  (11, 0): -Scncde 0 + Shift
+  (11, 1): -Scncde 1 + Shift
+  (11, 2): -Scncde 2 + Shift
+  (11, 3): -Scncde 3 + Shift
+  (11, 4): a + Shift
+  (11, 5): b + Shift
+  (11, 6): c + Shift
+  (11, 7): d + Shift
+  (11, 8): e + Shift
+  (11, 9): f + Shift
+  (11, 10): g + Shift
+  (11, 11): h + Shift
+  (11, 12): i + Shift
+  (11, 13): j + Shift
+  (11, 14): k + Shift
+  (11, 15): l + Shift
+  (11, 16): m + Shift
+  (11, 17): n + Shift
+  (11, 18): o + Shift
+  (11, 19): p + Shift
+  (11, 20): q + Shift
+  (11, 21): r + Shift
+  (11, 22): s + Shift
+  (11, 23): t + Shift
+  (11, 24): u + Shift
+  (11, 25): v + Shift
+  (11, 26): w + Shift
+  (11, 27): x + Shift
+  (11, 28): y + Shift
+  (11, 29): z + Shift
+  (11, 30): 1 ! + Shift
+  (11, 31): 2 @ + Shift
+  (11, 32): '3 # + Shift'
+  (11, 33): 4 $ + Shift
+  (11, 34): 5 % + Shift
+  (11, 35): 6 ^ + Shift
+  (11, 36): 7 & + Shift
+  (11, 37): 8 * + Shift
+  (11, 38): 9 ( + Shift
+  (11, 39): 0 ) + Shift
+  (11, 40): Enter + Shift
+  (11, 41): Esc + Shift
+  (11, 42): Backspace + Shift
+  (11, 43): Tab + Shift
+  (11, 44): Space + Shift
+  (11, 45): '- _ + Shift'
+  (11, 46): = + + Shift
+  (11, 47): '[ { + Shift'
+  (11, 48): '] } + Shift'
+  (11, 49): \ | + Shift
+  (11, 50): 'Non-US # ~ + Shift'
+  (11, 51): '; : + Shift'
+  (11, 52): ''' " + Shift'
+  (11, 53): '` ~ + Shift'
+  (11, 54): ', < + Shift'
+  (11, 55): . > + Shift
+  (11, 56): / ? + Shift
+  (11, 57): Capslock + Shift
+  (11, 58): F1 + Shift
+  (11, 59): F2 + Shift
+  (11, 60): F3 + Shift
+  (11, 61): F4 + Shift
+  (11, 62): F5 + Shift
+  (11, 63): F6 + Shift
+  (11, 64): F7 + Shift
+  (11, 65): F8 + Shift
+  (11, 66): F9 + Shift
+  (11, 67): F10 + Shift
+  (11, 68): F11 + Shift
+  (11, 69): F12 + Shift
+  (11, 70): PrntScn + Shift
+  (11, 71): ScrlLck + Shift
+  (11, 72): Pause + Shift
+  (11, 73): Insert + Shift
+  (11, 74): Home + Shift
+  (11, 75): Page Up + Shift
+  (11, 76): Delete + Shift
+  (11, 77): End + Shift
+  (11, 78): Page Down + Shift
+  (11, 79): Right + Shift
+  (11, 80): Left + Shift
+  (11, 81): Down + Shift
+  (11, 82): Up + Shift
+  (11, 83): NumLock + Shift
+  (11, 84): Num / + Shift
+  (11, 85): Num * + Shift
+  (11, 86): Num - + Shift
+  (11, 87): Num + + Shift
+  (11, 88): Num Enter + Shift
+  (11, 89): Num 1 + Shift
+  (11, 90): Num 2 + Shift
+  (11, 91): Num 3 + Shift
+  (11, 92): Num 4 + Shift
+  (11, 93): Num 5 + Shift
+  (11, 94): Num 6 + Shift
+  (11, 95): Num 7 + Shift
+  (11, 96): Num 8 + Shift
+  (11, 97): Num 9 + Shift
+  (11, 98): Num 0 + Shift
+  (11, 99): Num . + Shift
+  (11, 100): Non-US \ | + Shift
+  (11, 101): App + Shift
+  (11, 102): Power Off + Shift
+  (11, 103): Num = + Shift
+  (11, 104): F13 + Shift
+  (11, 105): F14 + Shift
+  (11, 106): F15 + Shift
+  (11, 107): F16 + Shift
+  (11, 108): F17 + Shift
+  (11, 109): F18 + Shift
+  (11, 110): F19 + Shift
+  (11, 111): F20 + Shift
+  (11, 112): F21 + Shift
+  (11, 113): F22 + Shift
+  (11, 114): F23 + Shift
+  (11, 115): F24 + Shift
+  (11, 116): -Scncde 116 + Shift
+  (11, 117): KB Help + Shift
+  (11, 118): Menu + Shift
+  (11, 119): KB Select + Shift
+  (11, 120): KB Stop + Shift
+  (11, 121): KB Again + Shift
+  (11, 122): KB Undo + Shift
+  (11, 123): KB Cut + Shift
+  (11, 124): KB Copy + Shift
+  (11, 125): KB Paste + Shift
+  (11, 126): KB Find + Shift
+  (11, 127): KB Mute + Shift
+  (11, 128): KB Vol Up + Shift
+  (11, 129): KB Vol Dn + Shift
+  (11, 224): L Ctrl + Shift
+  (11, 225): L Shift + Shift
+  (11, 226): L Alt + Shift
+  (11, 227): L Win + Shift
+  (11, 228): R Ctrl + Shift
+  (11, 229): R Shift + Shift
+  (11, 230): R Alt + Shift
+  (11, 231): R Win + Shift
+  (12, 0): -Scncde 0 + Ctrl
+  (12, 1): -Scncde 1 + Ctrl
+  (12, 2): -Scncde 2 + Ctrl
+  (12, 3): -Scncde 3 + Ctrl
+  (12, 4): a + Ctrl
+  (12, 5): b + Ctrl
+  (12, 6): c + Ctrl
+  (12, 7): d + Ctrl
+  (12, 8): e + Ctrl
+  (12, 9): f + Ctrl
+  (12, 10): g + Ctrl
+  (12, 11): h + Ctrl
+  (12, 12): i + Ctrl
+  (12, 13): j + Ctrl
+  (12, 14): k + Ctrl
+  (12, 15): l + Ctrl
+  (12, 16): m + Ctrl
+  (12, 17): n + Ctrl
+  (12, 18): o + Ctrl
+  (12, 19): p + Ctrl
+  (12, 20): q + Ctrl
+  (12, 21): r + Ctrl
+  (12, 22): s + Ctrl
+  (12, 23): t + Ctrl
+  (12, 24): u + Ctrl
+  (12, 25): v + Ctrl
+  (12, 26): w + Ctrl
+  (12, 27): x + Ctrl
+  (12, 28): y + Ctrl
+  (12, 29): z + Ctrl
+  (12, 30): 1 ! + Ctrl
+  (12, 31): 2 @ + Ctrl
+  (12, 32): '3 # + Ctrl'
+  (12, 33): 4 $ + Ctrl
+  (12, 34): 5 % + Ctrl
+  (12, 35): 6 ^ + Ctrl
+  (12, 36): 7 & + Ctrl
+  (12, 37): 8 * + Ctrl
+  (12, 38): 9 ( + Ctrl
+  (12, 39): 0 ) + Ctrl
+  (12, 40): Enter + Ctrl
+  (12, 41): Esc + Ctrl
+  (12, 42): Backspace + Ctrl
+  (12, 43): Tab + Ctrl
+  (12, 44): Space + Ctrl
+  (12, 45): '- _ + Ctrl'
+  (12, 46): = + + Ctrl
+  (12, 47): '[ { + Ctrl'
+  (12, 48): '] } + Ctrl'
+  (12, 49): \ | + Ctrl
+  (12, 50): 'Non-US # ~ + Ctrl'
+  (12, 51): '; : + Ctrl'
+  (12, 52): ''' " + Ctrl'
+  (12, 53): '` ~ + Ctrl'
+  (12, 54): ', < + Ctrl'
+  (12, 55): . > + Ctrl
+  (12, 56): / ? + Ctrl
+  (12, 57): Capslock + Ctrl
+  (12, 58): F1 + Ctrl
+  (12, 59): F2 + Ctrl
+  (12, 60): F3 + Ctrl
+  (12, 61): F4 + Ctrl
+  (12, 62): F5 + Ctrl
+  (12, 63): F6 + Ctrl
+  (12, 64): F7 + Ctrl
+  (12, 65): F8 + Ctrl
+  (12, 66): F9 + Ctrl
+  (12, 67): F10 + Ctrl
+  (12, 68): F11 + Ctrl
+  (12, 69): F12 + Ctrl
+  (12, 70): PrntScn + Ctrl
+  (12, 71): ScrlLck + Ctrl
+  (12, 72): Pause + Ctrl
+  (12, 73): Insert + Ctrl
+  (12, 74): Home + Ctrl
+  (12, 75): Page Up + Ctrl
+  (12, 76): Delete + Ctrl
+  (12, 77): End + Ctrl
+  (12, 78): Page Down + Ctrl
+  (12, 79): Right + Ctrl
+  (12, 80): Left + Ctrl
+  (12, 81): Down + Ctrl
+  (12, 82): Up + Ctrl
+  (12, 83): NumLock + Ctrl
+  (12, 84): Num / + Ctrl
+  (12, 85): Num * + Ctrl
+  (12, 86): Num - + Ctrl
+  (12, 87): Num + + Ctrl
+  (12, 88): Num Enter + Ctrl
+  (12, 89): Num 1 + Ctrl
+  (12, 90): Num 2 + Ctrl
+  (12, 91): Num 3 + Ctrl
+  (12, 92): Num 4 + Ctrl
+  (12, 93): Num 5 + Ctrl
+  (12, 94): Num 6 + Ctrl
+  (12, 95): Num 7 + Ctrl
+  (12, 96): Num 8 + Ctrl
+  (12, 97): Num 9 + Ctrl
+  (12, 98): Num 0 + Ctrl
+  (12, 99): Num . + Ctrl
+  (12, 100): Non-US \ | + Ctrl
+  (12, 101): App + Ctrl
+  (12, 102): Power Off + Ctrl
+  (12, 103): Num = + Ctrl
+  (12, 104): F13 + Ctrl
+  (12, 105): F14 + Ctrl
+  (12, 106): F15 + Ctrl
+  (12, 107): F16 + Ctrl
+  (12, 108): F17 + Ctrl
+  (12, 109): F18 + Ctrl
+  (12, 110): F19 + Ctrl
+  (12, 111): F20 + Ctrl
+  (12, 112): F21 + Ctrl
+  (12, 113): F22 + Ctrl
+  (12, 114): F23 + Ctrl
+  (12, 115): F24 + Ctrl
+  (12, 116): -Scncde 116 + Ctrl
+  (12, 117): KB Help + Ctrl
+  (12, 118): Menu + Ctrl
+  (12, 119): KB Select + Ctrl
+  (12, 120): KB Stop + Ctrl
+  (12, 121): KB Again + Ctrl
+  (12, 122): KB Undo + Ctrl
+  (12, 123): KB Cut + Ctrl
+  (12, 124): KB Copy + Ctrl
+  (12, 125): KB Paste + Ctrl
+  (12, 126): KB Find + Ctrl
+  (12, 127): KB Mute + Ctrl
+  (12, 128): KB Vol Up + Ctrl
+  (12, 129): KB Vol Dn + Ctrl
+  (12, 224): L Ctrl + Ctrl
+  (12, 225): L Shift + Ctrl
+  (12, 226): L Alt + Ctrl
+  (12, 227): L Win + Ctrl
+  (12, 228): R Ctrl + Ctrl
+  (12, 229): R Shift + Ctrl
+  (12, 230): R Alt + Ctrl
+  (12, 231): R Win + Ctrl
+  (13, 0): -Scncde 0 + Alt
+  (13, 1): -Scncde 1 + Alt
+  (13, 2): -Scncde 2 + Alt
+  (13, 3): -Scncde 3 + Alt
+  (13, 4): a + Alt
+  (13, 5): b + Alt
+  (13, 6): c + Alt
+  (13, 7): d + Alt
+  (13, 8): e + Alt
+  (13, 9): f + Alt
+  (13, 10): g + Alt
+  (13, 11): h + Alt
+  (13, 12): i + Alt
+  (13, 13): j + Alt
+  (13, 14): k + Alt
+  (13, 15): l + Alt
+  (13, 16): m + Alt
+  (13, 17): n + Alt
+  (13, 18): o + Alt
+  (13, 19): p + Alt
+  (13, 20): q + Alt
+  (13, 21): r + Alt
+  (13, 22): s + Alt
+  (13, 23): t + Alt
+  (13, 24): u + Alt
+  (13, 25): v + Alt
+  (13, 26): w + Alt
+  (13, 27): x + Alt
+  (13, 28): y + Alt
+  (13, 29): z + Alt
+  (13, 30): 1 ! + Alt
+  (13, 31): 2 @ + Alt
+  (13, 32): '3 # + Alt'
+  (13, 33): 4 $ + Alt
+  (13, 34): 5 % + Alt
+  (13, 35): 6 ^ + Alt
+  (13, 36): 7 & + Alt
+  (13, 37): 8 * + Alt
+  (13, 38): 9 ( + Alt
+  (13, 39): 0 ) + Alt
+  (13, 40): Enter + Alt
+  (13, 41): Esc + Alt
+  (13, 42): Backspace + Alt
+  (13, 43): Tab + Alt
+  (13, 44): Space + Alt
+  (13, 45): '- _ + Alt'
+  (13, 46): = + + Alt
+  (13, 47): '[ { + Alt'
+  (13, 48): '] } + Alt'
+  (13, 49): \ | + Alt
+  (13, 50): 'Non-US # ~ + Alt'
+  (13, 51): '; : + Alt'
+  (13, 52): ''' " + Alt'
+  (13, 53): '` ~ + Alt'
+  (13, 54): ', < + Alt'
+  (13, 55): . > + Alt
+  (13, 56): / ? + Alt
+  (13, 57): Capslock + Alt
+  (13, 58): F1 + Alt
+  (13, 59): F2 + Alt
+  (13, 60): F3 + Alt
+  (13, 61): F4 + Alt
+  (13, 62): F5 + Alt
+  (13, 63): F6 + Alt
+  (13, 64): F7 + Alt
+  (13, 65): F8 + Alt
+  (13, 66): F9 + Alt
+  (13, 67): F10 + Alt
+  (13, 68): F11 + Alt
+  (13, 69): F12 + Alt
+  (13, 70): PrntScn + Alt
+  (13, 71): ScrlLck + Alt
+  (13, 72): Pause + Alt
+  (13, 73): Insert + Alt
+  (13, 74): Home + Alt
+  (13, 75): Page Up + Alt
+  (13, 76): Delete + Alt
+  (13, 77): End + Alt
+  (13, 78): Page Down + Alt
+  (13, 79): Right + Alt
+  (13, 80): Left + Alt
+  (13, 81): Down + Alt
+  (13, 82): Up + Alt
+  (13, 83): NumLock + Alt
+  (13, 84): Num / + Alt
+  (13, 85): Num * + Alt
+  (13, 86): Num - + Alt
+  (13, 87): Num + + Alt
+  (13, 88): Num Enter + Alt
+  (13, 89): Num 1 + Alt
+  (13, 90): Num 2 + Alt
+  (13, 91): Num 3 + Alt
+  (13, 92): Num 4 + Alt
+  (13, 93): Num 5 + Alt
+  (13, 94): Num 6 + Alt
+  (13, 95): Num 7 + Alt
+  (13, 96): Num 8 + Alt
+  (13, 97): Num 9 + Alt
+  (13, 98): Num 0 + Alt
+  (13, 99): Num . + Alt
+  (13, 100): Non-US \ | + Alt
+  (13, 101): App + Alt
+  (13, 102): Power Off + Alt
+  (13, 103): Num = + Alt
+  (13, 104): F13 + Alt
+  (13, 105): F14 + Alt
+  (13, 106): F15 + Alt
+  (13, 107): F16 + Alt
+  (13, 108): F17 + Alt
+  (13, 109): F18 + Alt
+  (13, 110): F19 + Alt
+  (13, 111): F20 + Alt
+  (13, 112): F21 + Alt
+  (13, 113): F22 + Alt
+  (13, 114): F23 + Alt
+  (13, 115): F24 + Alt
+  (13, 116): -Scncde 116 + Alt
+  (13, 117): KB Help + Alt
+  (13, 118): Menu + Alt
+  (13, 119): KB Select + Alt
+  (13, 120): KB Stop + Alt
+  (13, 121): KB Again + Alt
+  (13, 122): KB Undo + Alt
+  (13, 123): KB Cut + Alt
+  (13, 124): KB Copy + Alt
+  (13, 125): KB Paste + Alt
+  (13, 126): KB Find + Alt
+  (13, 127): KB Mute + Alt
+  (13, 128): KB Vol Up + Alt
+  (13, 129): KB Vol Dn + Alt
+  (13, 224): L Ctrl + Alt
+  (13, 225): L Shift + Alt
+  (13, 226): L Alt + Alt
+  (13, 227): L Win + Alt
+  (13, 228): R Ctrl + Alt
+  (13, 229): R Shift + Alt
+  (13, 230): R Alt + Alt
+  (13, 231): R Win + Alt
+  (14, 0): -Scncde 0 + AltGr
+  (14, 1): -Scncde 1 + AltGr
+  (14, 2): -Scncde 2 + AltGr
+  (14, 3): -Scncde 3 + AltGr
+  (14, 4): a + AltGr
+  (14, 5): b + AltGr
+  (14, 6): c + AltGr
+  (14, 7): d + AltGr
+  (14, 8): e + AltGr
+  (14, 9): f + AltGr
+  (14, 10): g + AltGr
+  (14, 11): h + AltGr
+  (14, 12): i + AltGr
+  (14, 13): j + AltGr
+  (14, 14): k + AltGr
+  (14, 15): l + AltGr
+  (14, 16): m + AltGr
+  (14, 17): n + AltGr
+  (14, 18): o + AltGr
+  (14, 19): p + AltGr
+  (14, 20): q + AltGr
+  (14, 21): r + AltGr
+  (14, 22): s + AltGr
+  (14, 23): t + AltGr
+  (14, 24): u + AltGr
+  (14, 25): v + AltGr
+  (14, 26): w + AltGr
+  (14, 27): x + AltGr
+  (14, 28): y + AltGr
+  (14, 29): z + AltGr
+  (14, 30): 1 ! + AltGr
+  (14, 31): 2 @ + AltGr
+  (14, 32): '3 # + AltGr'
+  (14, 33): 4 $ + AltGr
+  (14, 34): 5 % + AltGr
+  (14, 35): 6 ^ + AltGr
+  (14, 36): 7 & + AltGr
+  (14, 37): 8 * + AltGr
+  (14, 38): 9 ( + AltGr
+  (14, 39): 0 ) + AltGr
+  (14, 40): Enter + AltGr
+  (14, 41): Esc + AltGr
+  (14, 42): Backspace + AltGr
+  (14, 43): Tab + AltGr
+  (14, 44): Space + AltGr
+  (14, 45): '- _ + AltGr'
+  (14, 46): = + + AltGr
+  (14, 47): '[ { + AltGr'
+  (14, 48): '] } + AltGr'
+  (14, 49): \ | + AltGr
+  (14, 50): 'Non-US # ~ + AltGr'
+  (14, 51): '; : + AltGr'
+  (14, 52): ''' " + AltGr'
+  (14, 53): '` ~ + AltGr'
+  (14, 54): ', < + AltGr'
+  (14, 55): . > + AltGr
+  (14, 56): / ? + AltGr
+  (14, 57): Capslock + AltGr
+  (14, 58): F1 + AltGr
+  (14, 59): F2 + AltGr
+  (14, 60): F3 + AltGr
+  (14, 61): F4 + AltGr
+  (14, 62): F5 + AltGr
+  (14, 63): F6 + AltGr
+  (14, 64): F7 + AltGr
+  (14, 65): F8 + AltGr
+  (14, 66): F9 + AltGr
+  (14, 67): F10 + AltGr
+  (14, 68): F11 + AltGr
+  (14, 69): F12 + AltGr
+  (14, 70): PrntScn + AltGr
+  (14, 71): ScrlLck + AltGr
+  (14, 72): Pause + AltGr
+  (14, 73): Insert + AltGr
+  (14, 74): Home + AltGr
+  (14, 75): Page Up + AltGr
+  (14, 76): Delete + AltGr
+  (14, 77): End + AltGr
+  (14, 78): Page Down + AltGr
+  (14, 79): Right + AltGr
+  (14, 80): Left + AltGr
+  (14, 81): Down + AltGr
+  (14, 82): Up + AltGr
+  (14, 83): NumLock + AltGr
+  (14, 84): Num / + AltGr
+  (14, 85): Num * + AltGr
+  (14, 86): Num - + AltGr
+  (14, 87): Num + + AltGr
+  (14, 88): Num Enter + AltGr
+  (14, 89): Num 1 + AltGr
+  (14, 90): Num 2 + AltGr
+  (14, 91): Num 3 + AltGr
+  (14, 92): Num 4 + AltGr
+  (14, 93): Num 5 + AltGr
+  (14, 94): Num 6 + AltGr
+  (14, 95): Num 7 + AltGr
+  (14, 96): Num 8 + AltGr
+  (14, 97): Num 9 + AltGr
+  (14, 98): Num 0 + AltGr
+  (14, 99): Num . + AltGr
+  (14, 100): Non-US \ | + AltGr
+  (14, 101): App + AltGr
+  (14, 102): Power Off + AltGr
+  (14, 103): Num = + AltGr
+  (14, 104): F13 + AltGr
+  (14, 105): F14 + AltGr
+  (14, 106): F15 + AltGr
+  (14, 107): F16 + AltGr
+  (14, 108): F17 + AltGr
+  (14, 109): F18 + AltGr
+  (14, 110): F19 + AltGr
+  (14, 111): F20 + AltGr
+  (14, 112): F21 + AltGr
+  (14, 113): F22 + AltGr
+  (14, 114): F23 + AltGr
+  (14, 115): F24 + AltGr
+  (14, 116): -Scncde 116 + AltGr
+  (14, 117): KB Help + AltGr
+  (14, 118): Menu + AltGr
+  (14, 119): KB Select + AltGr
+  (14, 120): KB Stop + AltGr
+  (14, 121): KB Again + AltGr
+  (14, 122): KB Undo + AltGr
+  (14, 123): KB Cut + AltGr
+  (14, 124): KB Copy + AltGr
+  (14, 125): KB Paste + AltGr
+  (14, 126): KB Find + AltGr
+  (14, 127): KB Mute + AltGr
+  (14, 128): KB Vol Up + AltGr
+  (14, 129): KB Vol Dn + AltGr
+  (14, 224): L Ctrl + AltGr
+  (14, 225): L Shift + AltGr
+  (14, 226): L Alt + AltGr
+  (14, 227): L Win + AltGr
+  (14, 228): R Ctrl + AltGr
+  (14, 229): R Shift + AltGr
+  (14, 230): R Alt + AltGr
+  (14, 231): R Win + AltGr
+  (15, 0): -Scncde 0 + Ctrl + Shift
+  (15, 1): -Scncde 1 + Ctrl + Shift
+  (15, 2): -Scncde 2 + Ctrl + Shift
+  (15, 3): -Scncde 3 + Ctrl + Shift
+  (15, 4): a + Ctrl + Shift
+  (15, 5): b + Ctrl + Shift
+  (15, 6): c + Ctrl + Shift
+  (15, 7): d + Ctrl + Shift
+  (15, 8): e + Ctrl + Shift
+  (15, 9): f + Ctrl + Shift
+  (15, 10): g + Ctrl + Shift
+  (15, 11): h + Ctrl + Shift
+  (15, 12): i + Ctrl + Shift
+  (15, 13): j + Ctrl + Shift
+  (15, 14): k + Ctrl + Shift
+  (15, 15): l + Ctrl + Shift
+  (15, 16): m + Ctrl + Shift
+  (15, 17): n + Ctrl + Shift
+  (15, 18): o + Ctrl + Shift
+  (15, 19): p + Ctrl + Shift
+  (15, 20): q + Ctrl + Shift
+  (15, 21): r + Ctrl + Shift
+  (15, 22): s + Ctrl + Shift
+  (15, 23): t + Ctrl + Shift
+  (15, 24): u + Ctrl + Shift
+  (15, 25): v + Ctrl + Shift
+  (15, 26): w + Ctrl + Shift
+  (15, 27): x + Ctrl + Shift
+  (15, 28): y + Ctrl + Shift
+  (15, 29): z + Ctrl + Shift
+  (15, 30): 1 ! + Ctrl + Shift
+  (15, 31): 2 @ + Ctrl + Shift
+  (15, 32): '3 # + Ctrl + Shift'
+  (15, 33): 4 $ + Ctrl + Shift
+  (15, 34): 5 % + Ctrl + Shift
+  (15, 35): 6 ^ + Ctrl + Shift
+  (15, 36): 7 & + Ctrl + Shift
+  (15, 37): 8 * + Ctrl + Shift
+  (15, 38): 9 ( + Ctrl + Shift
+  (15, 39): 0 ) + Ctrl + Shift
+  (15, 40): Enter + Ctrl + Shift
+  (15, 41): Esc + Ctrl + Shift
+  (15, 42): Backspace + Ctrl + Shift
+  (15, 43): Tab + Ctrl + Shift
+  (15, 44): Space + Ctrl + Shift
+  (15, 45): '- _ + Ctrl + Shift'
+  (15, 46): = + + Ctrl + Shift
+  (15, 47): '[ { + Ctrl + Shift'
+  (15, 48): '] } + Ctrl + Shift'
+  (15, 49): \ | + Ctrl + Shift
+  (15, 50): 'Non-US # ~ + Ctrl + Shift'
+  (15, 51): '; : + Ctrl + Shift'
+  (15, 52): ''' " + Ctrl + Shift'
+  (15, 53): '` ~ + Ctrl + Shift'
+  (15, 54): ', < + Ctrl + Shift'
+  (15, 55): . > + Ctrl + Shift
+  (15, 56): / ? + Ctrl + Shift
+  (15, 57): Capslock + Ctrl + Shift
+  (15, 58): F1 + Ctrl + Shift
+  (15, 59): F2 + Ctrl + Shift
+  (15, 60): F3 + Ctrl + Shift
+  (15, 61): F4 + Ctrl + Shift
+  (15, 62): F5 + Ctrl + Shift
+  (15, 63): F6 + Ctrl + Shift
+  (15, 64): F7 + Ctrl + Shift
+  (15, 65): F8 + Ctrl + Shift
+  (15, 66): F9 + Ctrl + Shift
+  (15, 67): F10 + Ctrl + Shift
+  (15, 68): F11 + Ctrl + Shift
+  (15, 69): F12 + Ctrl + Shift
+  (15, 70): PrntScn + Ctrl + Shift
+  (15, 71): ScrlLck + Ctrl + Shift
+  (15, 72): Pause + Ctrl + Shift
+  (15, 73): Insert + Ctrl + Shift
+  (15, 74): Home + Ctrl + Shift
+  (15, 75): Page Up + Ctrl + Shift
+  (15, 76): Delete + Ctrl + Shift
+  (15, 77): End + Ctrl + Shift
+  (15, 78): Page Down + Ctrl + Shift
+  (15, 79): Right + Ctrl + Shift
+  (15, 80): Left + Ctrl + Shift
+  (15, 81): Down + Ctrl + Shift
+  (15, 82): Up + Ctrl + Shift
+  (15, 83): NumLock + Ctrl + Shift
+  (15, 84): Num / + Ctrl + Shift
+  (15, 85): Num * + Ctrl + Shift
+  (15, 86): Num - + Ctrl + Shift
+  (15, 87): Num + + Ctrl + Shift
+  (15, 88): Num Enter + Ctrl + Shift
+  (15, 89): Num 1 + Ctrl + Shift
+  (15, 90): Num 2 + Ctrl + Shift
+  (15, 91): Num 3 + Ctrl + Shift
+  (15, 92): Num 4 + Ctrl + Shift
+  (15, 93): Num 5 + Ctrl + Shift
+  (15, 94): Num 6 + Ctrl + Shift
+  (15, 95): Num 7 + Ctrl + Shift
+  (15, 96): Num 8 + Ctrl + Shift
+  (15, 97): Num 9 + Ctrl + Shift
+  (15, 98): Num 0 + Ctrl + Shift
+  (15, 99): Num . + Ctrl + Shift
+  (15, 100): Non-US \ | + Ctrl + Shift
+  (15, 101): App + Ctrl + Shift
+  (15, 102): Power Off + Ctrl + Shift
+  (15, 103): Num = + Ctrl + Shift
+  (15, 104): F13 + Ctrl + Shift
+  (15, 105): F14 + Ctrl + Shift
+  (15, 106): F15 + Ctrl + Shift
+  (15, 107): F16 + Ctrl + Shift
+  (15, 108): F17 + Ctrl + Shift
+  (15, 109): F18 + Ctrl + Shift
+  (15, 110): F19 + Ctrl + Shift
+  (15, 111): F20 + Ctrl + Shift
+  (15, 112): F21 + Ctrl + Shift
+  (15, 113): F22 + Ctrl + Shift
+  (15, 114): F23 + Ctrl + Shift
+  (15, 115): F24 + Ctrl + Shift
+  (15, 116): -Scncde 116 + Ctrl + Shift
+  (15, 117): KB Help + Ctrl + Shift
+  (15, 118): Menu + Ctrl + Shift
+  (15, 119): KB Select + Ctrl + Shift
+  (15, 120): KB Stop + Ctrl + Shift
+  (15, 121): KB Again + Ctrl + Shift
+  (15, 122): KB Undo + Ctrl + Shift
+  (15, 123): KB Cut + Ctrl + Shift
+  (15, 124): KB Copy + Ctrl + Shift
+  (15, 125): KB Paste + Ctrl + Shift
+  (15, 126): KB Find + Ctrl + Shift
+  (15, 127): KB Mute + Ctrl + Shift
+  (15, 128): KB Vol Up + Ctrl + Shift
+  (15, 129): KB Vol Dn + Ctrl + Shift
+  (15, 224): L Ctrl + Ctrl + Shift
+  (15, 225): L Shift + Ctrl + Shift
+  (15, 226): L Alt + Ctrl + Shift
+  (15, 227): L Win + Ctrl + Shift
+  (15, 228): R Ctrl + Ctrl + Shift
+  (15, 229): R Shift + Ctrl + Shift
+  (15, 230): R Alt + Ctrl + Shift
+  (15, 231): R Win + Ctrl + Shift
+  (16, 0): -Scncde 0 + Ctrl + Shift + Alt
+  (16, 1): -Scncde 1 + Ctrl + Shift + Alt
+  (16, 2): -Scncde 2 + Ctrl + Shift + Alt
+  (16, 3): -Scncde 3 + Ctrl + Shift + Alt
+  (16, 4): a + Ctrl + Shift + Alt
+  (16, 5): b + Ctrl + Shift + Alt
+  (16, 6): c + Ctrl + Shift + Alt
+  (16, 7): d + Ctrl + Shift + Alt
+  (16, 8): e + Ctrl + Shift + Alt
+  (16, 9): f + Ctrl + Shift + Alt
+  (16, 10): g + Ctrl + Shift + Alt
+  (16, 11): h + Ctrl + Shift + Alt
+  (16, 12): i + Ctrl + Shift + Alt
+  (16, 13): j + Ctrl + Shift + Alt
+  (16, 14): k + Ctrl + Shift + Alt
+  (16, 15): l + Ctrl + Shift + Alt
+  (16, 16): m + Ctrl + Shift + Alt
+  (16, 17): n + Ctrl + Shift + Alt
+  (16, 18): o + Ctrl + Shift + Alt
+  (16, 19): p + Ctrl + Shift + Alt
+  (16, 20): q + Ctrl + Shift + Alt
+  (16, 21): r + Ctrl + Shift + Alt
+  (16, 22): s + Ctrl + Shift + Alt
+  (16, 23): t + Ctrl + Shift + Alt
+  (16, 24): u + Ctrl + Shift + Alt
+  (16, 25): v + Ctrl + Shift + Alt
+  (16, 26): w + Ctrl + Shift + Alt
+  (16, 27): x + Ctrl + Shift + Alt
+  (16, 28): y + Ctrl + Shift + Alt
+  (16, 29): z + Ctrl + Shift + Alt
+  (16, 30): 1 ! + Ctrl + Shift + Alt
+  (16, 31): 2 @ + Ctrl + Shift + Alt
+  (16, 32): '3 # + Ctrl + Shift + Alt'
+  (16, 33): 4 $ + Ctrl + Shift + Alt
+  (16, 34): 5 % + Ctrl + Shift + Alt
+  (16, 35): 6 ^ + Ctrl + Shift + Alt
+  (16, 36): 7 & + Ctrl + Shift + Alt
+  (16, 37): 8 * + Ctrl + Shift + Alt
+  (16, 38): 9 ( + Ctrl + Shift + Alt
+  (16, 39): 0 ) + Ctrl + Shift + Alt
+  (16, 40): Enter + Ctrl + Shift + Alt
+  (16, 41): Esc + Ctrl + Shift + Alt
+  (16, 42): Backspace + Ctrl + Shift + Alt
+  (16, 43): Tab + Ctrl + Shift + Alt
+  (16, 44): Space + Ctrl + Shift + Alt
+  (16, 45): '- _ + Ctrl + Shift + Alt'
+  (16, 46): = + + Ctrl + Shift + Alt
+  (16, 47): '[ { + Ctrl + Shift + Alt'
+  (16, 48): '] } + Ctrl + Shift + Alt'
+  (16, 49): \ | + Ctrl + Shift + Alt
+  (16, 50): 'Non-US # ~ + Ctrl + Shift + Alt'
+  (16, 51): '; : + Ctrl + Shift + Alt'
+  (16, 52): ''' " + Ctrl + Shift + Alt'
+  (16, 53): '` ~ + Ctrl + Shift + Alt'
+  (16, 54): ', < + Ctrl + Shift + Alt'
+  (16, 55): . > + Ctrl + Shift + Alt
+  (16, 56): / ? + Ctrl + Shift + Alt
+  (16, 57): Capslock + Ctrl + Shift + Alt
+  (16, 58): F1 + Ctrl + Shift + Alt
+  (16, 59): F2 + Ctrl + Shift + Alt
+  (16, 60): F3 + Ctrl + Shift + Alt
+  (16, 61): F4 + Ctrl + Shift + Alt
+  (16, 62): F5 + Ctrl + Shift + Alt
+  (16, 63): F6 + Ctrl + Shift + Alt
+  (16, 64): F7 + Ctrl + Shift + Alt
+  (16, 65): F8 + Ctrl + Shift + Alt
+  (16, 66): F9 + Ctrl + Shift + Alt
+  (16, 67): F10 + Ctrl + Shift + Alt
+  (16, 68): F11 + Ctrl + Shift + Alt
+  (16, 69): F12 + Ctrl + Shift + Alt
+  (16, 70): PrntScn + Ctrl + Shift + Alt
+  (16, 71): ScrlLck + Ctrl + Shift + Alt
+  (16, 72): Pause + Ctrl + Shift + Alt
+  (16, 73): Insert + Ctrl + Shift + Alt
+  (16, 74): Home + Ctrl + Shift + Alt
+  (16, 75): Page Up + Ctrl + Shift + Alt
+  (16, 76): Delete + Ctrl + Shift + Alt
+  (16, 77): End + Ctrl + Shift + Alt
+  (16, 78): Page Down + Ctrl + Shift + Alt
+  (16, 79): Right + Ctrl + Shift + Alt
+  (16, 80): Left + Ctrl + Shift + Alt
+  (16, 81): Down + Ctrl + Shift + Alt
+  (16, 82): Up + Ctrl + Shift + Alt
+  (16, 83): NumLock + Ctrl + Shift + Alt
+  (16, 84): Num / + Ctrl + Shift + Alt
+  (16, 85): Num * + Ctrl + Shift + Alt
+  (16, 86): Num - + Ctrl + Shift + Alt
+  (16, 87): Num + + Ctrl + Shift + Alt
+  (16, 88): Num Enter + Ctrl + Shift + Alt
+  (16, 89): Num 1 + Ctrl + Shift + Alt
+  (16, 90): Num 2 + Ctrl + Shift + Alt
+  (16, 91): Num 3 + Ctrl + Shift + Alt
+  (16, 92): Num 4 + Ctrl + Shift + Alt
+  (16, 93): Num 5 + Ctrl + Shift + Alt
+  (16, 94): Num 6 + Ctrl + Shift + Alt
+  (16, 95): Num 7 + Ctrl + Shift + Alt
+  (16, 96): Num 8 + Ctrl + Shift + Alt
+  (16, 97): Num 9 + Ctrl + Shift + Alt
+  (16, 98): Num 0 + Ctrl + Shift + Alt
+  (16, 99): Num . + Ctrl + Shift + Alt
+  (16, 100): Non-US \ | + Ctrl + Shift + Alt
+  (16, 101): App + Ctrl + Shift + Alt
+  (16, 102): Power Off + Ctrl + Shift + Alt
+  (16, 103): Num = + Ctrl + Shift + Alt
+  (16, 104): F13 + Ctrl + Shift + Alt
+  (16, 105): F14 + Ctrl + Shift + Alt
+  (16, 106): F15 + Ctrl + Shift + Alt
+  (16, 107): F16 + Ctrl + Shift + Alt
+  (16, 108): F17 + Ctrl + Shift + Alt
+  (16, 109): F18 + Ctrl + Shift + Alt
+  (16, 110): F19 + Ctrl + Shift + Alt
+  (16, 111): F20 + Ctrl + Shift + Alt
+  (16, 112): F21 + Ctrl + Shift + Alt
+  (16, 113): F22 + Ctrl + Shift + Alt
+  (16, 114): F23 + Ctrl + Shift + Alt
+  (16, 115): F24 + Ctrl + Shift + Alt
+  (16, 116): -Scncde 116 + Ctrl + Shift + Alt
+  (16, 117): KB Help + Ctrl + Shift + Alt
+  (16, 118): Menu + Ctrl + Shift + Alt
+  (16, 119): KB Select + Ctrl + Shift + Alt
+  (16, 120): KB Stop + Ctrl + Shift + Alt
+  (16, 121): KB Again + Ctrl + Shift + Alt
+  (16, 122): KB Undo + Ctrl + Shift + Alt
+  (16, 123): KB Cut + Ctrl + Shift + Alt
+  (16, 124): KB Copy + Ctrl + Shift + Alt
+  (16, 125): KB Paste + Ctrl + Shift + Alt
+  (16, 126): KB Find + Ctrl + Shift + Alt
+  (16, 127): KB Mute + Ctrl + Shift + Alt
+  (16, 128): KB Vol Up + Ctrl + Shift + Alt
+  (16, 129): KB Vol Dn + Ctrl + Shift + Alt
+  (16, 224): L Ctrl + Ctrl + Shift + Alt
+  (16, 225): L Shift + Ctrl + Shift + Alt
+  (16, 226): L Alt + Ctrl + Shift + Alt
+  (16, 227): L Win + Ctrl + Shift + Alt
+  (16, 228): R Ctrl + Ctrl + Shift + Alt
+  (16, 229): R Shift + Ctrl + Shift + Alt
+  (16, 230): R Alt + Ctrl + Shift + Alt
+  (16, 231): R Win + Ctrl + Shift + Alt
+  (17, 0): -Scncde 0 + Ctrl + Alt
+  (17, 1): -Scncde 1 + Ctrl + Alt
+  (17, 2): -Scncde 2 + Ctrl + Alt
+  (17, 3): -Scncde 3 + Ctrl + Alt
+  (17, 4): a + Ctrl + Alt
+  (17, 5): b + Ctrl + Alt
+  (17, 6): c + Ctrl + Alt
+  (17, 7): d + Ctrl + Alt
+  (17, 8): e + Ctrl + Alt
+  (17, 9): f + Ctrl + Alt
+  (17, 10): g + Ctrl + Alt
+  (17, 11): h + Ctrl + Alt
+  (17, 12): i + Ctrl + Alt
+  (17, 13): j + Ctrl + Alt
+  (17, 14): k + Ctrl + Alt
+  (17, 15): l + Ctrl + Alt
+  (17, 16): m + Ctrl + Alt
+  (17, 17): n + Ctrl + Alt
+  (17, 18): o + Ctrl + Alt
+  (17, 19): p + Ctrl + Alt
+  (17, 20): q + Ctrl + Alt
+  (17, 21): r + Ctrl + Alt
+  (17, 22): s + Ctrl + Alt
+  (17, 23): t + Ctrl + Alt
+  (17, 24): u + Ctrl + Alt
+  (17, 25): v + Ctrl + Alt
+  (17, 26): w + Ctrl + Alt
+  (17, 27): x + Ctrl + Alt
+  (17, 28): y + Ctrl + Alt
+  (17, 29): z + Ctrl + Alt
+  (17, 30): 1 ! + Ctrl + Alt
+  (17, 31): 2 @ + Ctrl + Alt
+  (17, 32): '3 # + Ctrl + Alt'
+  (17, 33): 4 $ + Ctrl + Alt
+  (17, 34): 5 % + Ctrl + Alt
+  (17, 35): 6 ^ + Ctrl + Alt
+  (17, 36): 7 & + Ctrl + Alt
+  (17, 37): 8 * + Ctrl + Alt
+  (17, 38): 9 ( + Ctrl + Alt
+  (17, 39): 0 ) + Ctrl + Alt
+  (17, 40): Enter + Ctrl + Alt
+  (17, 41): Esc + Ctrl + Alt
+  (17, 42): Backspace + Ctrl + Alt
+  (17, 43): Tab + Ctrl + Alt
+  (17, 44): Space + Ctrl + Alt
+  (17, 45): '- _ + Ctrl + Alt'
+  (17, 46): = + + Ctrl + Alt
+  (17, 47): '[ { + Ctrl + Alt'
+  (17, 48): '] } + Ctrl + Alt'
+  (17, 49): \ | + Ctrl + Alt
+  (17, 50): 'Non-US # ~ + Ctrl + Alt'
+  (17, 51): '; : + Ctrl + Alt'
+  (17, 52): ''' " + Ctrl + Alt'
+  (17, 53): '` ~ + Ctrl + Alt'
+  (17, 54): ', < + Ctrl + Alt'
+  (17, 55): . > + Ctrl + Alt
+  (17, 56): / ? + Ctrl + Alt
+  (17, 57): Capslock + Ctrl + Alt
+  (17, 58): F1 + Ctrl + Alt
+  (17, 59): F2 + Ctrl + Alt
+  (17, 60): F3 + Ctrl + Alt
+  (17, 61): F4 + Ctrl + Alt
+  (17, 62): F5 + Ctrl + Alt
+  (17, 63): F6 + Ctrl + Alt
+  (17, 64): F7 + Ctrl + Alt
+  (17, 65): F8 + Ctrl + Alt
+  (17, 66): F9 + Ctrl + Alt
+  (17, 67): F10 + Ctrl + Alt
+  (17, 68): F11 + Ctrl + Alt
+  (17, 69): F12 + Ctrl + Alt
+  (17, 70): PrntScn + Ctrl + Alt
+  (17, 71): ScrlLck + Ctrl + Alt
+  (17, 72): Pause + Ctrl + Alt
+  (17, 73): Insert + Ctrl + Alt
+  (17, 74): Home + Ctrl + Alt
+  (17, 75): Page Up + Ctrl + Alt
+  (17, 76): Delete + Ctrl + Alt
+  (17, 77): End + Ctrl + Alt
+  (17, 78): Page Down + Ctrl + Alt
+  (17, 79): Right + Ctrl + Alt
+  (17, 80): Left + Ctrl + Alt
+  (17, 81): Down + Ctrl + Alt
+  (17, 82): Up + Ctrl + Alt
+  (17, 83): NumLock + Ctrl + Alt
+  (17, 84): Num / + Ctrl + Alt
+  (17, 85): Num * + Ctrl + Alt
+  (17, 86): Num - + Ctrl + Alt
+  (17, 87): Num + + Ctrl + Alt
+  (17, 88): Num Enter + Ctrl + Alt
+  (17, 89): Num 1 + Ctrl + Alt
+  (17, 90): Num 2 + Ctrl + Alt
+  (17, 91): Num 3 + Ctrl + Alt
+  (17, 92): Num 4 + Ctrl + Alt
+  (17, 93): Num 5 + Ctrl + Alt
+  (17, 94): Num 6 + Ctrl + Alt
+  (17, 95): Num 7 + Ctrl + Alt
+  (17, 96): Num 8 + Ctrl + Alt
+  (17, 97): Num 9 + Ctrl + Alt
+  (17, 98): Num 0 + Ctrl + Alt
+  (17, 99): Num . + Ctrl + Alt
+  (17, 100): Non-US \ | + Ctrl + Alt
+  (17, 101): App + Ctrl + Alt
+  (17, 102): Power Off + Ctrl + Alt
+  (17, 103): Num = + Ctrl + Alt
+  (17, 104): F13 + Ctrl + Alt
+  (17, 105): F14 + Ctrl + Alt
+  (17, 106): F15 + Ctrl + Alt
+  (17, 107): F16 + Ctrl + Alt
+  (17, 108): F17 + Ctrl + Alt
+  (17, 109): F18 + Ctrl + Alt
+  (17, 110): F19 + Ctrl + Alt
+  (17, 111): F20 + Ctrl + Alt
+  (17, 112): F21 + Ctrl + Alt
+  (17, 113): F22 + Ctrl + Alt
+  (17, 114): F23 + Ctrl + Alt
+  (17, 115): F24 + Ctrl + Alt
+  (17, 116): -Scncde 116 + Ctrl + Alt
+  (17, 117): KB Help + Ctrl + Alt
+  (17, 118): Menu + Ctrl + Alt
+  (17, 119): KB Select + Ctrl + Alt
+  (17, 120): KB Stop + Ctrl + Alt
+  (17, 121): KB Again + Ctrl + Alt
+  (17, 122): KB Undo + Ctrl + Alt
+  (17, 123): KB Cut + Ctrl + Alt
+  (17, 124): KB Copy + Ctrl + Alt
+  (17, 125): KB Paste + Ctrl + Alt
+  (17, 126): KB Find + Ctrl + Alt
+  (17, 127): KB Mute + Ctrl + Alt
+  (17, 128): KB Vol Up + Ctrl + Alt
+  (17, 129): KB Vol Dn + Ctrl + Alt
+  (17, 224): L Ctrl + Ctrl + Alt
+  (17, 225): L Shift + Ctrl + Alt
+  (17, 226): L Alt + Ctrl + Alt
+  (17, 227): L Win + Ctrl + Alt
+  (17, 228): R Ctrl + Ctrl + Alt
+  (17, 229): R Shift + Ctrl + Alt
+  (17, 230): R Alt + Ctrl + Alt
+  (17, 231): R Win + Ctrl + Alt
+  (18, 0): -Scncde 0 + Shift + Alt
+  (18, 1): -Scncde 1 + Shift + Alt
+  (18, 2): -Scncde 2 + Shift + Alt
+  (18, 3): -Scncde 3 + Shift + Alt
+  (18, 4): a + Shift + Alt
+  (18, 5): b + Shift + Alt
+  (18, 6): c + Shift + Alt
+  (18, 7): d + Shift + Alt
+  (18, 8): e + Shift + Alt
+  (18, 9): f + Shift + Alt
+  (18, 10): g + Shift + Alt
+  (18, 11): h + Shift + Alt
+  (18, 12): i + Shift + Alt
+  (18, 13): j + Shift + Alt
+  (18, 14): k + Shift + Alt
+  (18, 15): l + Shift + Alt
+  (18, 16): m + Shift + Alt
+  (18, 17): n + Shift + Alt
+  (18, 18): o + Shift + Alt
+  (18, 19): p + Shift + Alt
+  (18, 20): q + Shift + Alt
+  (18, 21): r + Shift + Alt
+  (18, 22): s + Shift + Alt
+  (18, 23): t + Shift + Alt
+  (18, 24): u + Shift + Alt
+  (18, 25): v + Shift + Alt
+  (18, 26): w + Shift + Alt
+  (18, 27): x + Shift + Alt
+  (18, 28): y + Shift + Alt
+  (18, 29): z + Shift + Alt
+  (18, 30): 1 ! + Shift + Alt
+  (18, 31): 2 @ + Shift + Alt
+  (18, 32): '3 # + Shift + Alt'
+  (18, 33): 4 $ + Shift + Alt
+  (18, 34): 5 % + Shift + Alt
+  (18, 35): 6 ^ + Shift + Alt
+  (18, 36): 7 & + Shift + Alt
+  (18, 37): 8 * + Shift + Alt
+  (18, 38): 9 ( + Shift + Alt
+  (18, 39): 0 ) + Shift + Alt
+  (18, 40): Enter + Shift + Alt
+  (18, 41): Esc + Shift + Alt
+  (18, 42): Backspace + Shift + Alt
+  (18, 43): Tab + Shift + Alt
+  (18, 44): Space + Shift + Alt
+  (18, 45): '- _ + Shift + Alt'
+  (18, 46): = + + Shift + Alt
+  (18, 47): '[ { + Shift + Alt'
+  (18, 48): '] } + Shift + Alt'
+  (18, 49): \ | + Shift + Alt
+  (18, 50): 'Non-US # ~ + Shift + Alt'
+  (18, 51): '; : + Shift + Alt'
+  (18, 52): ''' " + Shift + Alt'
+  (18, 53): '` ~ + Shift + Alt'
+  (18, 54): ', < + Shift + Alt'
+  (18, 55): . > + Shift + Alt
+  (18, 56): / ? + Shift + Alt
+  (18, 57): Capslock + Shift + Alt
+  (18, 58): F1 + Shift + Alt
+  (18, 59): F2 + Shift + Alt
+  (18, 60): F3 + Shift + Alt
+  (18, 61): F4 + Shift + Alt
+  (18, 62): F5 + Shift + Alt
+  (18, 63): F6 + Shift + Alt
+  (18, 64): F7 + Shift + Alt
+  (18, 65): F8 + Shift + Alt
+  (18, 66): F9 + Shift + Alt
+  (18, 67): F10 + Shift + Alt
+  (18, 68): F11 + Shift + Alt
+  (18, 69): F12 + Shift + Alt
+  (18, 70): PrntScn + Shift + Alt
+  (18, 71): ScrlLck + Shift + Alt
+  (18, 72): Pause + Shift + Alt
+  (18, 73): Insert + Shift + Alt
+  (18, 74): Home + Shift + Alt
+  (18, 75): Page Up + Shift + Alt
+  (18, 76): Delete + Shift + Alt
+  (18, 77): End + Shift + Alt
+  (18, 78): Page Down + Shift + Alt
+  (18, 79): Right + Shift + Alt
+  (18, 80): Left + Shift + Alt
+  (18, 81): Down + Shift + Alt
+  (18, 82): Up + Shift + Alt
+  (18, 83): NumLock + Shift + Alt
+  (18, 84): Num / + Shift + Alt
+  (18, 85): Num * + Shift + Alt
+  (18, 86): Num - + Shift + Alt
+  (18, 87): Num + + Shift + Alt
+  (18, 88): Num Enter + Shift + Alt
+  (18, 89): Num 1 + Shift + Alt
+  (18, 90): Num 2 + Shift + Alt
+  (18, 91): Num 3 + Shift + Alt
+  (18, 92): Num 4 + Shift + Alt
+  (18, 93): Num 5 + Shift + Alt
+  (18, 94): Num 6 + Shift + Alt
+  (18, 95): Num 7 + Shift + Alt
+  (18, 96): Num 8 + Shift + Alt
+  (18, 97): Num 9 + Shift + Alt
+  (18, 98): Num 0 + Shift + Alt
+  (18, 99): Num . + Shift + Alt
+  (18, 100): Non-US \ | + Shift + Alt
+  (18, 101): App + Shift + Alt
+  (18, 102): Power Off + Shift + Alt
+  (18, 103): Num = + Shift + Alt
+  (18, 104): F13 + Shift + Alt
+  (18, 105): F14 + Shift + Alt
+  (18, 106): F15 + Shift + Alt
+  (18, 107): F16 + Shift + Alt
+  (18, 108): F17 + Shift + Alt
+  (18, 109): F18 + Shift + Alt
+  (18, 110): F19 + Shift + Alt
+  (18, 111): F20 + Shift + Alt
+  (18, 112): F21 + Shift + Alt
+  (18, 113): F22 + Shift + Alt
+  (18, 114): F23 + Shift + Alt
+  (18, 115): F24 + Shift + Alt
+  (18, 116): -Scncde 116 + Shift + Alt
+  (18, 117): KB Help + Shift + Alt
+  (18, 118): Menu + Shift + Alt
+  (18, 119): KB Select + Shift + Alt
+  (18, 120): KB Stop + Shift + Alt
+  (18, 121): KB Again + Shift + Alt
+  (18, 122): KB Undo + Shift + Alt
+  (18, 123): KB Cut + Shift + Alt
+  (18, 124): KB Copy + Shift + Alt
+  (18, 125): KB Paste + Shift + Alt
+  (18, 126): KB Find + Shift + Alt
+  (18, 127): KB Mute + Shift + Alt
+  (18, 128): KB Vol Up + Shift + Alt
+  (18, 129): KB Vol Dn + Shift + Alt
+  (18, 224): L Ctrl + Shift + Alt
+  (18, 225): L Shift + Shift + Alt
+  (18, 226): L Alt + Shift + Alt
+  (18, 227): L Win + Shift + Alt
+  (18, 228): R Ctrl + Shift + Alt
+  (18, 229): R Shift + Shift + Alt
+  (18, 230): R Alt + Shift + Alt
+  (18, 231): R Win + Shift + Alt
+  (19, 0): tapDance0
+  (19, 1): tapDance1
+  (19, 2): tapDance2
+  (19, 3): tapDance3
+  (19, 4): tapDance4
+  (19, 5): tapDance5
+  (19, 6): tapDance6
+  (19, 7): tapDance7
+  (19, 8): tapDance8
+  (19, 9): tapDance9
+  (19, 10): tapDance10
+  (19, 11): tapDance11
+  (19, 12): tapDance12
+  (19, 13): tapDance13
+  (19, 14): tapDance14
+  (19, 15): tapDance15
+  (19, 16): tapDance16
+  (19, 17): tapDance17
+  (19, 18): tapDance18
+  (19, 19): tapDance19
+  (20, 0): -Scncde 0 || Ctrl
+  (20, 1): -Scncde 1 || Ctrl
+  (20, 2): -Scncde 2 || Ctrl
+  (20, 3): -Scncde 3 || Ctrl
+  (20, 4): a || Ctrl
+  (20, 5): b || Ctrl
+  (20, 6): c || Ctrl
+  (20, 7): d || Ctrl
+  (20, 8): e || Ctrl
+  (20, 9): f || Ctrl
+  (20, 10): g || Ctrl
+  (20, 11): h || Ctrl
+  (20, 12): i || Ctrl
+  (20, 13): j || Ctrl
+  (20, 14): k || Ctrl
+  (20, 15): l || Ctrl
+  (20, 16): m || Ctrl
+  (20, 17): n || Ctrl
+  (20, 18): o || Ctrl
+  (20, 19): p || Ctrl
+  (20, 20): q || Ctrl
+  (20, 21): r || Ctrl
+  (20, 22): s || Ctrl
+  (20, 23): t || Ctrl
+  (20, 24): u || Ctrl
+  (20, 25): v || Ctrl
+  (20, 26): w || Ctrl
+  (20, 27): x || Ctrl
+  (20, 28): y || Ctrl
+  (20, 29): z || Ctrl
+  (20, 30): 1 ! || Ctrl
+  (20, 31): 2 @ || Ctrl
+  (20, 32): '3 # || Ctrl'
+  (20, 33): 4 $ || Ctrl
+  (20, 34): 5 % || Ctrl
+  (20, 35): 6 ^ || Ctrl
+  (20, 36): 7 & || Ctrl
+  (20, 37): 8 * || Ctrl
+  (20, 38): 9 ( || Ctrl
+  (20, 39): 0 ) || Ctrl
+  (20, 40): Enter || Ctrl
+  (20, 41): Esc || Ctrl
+  (20, 42): Backspace || Ctrl
+  (20, 43): Tab || Ctrl
+  (20, 44): Space || Ctrl
+  (20, 45): '- _ || Ctrl'
+  (20, 46): = + || Ctrl
+  (20, 47): '[ { || Ctrl'
+  (20, 48): '] } || Ctrl'
+  (20, 49): \ | || Ctrl
+  (20, 50): 'Non-US # ~ || Ctrl'
+  (20, 51): '; : || Ctrl'
+  (20, 52): ''' " || Ctrl'
+  (20, 53): '` ~ || Ctrl'
+  (20, 54): ', < || Ctrl'
+  (20, 55): . > || Ctrl
+  (20, 56): / ? || Ctrl
+  (20, 57): Capslock || Ctrl
+  (20, 58): F1 || Ctrl
+  (20, 59): F2 || Ctrl
+  (20, 60): F3 || Ctrl
+  (20, 61): F4 || Ctrl
+  (20, 62): F5 || Ctrl
+  (20, 63): F6 || Ctrl
+  (20, 64): F7 || Ctrl
+  (20, 65): F8 || Ctrl
+  (20, 66): F9 || Ctrl
+  (20, 67): F10 || Ctrl
+  (20, 68): F11 || Ctrl
+  (20, 69): F12 || Ctrl
+  (20, 70): PrntScn || Ctrl
+  (20, 71): ScrlLck || Ctrl
+  (20, 72): Pause || Ctrl
+  (20, 73): Insert || Ctrl
+  (20, 74): Home || Ctrl
+  (20, 75): Page Up || Ctrl
+  (20, 76): Delete || Ctrl
+  (20, 77): End || Ctrl
+  (20, 78): Page Down || Ctrl
+  (20, 79): Right || Ctrl
+  (20, 80): Left || Ctrl
+  (20, 81): Down || Ctrl
+  (20, 82): Up || Ctrl
+  (20, 83): NumLock || Ctrl
+  (20, 84): Num / || Ctrl
+  (20, 85): Num * || Ctrl
+  (20, 86): Num - || Ctrl
+  (20, 87): Num + || Ctrl
+  (20, 88): Num Enter || Ctrl
+  (20, 89): Num 1 || Ctrl
+  (20, 90): Num 2 || Ctrl
+  (20, 91): Num 3 || Ctrl
+  (20, 92): Num 4 || Ctrl
+  (20, 93): Num 5 || Ctrl
+  (20, 94): Num 6 || Ctrl
+  (20, 95): Num 7 || Ctrl
+  (20, 96): Num 8 || Ctrl
+  (20, 97): Num 9 || Ctrl
+  (20, 98): Num 0 || Ctrl
+  (20, 99): Num . || Ctrl
+  (20, 100): Non-US \ | || Ctrl
+  (20, 101): App || Ctrl
+  (20, 102): Power Off || Ctrl
+  (20, 103): Num = || Ctrl
+  (20, 104): F13 || Ctrl
+  (20, 105): F14 || Ctrl
+  (20, 106): F15 || Ctrl
+  (20, 107): F16 || Ctrl
+  (20, 108): F17 || Ctrl
+  (20, 109): F18 || Ctrl
+  (20, 110): F19 || Ctrl
+  (20, 111): F20 || Ctrl
+  (20, 112): F21 || Ctrl
+  (20, 113): F22 || Ctrl
+  (20, 114): F23 || Ctrl
+  (20, 115): F24 || Ctrl
+  (20, 116): -Scncde 116 || Ctrl
+  (20, 117): KB Help || Ctrl
+  (20, 118): Menu || Ctrl
+  (20, 119): KB Select || Ctrl
+  (20, 120): KB Stop || Ctrl
+  (20, 121): KB Again || Ctrl
+  (20, 122): KB Undo || Ctrl
+  (20, 123): KB Cut || Ctrl
+  (20, 124): KB Copy || Ctrl
+  (20, 125): KB Paste || Ctrl
+  (20, 126): KB Find || Ctrl
+  (20, 127): KB Mute || Ctrl
+  (20, 128): KB Vol Up || Ctrl
+  (20, 129): KB Vol Dn || Ctrl
+  (20, 224): L Ctrl || Ctrl
+  (20, 225): L Shift || Ctrl
+  (20, 226): L Alt || Ctrl
+  (20, 227): L Win || Ctrl
+  (20, 228): R Ctrl || Ctrl
+  (20, 229): R Shift || Ctrl
+  (20, 230): R Alt || Ctrl
+  (20, 231): R Win || Ctrl
+  (21, 0): -Scncde 0 || Shift
+  (21, 1): -Scncde 1 || Shift
+  (21, 2): -Scncde 2 || Shift
+  (21, 3): -Scncde 3 || Shift
+  (21, 4): a || Shift
+  (21, 5): b || Shift
+  (21, 6): c || Shift
+  (21, 7): d || Shift
+  (21, 8): e || Shift
+  (21, 9): f || Shift
+  (21, 10): g || Shift
+  (21, 11): h || Shift
+  (21, 12): i || Shift
+  (21, 13): j || Shift
+  (21, 14): k || Shift
+  (21, 15): l || Shift
+  (21, 16): m || Shift
+  (21, 17): n || Shift
+  (21, 18): o || Shift
+  (21, 19): p || Shift
+  (21, 20): q || Shift
+  (21, 21): r || Shift
+  (21, 22): s || Shift
+  (21, 23): t || Shift
+  (21, 24): u || Shift
+  (21, 25): v || Shift
+  (21, 26): w || Shift
+  (21, 27): x || Shift
+  (21, 28): y || Shift
+  (21, 29): z || Shift
+  (21, 30): 1 ! || Shift
+  (21, 31): 2 @ || Shift
+  (21, 32): '3 # || Shift'
+  (21, 33): 4 $ || Shift
+  (21, 34): 5 % || Shift
+  (21, 35): 6 ^ || Shift
+  (21, 36): 7 & || Shift
+  (21, 37): 8 * || Shift
+  (21, 38): 9 ( || Shift
+  (21, 39): 0 ) || Shift
+  (21, 40): Enter || Shift
+  (21, 41): Esc || Shift
+  (21, 42): Backspace || Shift
+  (21, 43): Tab || Shift
+  (21, 44): Space || Shift
+  (21, 45): '- _ || Shift'
+  (21, 46): = + || Shift
+  (21, 47): '[ { || Shift'
+  (21, 48): '] } || Shift'
+  (21, 49): \ | || Shift
+  (21, 50): 'Non-US # ~ || Shift'
+  (21, 51): '; : || Shift'
+  (21, 52): ''' " || Shift'
+  (21, 53): '` ~ || Shift'
+  (21, 54): ', < || Shift'
+  (21, 55): . > || Shift
+  (21, 56): / ? || Shift
+  (21, 57): Capslock || Shift
+  (21, 58): F1 || Shift
+  (21, 59): F2 || Shift
+  (21, 60): F3 || Shift
+  (21, 61): F4 || Shift
+  (21, 62): F5 || Shift
+  (21, 63): F6 || Shift
+  (21, 64): F7 || Shift
+  (21, 65): F8 || Shift
+  (21, 66): F9 || Shift
+  (21, 67): F10 || Shift
+  (21, 68): F11 || Shift
+  (21, 69): F12 || Shift
+  (21, 70): PrntScn || Shift
+  (21, 71): ScrlLck || Shift
+  (21, 72): Pause || Shift
+  (21, 73): Insert || Shift
+  (21, 74): Home || Shift
+  (21, 75): Page Up || Shift
+  (21, 76): Delete || Shift
+  (21, 77): End || Shift
+  (21, 78): Page Down || Shift
+  (21, 79): Right || Shift
+  (21, 80): Left || Shift
+  (21, 81): Down || Shift
+  (21, 82): Up || Shift
+  (21, 83): NumLock || Shift
+  (21, 84): Num / || Shift
+  (21, 85): Num * || Shift
+  (21, 86): Num - || Shift
+  (21, 87): Num + || Shift
+  (21, 88): Num Enter || Shift
+  (21, 89): Num 1 || Shift
+  (21, 90): Num 2 || Shift
+  (21, 91): Num 3 || Shift
+  (21, 92): Num 4 || Shift
+  (21, 93): Num 5 || Shift
+  (21, 94): Num 6 || Shift
+  (21, 95): Num 7 || Shift
+  (21, 96): Num 8 || Shift
+  (21, 97): Num 9 || Shift
+  (21, 98): Num 0 || Shift
+  (21, 99): Num . || Shift
+  (21, 100): Non-US \ | || Shift
+  (21, 101): App || Shift
+  (21, 102): Power Off || Shift
+  (21, 103): Num = || Shift
+  (21, 104): F13 || Shift
+  (21, 105): F14 || Shift
+  (21, 106): F15 || Shift
+  (21, 107): F16 || Shift
+  (21, 108): F17 || Shift
+  (21, 109): F18 || Shift
+  (21, 110): F19 || Shift
+  (21, 111): F20 || Shift
+  (21, 112): F21 || Shift
+  (21, 113): F22 || Shift
+  (21, 114): F23 || Shift
+  (21, 115): F24 || Shift
+  (21, 116): -Scncde 116 || Shift
+  (21, 117): KB Help || Shift
+  (21, 118): Menu || Shift
+  (21, 119): KB Select || Shift
+  (21, 120): KB Stop || Shift
+  (21, 121): KB Again || Shift
+  (21, 122): KB Undo || Shift
+  (21, 123): KB Cut || Shift
+  (21, 124): KB Copy || Shift
+  (21, 125): KB Paste || Shift
+  (21, 126): KB Find || Shift
+  (21, 127): KB Mute || Shift
+  (21, 128): KB Vol Up || Shift
+  (21, 129): KB Vol Dn || Shift
+  (21, 224): L Ctrl || Shift
+  (21, 225): L Shift || Shift
+  (21, 226): L Alt || Shift
+  (21, 227): L Win || Shift
+  (21, 228): R Ctrl || Shift
+  (21, 229): R Shift || Shift
+  (21, 230): R Alt || Shift
+  (21, 231): R Win || Shift
+  (22, 0): -Scncde 0 || Alt
+  (22, 1): -Scncde 1 || Alt
+  (22, 2): -Scncde 2 || Alt
+  (22, 3): -Scncde 3 || Alt
+  (22, 4): a || Alt
+  (22, 5): b || Alt
+  (22, 6): c || Alt
+  (22, 7): d || Alt
+  (22, 8): e || Alt
+  (22, 9): f || Alt
+  (22, 10): g || Alt
+  (22, 11): h || Alt
+  (22, 12): i || Alt
+  (22, 13): j || Alt
+  (22, 14): k || Alt
+  (22, 15): l || Alt
+  (22, 16): m || Alt
+  (22, 17): n || Alt
+  (22, 18): o || Alt
+  (22, 19): p || Alt
+  (22, 20): q || Alt
+  (22, 21): r || Alt
+  (22, 22): s || Alt
+  (22, 23): t || Alt
+  (22, 24): u || Alt
+  (22, 25): v || Alt
+  (22, 26): w || Alt
+  (22, 27): x || Alt
+  (22, 28): y || Alt
+  (22, 29): z || Alt
+  (22, 30): 1 ! || Alt
+  (22, 31): 2 @ || Alt
+  (22, 32): '3 # || Alt'
+  (22, 33): 4 $ || Alt
+  (22, 34): 5 % || Alt
+  (22, 35): 6 ^ || Alt
+  (22, 36): 7 & || Alt
+  (22, 37): 8 * || Alt
+  (22, 38): 9 ( || Alt
+  (22, 39): 0 ) || Alt
+  (22, 40): Enter || Alt
+  (22, 41): Esc || Alt
+  (22, 42): Backspace || Alt
+  (22, 43): Tab || Alt
+  (22, 44): Space || Alt
+  (22, 45): '- _ || Alt'
+  (22, 46): = + || Alt
+  (22, 47): '[ { || Alt'
+  (22, 48): '] } || Alt'
+  (22, 49): \ | || Alt
+  (22, 50): 'Non-US # ~ || Alt'
+  (22, 51): '; : || Alt'
+  (22, 52): ''' " || Alt'
+  (22, 53): '` ~ || Alt'
+  (22, 54): ', < || Alt'
+  (22, 55): . > || Alt
+  (22, 56): / ? || Alt
+  (22, 57): Capslock || Alt
+  (22, 58): F1 || Alt
+  (22, 59): F2 || Alt
+  (22, 60): F3 || Alt
+  (22, 61): F4 || Alt
+  (22, 62): F5 || Alt
+  (22, 63): F6 || Alt
+  (22, 64): F7 || Alt
+  (22, 65): F8 || Alt
+  (22, 66): F9 || Alt
+  (22, 67): F10 || Alt
+  (22, 68): F11 || Alt
+  (22, 69): F12 || Alt
+  (22, 70): PrntScn || Alt
+  (22, 71): ScrlLck || Alt
+  (22, 72): Pause || Alt
+  (22, 73): Insert || Alt
+  (22, 74): Home || Alt
+  (22, 75): Page Up || Alt
+  (22, 76): Delete || Alt
+  (22, 77): End || Alt
+  (22, 78): Page Down || Alt
+  (22, 79): Right || Alt
+  (22, 80): Left || Alt
+  (22, 81): Down || Alt
+  (22, 82): Up || Alt
+  (22, 83): NumLock || Alt
+  (22, 84): Num / || Alt
+  (22, 85): Num * || Alt
+  (22, 86): Num - || Alt
+  (22, 87): Num + || Alt
+  (22, 88): Num Enter || Alt
+  (22, 89): Num 1 || Alt
+  (22, 90): Num 2 || Alt
+  (22, 91): Num 3 || Alt
+  (22, 92): Num 4 || Alt
+  (22, 93): Num 5 || Alt
+  (22, 94): Num 6 || Alt
+  (22, 95): Num 7 || Alt
+  (22, 96): Num 8 || Alt
+  (22, 97): Num 9 || Alt
+  (22, 98): Num 0 || Alt
+  (22, 99): Num . || Alt
+  (22, 100): Non-US \ | || Alt
+  (22, 101): App || Alt
+  (22, 102): Power Off || Alt
+  (22, 103): Num = || Alt
+  (22, 104): F13 || Alt
+  (22, 105): F14 || Alt
+  (22, 106): F15 || Alt
+  (22, 107): F16 || Alt
+  (22, 108): F17 || Alt
+  (22, 109): F18 || Alt
+  (22, 110): F19 || Alt
+  (22, 111): F20 || Alt
+  (22, 112): F21 || Alt
+  (22, 113): F22 || Alt
+  (22, 114): F23 || Alt
+  (22, 115): F24 || Alt
+  (22, 116): -Scncde 116 || Alt
+  (22, 117): KB Help || Alt
+  (22, 118): Menu || Alt
+  (22, 119): KB Select || Alt
+  (22, 120): KB Stop || Alt
+  (22, 121): KB Again || Alt
+  (22, 122): KB Undo || Alt
+  (22, 123): KB Cut || Alt
+  (22, 124): KB Copy || Alt
+  (22, 125): KB Paste || Alt
+  (22, 126): KB Find || Alt
+  (22, 127): KB Mute || Alt
+  (22, 128): KB Vol Up || Alt
+  (22, 129): KB Vol Dn || Alt
+  (22, 224): L Ctrl || Alt
+  (22, 225): L Shift || Alt
+  (22, 226): L Alt || Alt
+  (22, 227): L Win || Alt
+  (22, 228): R Ctrl || Alt
+  (22, 229): R Shift || Alt
+  (22, 230): R Alt || Alt
+  (22, 231): R Win || Alt
+  (23, 0): -Scncde 0 || AltGr
+  (23, 1): -Scncde 1 || AltGr
+  (23, 2): -Scncde 2 || AltGr
+  (23, 3): -Scncde 3 || AltGr
+  (23, 4): a || AltGr
+  (23, 5): b || AltGr
+  (23, 6): c || AltGr
+  (23, 7): d || AltGr
+  (23, 8): e || AltGr
+  (23, 9): f || AltGr
+  (23, 10): g || AltGr
+  (23, 11): h || AltGr
+  (23, 12): i || AltGr
+  (23, 13): j || AltGr
+  (23, 14): k || AltGr
+  (23, 15): l || AltGr
+  (23, 16): m || AltGr
+  (23, 17): n || AltGr
+  (23, 18): o || AltGr
+  (23, 19): p || AltGr
+  (23, 20): q || AltGr
+  (23, 21): r || AltGr
+  (23, 22): s || AltGr
+  (23, 23): t || AltGr
+  (23, 24): u || AltGr
+  (23, 25): v || AltGr
+  (23, 26): w || AltGr
+  (23, 27): x || AltGr
+  (23, 28): y || AltGr
+  (23, 29): z || AltGr
+  (23, 30): 1 ! || AltGr
+  (23, 31): 2 @ || AltGr
+  (23, 32): '3 # || AltGr'
+  (23, 33): 4 $ || AltGr
+  (23, 34): 5 % || AltGr
+  (23, 35): 6 ^ || AltGr
+  (23, 36): 7 & || AltGr
+  (23, 37): 8 * || AltGr
+  (23, 38): 9 ( || AltGr
+  (23, 39): 0 ) || AltGr
+  (23, 40): Enter || AltGr
+  (23, 41): Esc || AltGr
+  (23, 42): Backspace || AltGr
+  (23, 43): Tab || AltGr
+  (23, 44): Space || AltGr
+  (23, 45): '- _ || AltGr'
+  (23, 46): = + || AltGr
+  (23, 47): '[ { || AltGr'
+  (23, 48): '] } || AltGr'
+  (23, 49): \ | || AltGr
+  (23, 50): 'Non-US # ~ || AltGr'
+  (23, 51): '; : || AltGr'
+  (23, 52): ''' " || AltGr'
+  (23, 53): '` ~ || AltGr'
+  (23, 54): ', < || AltGr'
+  (23, 55): . > || AltGr
+  (23, 56): / ? || AltGr
+  (23, 57): Capslock || AltGr
+  (23, 58): F1 || AltGr
+  (23, 59): F2 || AltGr
+  (23, 60): F3 || AltGr
+  (23, 61): F4 || AltGr
+  (23, 62): F5 || AltGr
+  (23, 63): F6 || AltGr
+  (23, 64): F7 || AltGr
+  (23, 65): F8 || AltGr
+  (23, 66): F9 || AltGr
+  (23, 67): F10 || AltGr
+  (23, 68): F11 || AltGr
+  (23, 69): F12 || AltGr
+  (23, 70): PrntScn || AltGr
+  (23, 71): ScrlLck || AltGr
+  (23, 72): Pause || AltGr
+  (23, 73): Insert || AltGr
+  (23, 74): Home || AltGr
+  (23, 75): Page Up || AltGr
+  (23, 76): Delete || AltGr
+  (23, 77): End || AltGr
+  (23, 78): Page Down || AltGr
+  (23, 79): Right || AltGr
+  (23, 80): Left || AltGr
+  (23, 81): Down || AltGr
+  (23, 82): Up || AltGr
+  (23, 83): NumLock || AltGr
+  (23, 84): Num / || AltGr
+  (23, 85): Num * || AltGr
+  (23, 86): Num - || AltGr
+  (23, 87): Num + || AltGr
+  (23, 88): Num Enter || AltGr
+  (23, 89): Num 1 || AltGr
+  (23, 90): Num 2 || AltGr
+  (23, 91): Num 3 || AltGr
+  (23, 92): Num 4 || AltGr
+  (23, 93): Num 5 || AltGr
+  (23, 94): Num 6 || AltGr
+  (23, 95): Num 7 || AltGr
+  (23, 96): Num 8 || AltGr
+  (23, 97): Num 9 || AltGr
+  (23, 98): Num 0 || AltGr
+  (23, 99): Num . || AltGr
+  (23, 100): Non-US \ | || AltGr
+  (23, 101): App || AltGr
+  (23, 102): Power Off || AltGr
+  (23, 103): Num = || AltGr
+  (23, 104): F13 || AltGr
+  (23, 105): F14 || AltGr
+  (23, 106): F15 || AltGr
+  (23, 107): F16 || AltGr
+  (23, 108): F17 || AltGr
+  (23, 109): F18 || AltGr
+  (23, 110): F19 || AltGr
+  (23, 111): F20 || AltGr
+  (23, 112): F21 || AltGr
+  (23, 113): F22 || AltGr
+  (23, 114): F23 || AltGr
+  (23, 115): F24 || AltGr
+  (23, 116): -Scncde 116 || AltGr
+  (23, 117): KB Help || AltGr
+  (23, 118): Menu || AltGr
+  (23, 119): KB Select || AltGr
+  (23, 120): KB Stop || AltGr
+  (23, 121): KB Again || AltGr
+  (23, 122): KB Undo || AltGr
+  (23, 123): KB Cut || AltGr
+  (23, 124): KB Copy || AltGr
+  (23, 125): KB Paste || AltGr
+  (23, 126): KB Find || AltGr
+  (23, 127): KB Mute || AltGr
+  (23, 128): KB Vol Up || AltGr
+  (23, 129): KB Vol Dn || AltGr
+  (23, 224): L Ctrl || AltGr
+  (23, 225): L Shift || AltGr
+  (23, 226): L Alt || AltGr
+  (23, 227): L Win || AltGr
+  (23, 228): R Ctrl || AltGr
+  (23, 229): R Shift || AltGr
+  (23, 230): R Alt || AltGr
+  (23, 231): R Win || AltGr
+  (24, 0): -Scncde 0 || FN
+  (24, 1): -Scncde 1 || FN
+  (24, 2): -Scncde 2 || FN
+  (24, 3): -Scncde 3 || FN
+  (24, 4): a || FN
+  (24, 5): b || FN
+  (24, 6): c || FN
+  (24, 7): d || FN
+  (24, 8): e || FN
+  (24, 9): f || FN
+  (24, 10): g || FN
+  (24, 11): h || FN
+  (24, 12): i || FN
+  (24, 13): j || FN
+  (24, 14): k || FN
+  (24, 15): l || FN
+  (24, 16): m || FN
+  (24, 17): n || FN
+  (24, 18): o || FN
+  (24, 19): p || FN
+  (24, 20): q || FN
+  (24, 21): r || FN
+  (24, 22): s || FN
+  (24, 23): t || FN
+  (24, 24): u || FN
+  (24, 25): v || FN
+  (24, 26): w || FN
+  (24, 27): x || FN
+  (24, 28): y || FN
+  (24, 29): z || FN
+  (24, 30): 1 ! || FN
+  (24, 31): 2 @ || FN
+  (24, 32): '3 # || FN'
+  (24, 33): 4 $ || FN
+  (24, 34): 5 % || FN
+  (24, 35): 6 ^ || FN
+  (24, 36): 7 & || FN
+  (24, 37): 8 * || FN
+  (24, 38): 9 ( || FN
+  (24, 39): 0 ) || FN
+  (24, 40): Enter || FN
+  (24, 41): Esc || FN
+  (24, 42): Backspace || FN
+  (24, 43): Tab || FN
+  (24, 44): Space || FN
+  (24, 45): '- _ || FN'
+  (24, 46): = + || FN
+  (24, 47): '[ { || FN'
+  (24, 48): '] } || FN'
+  (24, 49): \ | || FN
+  (24, 50): 'Non-US # ~ || FN'
+  (24, 51): '; : || FN'
+  (24, 52): ''' " || FN'
+  (24, 53): '` ~ || FN'
+  (24, 54): ', < || FN'
+  (24, 55): . > || FN
+  (24, 56): / ? || FN
+  (24, 57): Capslock || FN
+  (24, 58): F1 || FN
+  (24, 59): F2 || FN
+  (24, 60): F3 || FN
+  (24, 61): F4 || FN
+  (24, 62): F5 || FN
+  (24, 63): F6 || FN
+  (24, 64): F7 || FN
+  (24, 65): F8 || FN
+  (24, 66): F9 || FN
+  (24, 67): F10 || FN
+  (24, 68): F11 || FN
+  (24, 69): F12 || FN
+  (24, 70): PrntScn || FN
+  (24, 71): ScrlLck || FN
+  (24, 72): Pause || FN
+  (24, 73): Insert || FN
+  (24, 74): Home || FN
+  (24, 75): Page Up || FN
+  (24, 76): Delete || FN
+  (24, 77): End || FN
+  (24, 78): Page Down || FN
+  (24, 79): Right || FN
+  (24, 80): Left || FN
+  (24, 81): Down || FN
+  (24, 82): Up || FN
+  (24, 83): NumLock || FN
+  (24, 84): Num / || FN
+  (24, 85): Num * || FN
+  (24, 86): Num - || FN
+  (24, 87): Num + || FN
+  (24, 88): Num Enter || FN
+  (24, 89): Num 1 || FN
+  (24, 90): Num 2 || FN
+  (24, 91): Num 3 || FN
+  (24, 92): Num 4 || FN
+  (24, 93): Num 5 || FN
+  (24, 94): Num 6 || FN
+  (24, 95): Num 7 || FN
+  (24, 96): Num 8 || FN
+  (24, 97): Num 9 || FN
+  (24, 98): Num 0 || FN
+  (24, 99): Num . || FN
+  (24, 100): Non-US \ | || FN
+  (24, 101): App || FN
+  (24, 102): Power Off || FN
+  (24, 103): Num = || FN
+  (24, 104): F13 || FN
+  (24, 105): F14 || FN
+  (24, 106): F15 || FN
+  (24, 107): F16 || FN
+  (24, 108): F17 || FN
+  (24, 109): F18 || FN
+  (24, 110): F19 || FN
+  (24, 111): F20 || FN
+  (24, 112): F21 || FN
+  (24, 113): F22 || FN
+  (24, 114): F23 || FN
+  (24, 115): F24 || FN
+  (24, 116): -Scncde 116 || FN
+  (24, 117): KB Help || FN
+  (24, 118): Menu || FN
+  (24, 119): KB Select || FN
+  (24, 120): KB Stop || FN
+  (24, 121): KB Again || FN
+  (24, 122): KB Undo || FN
+  (24, 123): KB Cut || FN
+  (24, 124): KB Copy || FN
+  (24, 125): KB Paste || FN
+  (24, 126): KB Find || FN
+  (24, 127): KB Mute || FN
+  (24, 128): KB Vol Up || FN
+  (24, 129): KB Vol Dn || FN
+  (24, 224): L Ctrl || FN
+  (24, 225): L Shift || FN
+  (24, 226): L Alt || FN
+  (24, 227): L Win || FN
+  (24, 228): R Ctrl || FN
+  (24, 229): R Shift || FN
+  (24, 230): R Alt || FN
+  (24, 231): R Win || FN
+  (25, 0): -Scncde 0 || FN2
+  (25, 1): -Scncde 1 || FN2
+  (25, 2): -Scncde 2 || FN2
+  (25, 3): -Scncde 3 || FN2
+  (25, 4): a || FN2
+  (25, 5): b || FN2
+  (25, 6): c || FN2
+  (25, 7): d || FN2
+  (25, 8): e || FN2
+  (25, 9): f || FN2
+  (25, 10): g || FN2
+  (25, 11): h || FN2
+  (25, 12): i || FN2
+  (25, 13): j || FN2
+  (25, 14): k || FN2
+  (25, 15): l || FN2
+  (25, 16): m || FN2
+  (25, 17): n || FN2
+  (25, 18): o || FN2
+  (25, 19): p || FN2
+  (25, 20): q || FN2
+  (25, 21): r || FN2
+  (25, 22): s || FN2
+  (25, 23): t || FN2
+  (25, 24): u || FN2
+  (25, 25): v || FN2
+  (25, 26): w || FN2
+  (25, 27): x || FN2
+  (25, 28): y || FN2
+  (25, 29): z || FN2
+  (25, 30): 1 ! || FN2
+  (25, 31): 2 @ || FN2
+  (25, 32): '3 # || FN2'
+  (25, 33): 4 $ || FN2
+  (25, 34): 5 % || FN2
+  (25, 35): 6 ^ || FN2
+  (25, 36): 7 & || FN2
+  (25, 37): 8 * || FN2
+  (25, 38): 9 ( || FN2
+  (25, 39): 0 ) || FN2
+  (25, 40): Enter || FN2
+  (25, 41): Esc || FN2
+  (25, 42): Backspace || FN2
+  (25, 43): Tab || FN2
+  (25, 44): Space || FN2
+  (25, 45): '- _ || FN2'
+  (25, 46): = + || FN2
+  (25, 47): '[ { || FN2'
+  (25, 48): '] } || FN2'
+  (25, 49): \ | || FN2
+  (25, 50): 'Non-US # ~ || FN2'
+  (25, 51): '; : || FN2'
+  (25, 52): ''' " || FN2'
+  (25, 53): '` ~ || FN2'
+  (25, 54): ', < || FN2'
+  (25, 55): . > || FN2
+  (25, 56): / ? || FN2
+  (25, 57): Capslock || FN2
+  (25, 58): F1 || FN2
+  (25, 59): F2 || FN2
+  (25, 60): F3 || FN2
+  (25, 61): F4 || FN2
+  (25, 62): F5 || FN2
+  (25, 63): F6 || FN2
+  (25, 64): F7 || FN2
+  (25, 65): F8 || FN2
+  (25, 66): F9 || FN2
+  (25, 67): F10 || FN2
+  (25, 68): F11 || FN2
+  (25, 69): F12 || FN2
+  (25, 70): PrntScn || FN2
+  (25, 71): ScrlLck || FN2
+  (25, 72): Pause || FN2
+  (25, 73): Insert || FN2
+  (25, 74): Home || FN2
+  (25, 75): Page Up || FN2
+  (25, 76): Delete || FN2
+  (25, 77): End || FN2
+  (25, 78): Page Down || FN2
+  (25, 79): Right || FN2
+  (25, 80): Left || FN2
+  (25, 81): Down || FN2
+  (25, 82): Up || FN2
+  (25, 83): NumLock || FN2
+  (25, 84): Num / || FN2
+  (25, 85): Num * || FN2
+  (25, 86): Num - || FN2
+  (25, 87): Num + || FN2
+  (25, 88): Num Enter || FN2
+  (25, 89): Num 1 || FN2
+  (25, 90): Num 2 || FN2
+  (25, 91): Num 3 || FN2
+  (25, 92): Num 4 || FN2
+  (25, 93): Num 5 || FN2
+  (25, 94): Num 6 || FN2
+  (25, 95): Num 7 || FN2
+  (25, 96): Num 8 || FN2
+  (25, 97): Num 9 || FN2
+  (25, 98): Num 0 || FN2
+  (25, 99): Num . || FN2
+  (25, 100): Non-US \ | || FN2
+  (25, 101): App || FN2
+  (25, 102): Power Off || FN2
+  (25, 103): Num = || FN2
+  (25, 104): F13 || FN2
+  (25, 105): F14 || FN2
+  (25, 106): F15 || FN2
+  (25, 107): F16 || FN2
+  (25, 108): F17 || FN2
+  (25, 109): F18 || FN2
+  (25, 110): F19 || FN2
+  (25, 111): F20 || FN2
+  (25, 112): F21 || FN2
+  (25, 113): F22 || FN2
+  (25, 114): F23 || FN2
+  (25, 115): F24 || FN2
+  (25, 116): -Scncde 116 || FN2
+  (25, 117): KB Help || FN2
+  (25, 118): Menu || FN2
+  (25, 119): KB Select || FN2
+  (25, 120): KB Stop || FN2
+  (25, 121): KB Again || FN2
+  (25, 122): KB Undo || FN2
+  (25, 123): KB Cut || FN2
+  (25, 124): KB Copy || FN2
+  (25, 125): KB Paste || FN2
+  (25, 126): KB Find || FN2
+  (25, 127): KB Mute || FN2
+  (25, 128): KB Vol Up || FN2
+  (25, 129): KB Vol Dn || FN2
+  (25, 224): L Ctrl || FN2
+  (25, 225): L Shift || FN2
+  (25, 226): L Alt || FN2
+  (25, 227): L Win || FN2
+  (25, 228): R Ctrl || FN2
+  (25, 229): R Shift || FN2
+  (25, 230): R Alt || FN2
+  (25, 231): R Win || FN2
+  (26, 0): -Scncde 0 || FN3
+  (26, 1): -Scncde 1 || FN3
+  (26, 2): -Scncde 2 || FN3
+  (26, 3): -Scncde 3 || FN3
+  (26, 4): a || FN3
+  (26, 5): b || FN3
+  (26, 6): c || FN3
+  (26, 7): d || FN3
+  (26, 8): e || FN3
+  (26, 9): f || FN3
+  (26, 10): g || FN3
+  (26, 11): h || FN3
+  (26, 12): i || FN3
+  (26, 13): j || FN3
+  (26, 14): k || FN3
+  (26, 15): l || FN3
+  (26, 16): m || FN3
+  (26, 17): n || FN3
+  (26, 18): o || FN3
+  (26, 19): p || FN3
+  (26, 20): q || FN3
+  (26, 21): r || FN3
+  (26, 22): s || FN3
+  (26, 23): t || FN3
+  (26, 24): u || FN3
+  (26, 25): v || FN3
+  (26, 26): w || FN3
+  (26, 27): x || FN3
+  (26, 28): y || FN3
+  (26, 29): z || FN3
+  (26, 30): 1 ! || FN3
+  (26, 31): 2 @ || FN3
+  (26, 32): '3 # || FN3'
+  (26, 33): 4 $ || FN3
+  (26, 34): 5 % || FN3
+  (26, 35): 6 ^ || FN3
+  (26, 36): 7 & || FN3
+  (26, 37): 8 * || FN3
+  (26, 38): 9 ( || FN3
+  (26, 39): 0 ) || FN3
+  (26, 40): Enter || FN3
+  (26, 41): Esc || FN3
+  (26, 42): Backspace || FN3
+  (26, 43): Tab || FN3
+  (26, 44): Space || FN3
+  (26, 45): '- _ || FN3'
+  (26, 46): = + || FN3
+  (26, 47): '[ { || FN3'
+  (26, 48): '] } || FN3'
+  (26, 49): \ | || FN3
+  (26, 50): 'Non-US # ~ || FN3'
+  (26, 51): '; : || FN3'
+  (26, 52): ''' " || FN3'
+  (26, 53): '` ~ || FN3'
+  (26, 54): ', < || FN3'
+  (26, 55): . > || FN3
+  (26, 56): / ? || FN3
+  (26, 57): Capslock || FN3
+  (26, 58): F1 || FN3
+  (26, 59): F2 || FN3
+  (26, 60): F3 || FN3
+  (26, 61): F4 || FN3
+  (26, 62): F5 || FN3
+  (26, 63): F6 || FN3
+  (26, 64): F7 || FN3
+  (26, 65): F8 || FN3
+  (26, 66): F9 || FN3
+  (26, 67): F10 || FN3
+  (26, 68): F11 || FN3
+  (26, 69): F12 || FN3
+  (26, 70): PrntScn || FN3
+  (26, 71): ScrlLck || FN3
+  (26, 72): Pause || FN3
+  (26, 73): Insert || FN3
+  (26, 74): Home || FN3
+  (26, 75): Page Up || FN3
+  (26, 76): Delete || FN3
+  (26, 77): End || FN3
+  (26, 78): Page Down || FN3
+  (26, 79): Right || FN3
+  (26, 80): Left || FN3
+  (26, 81): Down || FN3
+  (26, 82): Up || FN3
+  (26, 83): NumLock || FN3
+  (26, 84): Num / || FN3
+  (26, 85): Num * || FN3
+  (26, 86): Num - || FN3
+  (26, 87): Num + || FN3
+  (26, 88): Num Enter || FN3
+  (26, 89): Num 1 || FN3
+  (26, 90): Num 2 || FN3
+  (26, 91): Num 3 || FN3
+  (26, 92): Num 4 || FN3
+  (26, 93): Num 5 || FN3
+  (26, 94): Num 6 || FN3
+  (26, 95): Num 7 || FN3
+  (26, 96): Num 8 || FN3
+  (26, 97): Num 9 || FN3
+  (26, 98): Num 0 || FN3
+  (26, 99): Num . || FN3
+  (26, 100): Non-US \ | || FN3
+  (26, 101): App || FN3
+  (26, 102): Power Off || FN3
+  (26, 103): Num = || FN3
+  (26, 104): F13 || FN3
+  (26, 105): F14 || FN3
+  (26, 106): F15 || FN3
+  (26, 107): F16 || FN3
+  (26, 108): F17 || FN3
+  (26, 109): F18 || FN3
+  (26, 110): F19 || FN3
+  (26, 111): F20 || FN3
+  (26, 112): F21 || FN3
+  (26, 113): F22 || FN3
+  (26, 114): F23 || FN3
+  (26, 115): F24 || FN3
+  (26, 116): -Scncde 116 || FN3
+  (26, 117): KB Help || FN3
+  (26, 118): Menu || FN3
+  (26, 119): KB Select || FN3
+  (26, 120): KB Stop || FN3
+  (26, 121): KB Again || FN3
+  (26, 122): KB Undo || FN3
+  (26, 123): KB Cut || FN3
+  (26, 124): KB Copy || FN3
+  (26, 125): KB Paste || FN3
+  (26, 126): KB Find || FN3
+  (26, 127): KB Mute || FN3
+  (26, 128): KB Vol Up || FN3
+  (26, 129): KB Vol Dn || FN3
+  (26, 224): L Ctrl || FN3
+  (26, 225): L Shift || FN3
+  (26, 226): L Alt || FN3
+  (26, 227): L Win || FN3
+  (26, 228): R Ctrl || FN3
+  (26, 229): R Shift || FN3
+  (26, 230): R Alt || FN3
+  (26, 231): R Win || FN3
+  (27, 0): -Scncde 0 || FN4
+  (27, 1): -Scncde 1 || FN4
+  (27, 2): -Scncde 2 || FN4
+  (27, 3): -Scncde 3 || FN4
+  (27, 4): a || FN4
+  (27, 5): b || FN4
+  (27, 6): c || FN4
+  (27, 7): d || FN4
+  (27, 8): e || FN4
+  (27, 9): f || FN4
+  (27, 10): g || FN4
+  (27, 11): h || FN4
+  (27, 12): i || FN4
+  (27, 13): j || FN4
+  (27, 14): k || FN4
+  (27, 15): l || FN4
+  (27, 16): m || FN4
+  (27, 17): n || FN4
+  (27, 18): o || FN4
+  (27, 19): p || FN4
+  (27, 20): q || FN4
+  (27, 21): r || FN4
+  (27, 22): s || FN4
+  (27, 23): t || FN4
+  (27, 24): u || FN4
+  (27, 25): v || FN4
+  (27, 26): w || FN4
+  (27, 27): x || FN4
+  (27, 28): y || FN4
+  (27, 29): z || FN4
+  (27, 30): 1 ! || FN4
+  (27, 31): 2 @ || FN4
+  (27, 32): '3 # || FN4'
+  (27, 33): 4 $ || FN4
+  (27, 34): 5 % || FN4
+  (27, 35): 6 ^ || FN4
+  (27, 36): 7 & || FN4
+  (27, 37): 8 * || FN4
+  (27, 38): 9 ( || FN4
+  (27, 39): 0 ) || FN4
+  (27, 40): Enter || FN4
+  (27, 41): Esc || FN4
+  (27, 42): Backspace || FN4
+  (27, 43): Tab || FN4
+  (27, 44): Space || FN4
+  (27, 45): '- _ || FN4'
+  (27, 46): = + || FN4
+  (27, 47): '[ { || FN4'
+  (27, 48): '] } || FN4'
+  (27, 49): \ | || FN4
+  (27, 50): 'Non-US # ~ || FN4'
+  (27, 51): '; : || FN4'
+  (27, 52): ''' " || FN4'
+  (27, 53): '` ~ || FN4'
+  (27, 54): ', < || FN4'
+  (27, 55): . > || FN4
+  (27, 56): / ? || FN4
+  (27, 57): Capslock || FN4
+  (27, 58): F1 || FN4
+  (27, 59): F2 || FN4
+  (27, 60): F3 || FN4
+  (27, 61): F4 || FN4
+  (27, 62): F5 || FN4
+  (27, 63): F6 || FN4
+  (27, 64): F7 || FN4
+  (27, 65): F8 || FN4
+  (27, 66): F9 || FN4
+  (27, 67): F10 || FN4
+  (27, 68): F11 || FN4
+  (27, 69): F12 || FN4
+  (27, 70): PrntScn || FN4
+  (27, 71): ScrlLck || FN4
+  (27, 72): Pause || FN4
+  (27, 73): Insert || FN4
+  (27, 74): Home || FN4
+  (27, 75): Page Up || FN4
+  (27, 76): Delete || FN4
+  (27, 77): End || FN4
+  (27, 78): Page Down || FN4
+  (27, 79): Right || FN4
+  (27, 80): Left || FN4
+  (27, 81): Down || FN4
+  (27, 82): Up || FN4
+  (27, 83): NumLock || FN4
+  (27, 84): Num / || FN4
+  (27, 85): Num * || FN4
+  (27, 86): Num - || FN4
+  (27, 87): Num + || FN4
+  (27, 88): Num Enter || FN4
+  (27, 89): Num 1 || FN4
+  (27, 90): Num 2 || FN4
+  (27, 91): Num 3 || FN4
+  (27, 92): Num 4 || FN4
+  (27, 93): Num 5 || FN4
+  (27, 94): Num 6 || FN4
+  (27, 95): Num 7 || FN4
+  (27, 96): Num 8 || FN4
+  (27, 97): Num 9 || FN4
+  (27, 98): Num 0 || FN4
+  (27, 99): Num . || FN4
+  (27, 100): Non-US \ | || FN4
+  (27, 101): App || FN4
+  (27, 102): Power Off || FN4
+  (27, 103): Num = || FN4
+  (27, 104): F13 || FN4
+  (27, 105): F14 || FN4
+  (27, 106): F15 || FN4
+  (27, 107): F16 || FN4
+  (27, 108): F17 || FN4
+  (27, 109): F18 || FN4
+  (27, 110): F19 || FN4
+  (27, 111): F20 || FN4
+  (27, 112): F21 || FN4
+  (27, 113): F22 || FN4
+  (27, 114): F23 || FN4
+  (27, 115): F24 || FN4
+  (27, 116): -Scncde 116 || FN4
+  (27, 117): KB Help || FN4
+  (27, 118): Menu || FN4
+  (27, 119): KB Select || FN4
+  (27, 120): KB Stop || FN4
+  (27, 121): KB Again || FN4
+  (27, 122): KB Undo || FN4
+  (27, 123): KB Cut || FN4
+  (27, 124): KB Copy || FN4
+  (27, 125): KB Paste || FN4
+  (27, 126): KB Find || FN4
+  (27, 127): KB Mute || FN4
+  (27, 128): KB Vol Up || FN4
+  (27, 129): KB Vol Dn || FN4
+  (27, 224): L Ctrl || FN4
+  (27, 225): L Shift || FN4
+  (27, 226): L Alt || FN4
+  (27, 227): L Win || FN4
+  (27, 228): R Ctrl || FN4
+  (27, 229): R Shift || FN4
+  (27, 230): R Alt || FN4
+  (27, 231): R Win || FN4
+  (28, 0): -Scncde 0 || FN5
+  (28, 1): -Scncde 1 || FN5
+  (28, 2): -Scncde 2 || FN5
+  (28, 3): -Scncde 3 || FN5
+  (28, 4): a || FN5
+  (28, 5): b || FN5
+  (28, 6): c || FN5
+  (28, 7): d || FN5
+  (28, 8): e || FN5
+  (28, 9): f || FN5
+  (28, 10): g || FN5
+  (28, 11): h || FN5
+  (28, 12): i || FN5
+  (28, 13): j || FN5
+  (28, 14): k || FN5
+  (28, 15): l || FN5
+  (28, 16): m || FN5
+  (28, 17): n || FN5
+  (28, 18): o || FN5
+  (28, 19): p || FN5
+  (28, 20): q || FN5
+  (28, 21): r || FN5
+  (28, 22): s || FN5
+  (28, 23): t || FN5
+  (28, 24): u || FN5
+  (28, 25): v || FN5
+  (28, 26): w || FN5
+  (28, 27): x || FN5
+  (28, 28): y || FN5
+  (28, 29): z || FN5
+  (28, 30): 1 ! || FN5
+  (28, 31): 2 @ || FN5
+  (28, 32): '3 # || FN5'
+  (28, 33): 4 $ || FN5
+  (28, 34): 5 % || FN5
+  (28, 35): 6 ^ || FN5
+  (28, 36): 7 & || FN5
+  (28, 37): 8 * || FN5
+  (28, 38): 9 ( || FN5
+  (28, 39): 0 ) || FN5
+  (28, 40): Enter || FN5
+  (28, 41): Esc || FN5
+  (28, 42): Backspace || FN5
+  (28, 43): Tab || FN5
+  (28, 44): Space || FN5
+  (28, 45): '- _ || FN5'
+  (28, 46): = + || FN5
+  (28, 47): '[ { || FN5'
+  (28, 48): '] } || FN5'
+  (28, 49): \ | || FN5
+  (28, 50): 'Non-US # ~ || FN5'
+  (28, 51): '; : || FN5'
+  (28, 52): ''' " || FN5'
+  (28, 53): '` ~ || FN5'
+  (28, 54): ', < || FN5'
+  (28, 55): . > || FN5
+  (28, 56): / ? || FN5
+  (28, 57): Capslock || FN5
+  (28, 58): F1 || FN5
+  (28, 59): F2 || FN5
+  (28, 60): F3 || FN5
+  (28, 61): F4 || FN5
+  (28, 62): F5 || FN5
+  (28, 63): F6 || FN5
+  (28, 64): F7 || FN5
+  (28, 65): F8 || FN5
+  (28, 66): F9 || FN5
+  (28, 67): F10 || FN5
+  (28, 68): F11 || FN5
+  (28, 69): F12 || FN5
+  (28, 70): PrntScn || FN5
+  (28, 71): ScrlLck || FN5
+  (28, 72): Pause || FN5
+  (28, 73): Insert || FN5
+  (28, 74): Home || FN5
+  (28, 75): Page Up || FN5
+  (28, 76): Delete || FN5
+  (28, 77): End || FN5
+  (28, 78): Page Down || FN5
+  (28, 79): Right || FN5
+  (28, 80): Left || FN5
+  (28, 81): Down || FN5
+  (28, 82): Up || FN5
+  (28, 83): NumLock || FN5
+  (28, 84): Num / || FN5
+  (28, 85): Num * || FN5
+  (28, 86): Num - || FN5
+  (28, 87): Num + || FN5
+  (28, 88): Num Enter || FN5
+  (28, 89): Num 1 || FN5
+  (28, 90): Num 2 || FN5
+  (28, 91): Num 3 || FN5
+  (28, 92): Num 4 || FN5
+  (28, 93): Num 5 || FN5
+  (28, 94): Num 6 || FN5
+  (28, 95): Num 7 || FN5
+  (28, 96): Num 8 || FN5
+  (28, 97): Num 9 || FN5
+  (28, 98): Num 0 || FN5
+  (28, 99): Num . || FN5
+  (28, 100): Non-US \ | || FN5
+  (28, 101): App || FN5
+  (28, 102): Power Off || FN5
+  (28, 103): Num = || FN5
+  (28, 104): F13 || FN5
+  (28, 105): F14 || FN5
+  (28, 106): F15 || FN5
+  (28, 107): F16 || FN5
+  (28, 108): F17 || FN5
+  (28, 109): F18 || FN5
+  (28, 110): F19 || FN5
+  (28, 111): F20 || FN5
+  (28, 112): F21 || FN5
+  (28, 113): F22 || FN5
+  (28, 114): F23 || FN5
+  (28, 115): F24 || FN5
+  (28, 116): -Scncde 116 || FN5
+  (28, 117): KB Help || FN5
+  (28, 118): Menu || FN5
+  (28, 119): KB Select || FN5
+  (28, 120): KB Stop || FN5
+  (28, 121): KB Again || FN5
+  (28, 122): KB Undo || FN5
+  (28, 123): KB Cut || FN5
+  (28, 124): KB Copy || FN5
+  (28, 125): KB Paste || FN5
+  (28, 126): KB Find || FN5
+  (28, 127): KB Mute || FN5
+  (28, 128): KB Vol Up || FN5
+  (28, 129): KB Vol Dn || FN5
+  (28, 224): L Ctrl || FN5
+  (28, 225): L Shift || FN5
+  (28, 226): L Alt || FN5
+  (28, 227): L Win || FN5
+  (28, 228): R Ctrl || FN5
+  (28, 229): R Shift || FN5
+  (28, 230): R Alt || FN5
+  (28, 231): R Win || FN5
+  (29, 0): -Scncde 0 || FN6
+  (29, 1): -Scncde 1 || FN6
+  (29, 2): -Scncde 2 || FN6
+  (29, 3): -Scncde 3 || FN6
+  (29, 4): a || FN6
+  (29, 5): b || FN6
+  (29, 6): c || FN6
+  (29, 7): d || FN6
+  (29, 8): e || FN6
+  (29, 9): f || FN6
+  (29, 10): g || FN6
+  (29, 11): h || FN6
+  (29, 12): i || FN6
+  (29, 13): j || FN6
+  (29, 14): k || FN6
+  (29, 15): l || FN6
+  (29, 16): m || FN6
+  (29, 17): n || FN6
+  (29, 18): o || FN6
+  (29, 19): p || FN6
+  (29, 20): q || FN6
+  (29, 21): r || FN6
+  (29, 22): s || FN6
+  (29, 23): t || FN6
+  (29, 24): u || FN6
+  (29, 25): v || FN6
+  (29, 26): w || FN6
+  (29, 27): x || FN6
+  (29, 28): y || FN6
+  (29, 29): z || FN6
+  (29, 30): 1 ! || FN6
+  (29, 31): 2 @ || FN6
+  (29, 32): '3 # || FN6'
+  (29, 33): 4 $ || FN6
+  (29, 34): 5 % || FN6
+  (29, 35): 6 ^ || FN6
+  (29, 36): 7 & || FN6
+  (29, 37): 8 * || FN6
+  (29, 38): 9 ( || FN6
+  (29, 39): 0 ) || FN6
+  (29, 40): Enter || FN6
+  (29, 41): Esc || FN6
+  (29, 42): Backspace || FN6
+  (29, 43): Tab || FN6
+  (29, 44): Space || FN6
+  (29, 45): '- _ || FN6'
+  (29, 46): = + || FN6
+  (29, 47): '[ { || FN6'
+  (29, 48): '] } || FN6'
+  (29, 49): \ | || FN6
+  (29, 50): 'Non-US # ~ || FN6'
+  (29, 51): '; : || FN6'
+  (29, 52): ''' " || FN6'
+  (29, 53): '` ~ || FN6'
+  (29, 54): ', < || FN6'
+  (29, 55): . > || FN6
+  (29, 56): / ? || FN6
+  (29, 57): Capslock || FN6
+  (29, 58): F1 || FN6
+  (29, 59): F2 || FN6
+  (29, 60): F3 || FN6
+  (29, 61): F4 || FN6
+  (29, 62): F5 || FN6
+  (29, 63): F6 || FN6
+  (29, 64): F7 || FN6
+  (29, 65): F8 || FN6
+  (29, 66): F9 || FN6
+  (29, 67): F10 || FN6
+  (29, 68): F11 || FN6
+  (29, 69): F12 || FN6
+  (29, 70): PrntScn || FN6
+  (29, 71): ScrlLck || FN6
+  (29, 72): Pause || FN6
+  (29, 73): Insert || FN6
+  (29, 74): Home || FN6
+  (29, 75): Page Up || FN6
+  (29, 76): Delete || FN6
+  (29, 77): End || FN6
+  (29, 78): Page Down || FN6
+  (29, 79): Right || FN6
+  (29, 80): Left || FN6
+  (29, 81): Down || FN6
+  (29, 82): Up || FN6
+  (29, 83): NumLock || FN6
+  (29, 84): Num / || FN6
+  (29, 85): Num * || FN6
+  (29, 86): Num - || FN6
+  (29, 87): Num + || FN6
+  (29, 88): Num Enter || FN6
+  (29, 89): Num 1 || FN6
+  (29, 90): Num 2 || FN6
+  (29, 91): Num 3 || FN6
+  (29, 92): Num 4 || FN6
+  (29, 93): Num 5 || FN6
+  (29, 94): Num 6 || FN6
+  (29, 95): Num 7 || FN6
+  (29, 96): Num 8 || FN6
+  (29, 97): Num 9 || FN6
+  (29, 98): Num 0 || FN6
+  (29, 99): Num . || FN6
+  (29, 100): Non-US \ | || FN6
+  (29, 101): App || FN6
+  (29, 102): Power Off || FN6
+  (29, 103): Num = || FN6
+  (29, 104): F13 || FN6
+  (29, 105): F14 || FN6
+  (29, 106): F15 || FN6
+  (29, 107): F16 || FN6
+  (29, 108): F17 || FN6
+  (29, 109): F18 || FN6
+  (29, 110): F19 || FN6
+  (29, 111): F20 || FN6
+  (29, 112): F21 || FN6
+  (29, 113): F22 || FN6
+  (29, 114): F23 || FN6
+  (29, 115): F24 || FN6
+  (29, 116): -Scncde 116 || FN6
+  (29, 117): KB Help || FN6
+  (29, 118): Menu || FN6
+  (29, 119): KB Select || FN6
+  (29, 120): KB Stop || FN6
+  (29, 121): KB Again || FN6
+  (29, 122): KB Undo || FN6
+  (29, 123): KB Cut || FN6
+  (29, 124): KB Copy || FN6
+  (29, 125): KB Paste || FN6
+  (29, 126): KB Find || FN6
+  (29, 127): KB Mute || FN6
+  (29, 128): KB Vol Up || FN6
+  (29, 129): KB Vol Dn || FN6
+  (29, 224): L Ctrl || FN6
+  (29, 225): L Shift || FN6
+  (29, 226): L Alt || FN6
+  (29, 227): L Win || FN6
+  (29, 228): R Ctrl || FN6
+  (29, 229): R Shift || FN6
+  (29, 230): R Alt || FN6
+  (29, 231): R Win || FN6
+  (30, 0): StickyCtrl
+  (30, 1): StickyShift
+  (30, 2): StickyAlt
+  (30, 3): StickyAltGr
+  (30, 4): StickyFN1
+  (30, 5): StickyFN2
+  (30, 6): StickyFN3
+  (30, 7): StickyFN4
+  (30, 8): StickyFN5
+  (30, 9): StickyFN6
+  (30, 10): StickyFN7
+  (30, 11): StickyFN8
+  (30, 12): StickyFN9
+  (30, 13): StickyFN10
+  (31, 0): Mouse Tap Left
+  (31, 125): Mouse Left++
+  (31, 126): Mouse Left+
+  (31, 127): Mouse Left
+  (31, 129): Mouse Right
+  (31, 130): Mouse Right+
+  (31, 131): Mouse Right++
+  (31, 255): Mouse Tap Right
+  (32, 0): Mouse Tap Up
+  (32, 125): Mouse Up++
+  (32, 126): Mouse Up+
+  (32, 127): Mouse Up
+  (32, 129): Mouse Down
+  (32, 130): Mouse Down+
+  (32, 131): Mouse Down++
+  (32, 255): Mouse Tap Down
+  (33, 127): Mouse Wheel+
+  (33, 129): Mouse Wheel-
+  (34, 1): Mouse LClick
+  (34, 2): Mouse RClick
+  (34, 3): Mouse MClick
+  (34, 4): Mouse Previous
+  (34, 5): Mouse Next
+  (35, 0): -Scncde 0 || Win
+  (35, 1): -Scncde 1 || Win
+  (35, 2): -Scncde 2 || Win
+  (35, 3): -Scncde 3 || Win
+  (35, 4): a || Win
+  (35, 5): b || Win
+  (35, 6): c || Win
+  (35, 7): d || Win
+  (35, 8): e || Win
+  (35, 9): f || Win
+  (35, 10): g || Win
+  (35, 11): h || Win
+  (35, 12): i || Win
+  (35, 13): j || Win
+  (35, 14): k || Win
+  (35, 15): l || Win
+  (35, 16): m || Win
+  (35, 17): n || Win
+  (35, 18): o || Win
+  (35, 19): p || Win
+  (35, 20): q || Win
+  (35, 21): r || Win
+  (35, 22): s || Win
+  (35, 23): t || Win
+  (35, 24): u || Win
+  (35, 25): v || Win
+  (35, 26): w || Win
+  (35, 27): x || Win
+  (35, 28): y || Win
+  (35, 29): z || Win
+  (35, 30): 1 ! || Win
+  (35, 31): 2 @ || Win
+  (35, 32): '3 # || Win'
+  (35, 33): 4 $ || Win
+  (35, 34): 5 % || Win
+  (35, 35): 6 ^ || Win
+  (35, 36): 7 & || Win
+  (35, 37): 8 * || Win
+  (35, 38): 9 ( || Win
+  (35, 39): 0 ) || Win
+  (35, 40): Enter || Win
+  (35, 41): Esc || Win
+  (35, 42): Backspace || Win
+  (35, 43): Tab || Win
+  (35, 44): Space || Win
+  (35, 45): '- _ || Win'
+  (35, 46): = + || Win
+  (35, 47): '[ { || Win'
+  (35, 48): '] } || Win'
+  (35, 49): \ | || Win
+  (35, 50): 'Non-US # ~ || Win'
+  (35, 51): '; : || Win'
+  (35, 52): ''' " || Win'
+  (35, 53): '` ~ || Win'
+  (35, 54): ', < || Win'
+  (35, 55): . > || Win
+  (35, 56): / ? || Win
+  (35, 57): Capslock || Win
+  (35, 58): F1 || Win
+  (35, 59): F2 || Win
+  (35, 60): F3 || Win
+  (35, 61): F4 || Win
+  (35, 62): F5 || Win
+  (35, 63): F6 || Win
+  (35, 64): F7 || Win
+  (35, 65): F8 || Win
+  (35, 66): F9 || Win
+  (35, 67): F10 || Win
+  (35, 68): F11 || Win
+  (35, 69): F12 || Win
+  (35, 70): PrntScn || Win
+  (35, 71): ScrlLck || Win
+  (35, 72): Pause || Win
+  (35, 73): Insert || Win
+  (35, 74): Home || Win
+  (35, 75): Page Up || Win
+  (35, 76): Delete || Win
+  (35, 77): End || Win
+  (35, 78): Page Down || Win
+  (35, 79): Right || Win
+  (35, 80): Left || Win
+  (35, 81): Down || Win
+  (35, 82): Up || Win
+  (35, 83): NumLock || Win
+  (35, 84): Num / || Win
+  (35, 85): Num * || Win
+  (35, 86): Num - || Win
+  (35, 87): Num + || Win
+  (35, 88): Num Enter || Win
+  (35, 89): Num 1 || Win
+  (35, 90): Num 2 || Win
+  (35, 91): Num 3 || Win
+  (35, 92): Num 4 || Win
+  (35, 93): Num 5 || Win
+  (35, 94): Num 6 || Win
+  (35, 95): Num 7 || Win
+  (35, 96): Num 8 || Win
+  (35, 97): Num 9 || Win
+  (35, 98): Num 0 || Win
+  (35, 99): Num . || Win
+  (35, 100): Non-US \ | || Win
+  (35, 101): App || Win
+  (35, 102): Power Off || Win
+  (35, 103): Num = || Win
+  (35, 104): F13 || Win
+  (35, 105): F14 || Win
+  (35, 106): F15 || Win
+  (35, 107): F16 || Win
+  (35, 108): F17 || Win
+  (35, 109): F18 || Win
+  (35, 110): F19 || Win
+  (35, 111): F20 || Win
+  (35, 112): F21 || Win
+  (35, 113): F22 || Win
+  (35, 114): F23 || Win
+  (35, 115): F24 || Win
+  (35, 116): -Scncde 116 || Win
+  (35, 117): KB Help || Win
+  (35, 118): Menu || Win
+  (35, 119): KB Select || Win
+  (35, 120): KB Stop || Win
+  (35, 121): KB Again || Win
+  (35, 122): KB Undo || Win
+  (35, 123): KB Cut || Win
+  (35, 124): KB Copy || Win
+  (35, 125): KB Paste || Win
+  (35, 126): KB Find || Win
+  (35, 127): KB Mute || Win
+  (35, 128): KB Vol Up || Win
+  (35, 129): KB Vol Dn || Win
+  (35, 224): L Ctrl || Win
+  (35, 225): L Shift || Win
+  (35, 226): L Alt || Win
+  (35, 227): L Win || Win
+  (35, 228): R Ctrl || Win
+  (35, 229): R Shift || Win
+  (35, 230): R Alt || Win
+  (35, 231): R Win || Win
+  (36, 1): Safe Return
+  (36, 2): Slasher
+  (36, 3): DotComm
+  (36, 4): Null Win
+  (255, 0): 'Null'
