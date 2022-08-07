@@ -137,25 +137,25 @@ pair_to_name:
   (0, 229): R Shift
   (0, 230): R Alt
   (0, 231): R Win
-  (1, 1): Fn
-  (1, 2): Fn2
-  (1, 3): Fn3
-  (1, 4): Fn4
-  (1, 5): Fn5
-  (1, 6): Fn6
-  (1, 7): Fn7
-  (1, 8): Fn8
-  (1, 9): Fn9
-  (1, 10): Fn10
-  (1, 11): Fn11
-  (1, 12): Fn12
-  (1, 13): Fn13
-  (1, 14): Fn14
-  (1, 15): Fn15
-  (1, 16): Fn16
-  (1, 17): Fn17
-  (1, 18): Fn18
-  (1, 19): Fn19
+  (1, 1): layer 2
+  (1, 2): layer 3
+  (1, 3): layer 4
+  (1, 4): layer 5
+  (1, 5): layer 6
+  (1, 6): layer 7
+  (1, 7): layer 8
+  (1, 8): layer 9
+  (1, 9): layer 10
+  (1, 10): layer 11
+  (1, 11): layer 12
+  (1, 12): layer 13
+  (1, 13): layer 14
+  (1, 14): layer 15
+  (1, 15): layer 16
+  (1, 16): layer 17
+  (1, 17): layer 18
+  (1, 18): layer 19
+  (1, 19): layer 20
   (4, 0): Vol Up
   (4, 1): Vol Dn
   (4, 2): Mute
@@ -163,38 +163,38 @@ pair_to_name:
   (4, 4): M Pause
   (4, 5): M Next
   (4, 6): M Back
-  (5, 1): toggleFn
-  (5, 2): toggleFn2
-  (5, 3): toggleFn3
-  (5, 4): toggleFn4
-  (5, 5): toggleFn5
-  (5, 6): toggleFn6
-  (5, 7): toggleFn7
-  (5, 8): toggleFn8
-  (5, 9): toggleFn9
-  (5, 10): toggleFn10
-  (5, 11): toggleFn11
-  (5, 12): toggleFn12
-  (5, 13): toggleFn13
-  (5, 14): toggleFn14
-  (5, 15): toggleFn15
-  (5, 16): toggleFn16
-  (5, 17): toggleFn17
-  (5, 18): toggleFn18
-  (5, 19): toggleFn19
+  (5, 1): toggle layer 2
+  (5, 2): toggle layer 3
+  (5, 3): toggle layer 4
+  (5, 4): toggle layer 5
+  (5, 5): toggle layer 6
+  (5, 6): toggle layer 7
+  (5, 7): toggle layer 8
+  (5, 8): toggle layer 9
+  (5, 9): toggle layer 10
+  (5, 10): toggle layer 11
+  (5, 11): toggle layer 12
+  (5, 12): toggle layer 13
+  (5, 13): toggle layer 14
+  (5, 14): toggle layer 15
+  (5, 15): toggle layer 16
+  (5, 16): toggle layer 17
+  (5, 17): toggle layer 18
+  (5, 18): toggle layer 19
+  (5, 19): toggle layer 20
   (6, 0): Set 6KRO
   (6, 1): Set NKRO
   (6, 2): Deprecated
-  (7, 0): macro0
-  (7, 1): macro1
-  (7, 2): macro2
-  (7, 3): macro3
-  (7, 4): macro4
-  (7, 5): macro5
-  (7, 6): macro6
-  (7, 7): macro7
-  (7, 8): macro8
-  (7, 9): macro9
+  (7, 0): macro 0
+  (7, 1): macro 1
+  (7, 2): macro 2
+  (7, 3): macro 3
+  (7, 4): macro 4
+  (7, 5): macro 5
+  (7, 6): macro 6
+  (7, 7): macro 7
+  (7, 8): macro 8
+  (7, 9): macro 9
   (10, 10): LED+
   (10, 20): LED++
   (10, 101): LED Off
