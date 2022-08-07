@@ -3,38 +3,11 @@ class ZCauligi_ : public ModBase {
   public:
 
 byte WinDown = 0;
-int16_t MouseTimer[4];
-byte MouseCount[4];
 byte SafeEnterLayer = -1;
 boolean SafeToEnter = true;
 boolean Shiftiness = false;
 boolean LshiftDown = false;
 boolean RshiftDown = false;
-
-void Startup()
-{
-  // things to run during hardware startup
-  for (byte i = 0; i < 4; i++)
-  {
-    MouseTimer[i] = -1;
-    MouseCount[i] = 0;
-  }
-}
-
-void Loop()
-{
-  for (byte i = 0; i < 4; i++)
-  {
-    if (MouseTimer[i] > 0)
-    {
-      MouseTimer[i]--;
-    }
-    else if (MouseTimer[i] == 0)
-    {
-      MouseTimer[i] = -1;
-    }
-  }
-}
 
 void RestoreShiftiness() {
   Shiftiness = 0;
@@ -82,19 +55,6 @@ void KeyDown(char val, byte type)
 
     else if (type == 1 || type == 5) { // switching layers
       SafeToEnter = true;
-    }
-
-    // double tap mouse keys
-    else if (type == 31 || type == 32)
-    {
-      int8_t m = KeyToMouse(val, type);
-      byte i = m & B11;
-
-      if (MouseTimer[i] < 0)
-        MouseCount[i] = 0;
-      MouseCount[i]++;
-      byte mouseSpeed = 1 << (MouseCount[i] - 1);
-      AdjustMouse(i, mouseSpeed - 1);
     }
 
     // custom keys
@@ -172,17 +132,6 @@ void KeyUp(char val, byte type)
       WinDown = 0;
     }
 
-    else if (type == 31 || type == 32)
-    {
-      int8_t m = KeyToMouse(val, type);
-      byte i = m & B11;
-
-      byte mouseSpeed = 1 << (MouseCount[i] - 1);
-      AdjustMouse(i, -(mouseSpeed - 1));
-
-      MouseTimer[i] = 5 * TapDance.TIMER_MULTIPLIER;
-    }
-
     else if (type == 36) {
       if (val == 1) {
         AnimusKeyboard.release(40);
@@ -218,45 +167,5 @@ void SerialCommand(String input)
 
 }
 
-void AdjustMouse(byte i, int8_t amt)
-{
-  switch (i)
-  {
-    case 0: // up
-      MouseKeys.YVal -= amt;
-      break;
-    case 1: // down
-      MouseKeys.YVal += amt;
-      break;
-    case 2: // left
-      MouseKeys.XVal -= amt;
-      break;
-    case 3: // right
-      MouseKeys.XVal += amt;
-      break;
-  }
-}
-
-int8_t KeyToMouse(char val, byte type)
-{
-  byte i;
-  int8_t amt = val - 128;
-  if (type == 32)
-  {
-    if (amt < 0)
-      i = 0;
-    else if (amt > 0)
-      i = 1;
-  }
-  else if (type == 31)
-  {
-    if (amt < 0)
-      i = 2;
-    else if (amt > 0)
-      i = 3;
-  }
-  return (amt << 2) | i;
-}
-
 };
-extern ZCauligi_ ZCauligi;
+ZCauligi_ ZCauligi;

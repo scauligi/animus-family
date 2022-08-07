@@ -9,6 +9,7 @@ BUILDER_REQUIREMENT_END
 
 
 #include "Wire.h"
+#include <avr/wdt.h>
 
 class I2C_ : public ModBase {
   public:
@@ -19,6 +20,9 @@ int I2CTempLayer = 0;
 void Startup()
 {
   Wire.begin();
+  // Wire.setClock(1000000);
+  debug_print("tw ");
+  debug_log(TWBR);
 }
 
 void OuterLoop()
@@ -61,6 +65,26 @@ void OuterLoop()
       {
         reX = cinput;
         reY = tinput;
+        debug_print("sub press ");
+        debug_print(reY);
+        debug_print(" ");
+        debug_log(reX);
+  debug_print("tw ");
+  debug_log(TWBR);
+        if (reX == 6 && reY == 0) {
+          //((void(*)(void))(0))();
+          uint16_t bootKey = 0x7777;
+          volatile uint16_t * const bootKeyPtr = (volatile uint16_t *)0x0800;
+
+          // Stash the magic key
+          *bootKeyPtr = bootKey;
+
+          // Set a watchdog timer
+          wdt_enable(WDTO_120MS);
+          debug_log("watchdog enabled...");
+
+          while(1) {}
+        }
       }
       else if (type == 2)
       {

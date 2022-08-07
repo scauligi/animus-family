@@ -150,6 +150,34 @@ void SerialCommand(String input)
     Serial.print("set prime(");
     Serial.print(IS_PRIME);
   }
+  else if (input.startsWith("uniquekdumpall"))
+  {
+    byte b;
+    for (int i = 0; i < 1024; i++) {
+      b = EEPROM.read(i);
+      Serial.write(b);
+    }
+    byte numLayers = b; // last byte of EEPROM
+    for (byte z = 0; z < numLayers; z++) {
+      I2C.SetTempLayer(z);
+      for (byte y = 0; y < ROW; y++) {
+        for (byte x = 0; x < COL; x++) {
+          Wire.beginTransmission(8);
+          Wire.write(7);    // request updated key press due to layer change
+          Wire.write(x);
+          Wire.write(y);
+          Wire.endTransmission();
+          Wire.requestFrom(8, 3);    // request 3 bytes from sub device #8
+          Wire.read();    // discard count; we don't need it
+          byte cinput = Wire.read();
+          byte tinput = Wire.read();
+          Serial.write(cinput);
+          Serial.write(tinput);
+        }
+      }
+    }
+    I2C.SetTempLayer(TempLayer);
+  }
   Mod.SerialCommand(input);
 }
 

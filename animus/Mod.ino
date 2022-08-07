@@ -13,7 +13,7 @@
 */
 
 #define Mod(name) class name##_; extern name##_ name;
-class Mod_;
+class ModBase;
 Mod(NKRO)
 Mod(I2C)
 Mod(I2CSub)
@@ -27,18 +27,18 @@ Mod(Shifted)
 Mod(ZCauligi)
 #undef Mod
 
-Mod_* mods[] = {
-  (Mod_*)&NKRO,
-  (Mod_*)&I2C,
-  (Mod_*)&I2CSub,
-  (Mod_*)&Media,
-  (Mod_*)&Macro,
-  (Mod_*)&DualRoles,
-  (Mod_*)&TapDance,
-  (Mod_*)&MouseKeys,
-  (Mod_*)&StickyKeys,
-  (Mod_*)&Shifted,
-  (Mod_*)&ZCauligi,
+ModBase* mods[] = {
+  (ModBase*)&NKRO,
+  (ModBase*)&I2C,
+  (ModBase*)&I2CSub,
+  (ModBase*)&Media,
+  (ModBase*)&Macro,
+  (ModBase*)&DualRoles,
+  (ModBase*)&TapDance,
+  (ModBase*)&MouseKeys,
+  (ModBase*)&StickyKeys,
+  (ModBase*)&Shifted,
+  (ModBase*)&ZCauligi,
 };
 
 class ModBase
@@ -60,7 +60,7 @@ public:
   }
 class Mod_ {
 public:
-  void Startup() { withAllMods(Startup()); }
+  void Startup() { debug_log("startup"); withAllMods(Startup()); }
   void OuterLoop() { withAllMods(OuterLoop()); }
   void Loop() { withAllMods(Loop()); }
   void PressCoord(byte x, byte y) { withAllMods(PressCoord(x, y)); }

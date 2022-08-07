@@ -26,16 +26,56 @@ boolean PressedKey = false;
 // baud: dont change this it messes with the GUI interface
 int BaudRate = 19200;
 
+#define DO_DEBUG 0
+
+#if DO_DEBUG
+bool can_write = true;
+void debug_waitfor() {
+  int i = 0;
+  while (!Serial) {
+    delay(10);
+    i++;
+    if (i > 200) {
+      can_write = false;
+      break;
+    }
+  }
+  if (can_write) {
+    Serial.print("baud: ");
+    Serial.println(Serial.baud());
+  }
+}
+template <typename T>
+void debug_log(T msg) {
+  if (can_write) {
+    Serial.println(msg);
+  }
+}
+template <typename T>
+void debug_print(T msg) {
+  if (can_write) {
+    Serial.print(msg);
+  }
+}
+#else
+void debug_waitfor() {}
+template <typename T>
+void debug_log(T msg) {}
+template <typename T>
+void debug_print(T msg) {}
+#endif
+
 
 void setup()
 {
-  AnimusKeyboard.begin();
   Serial.begin(BaudRate);
+  delay(300);
+
+  debug_waitfor();
+
+  AnimusKeyboard.begin();
   Mod.Startup();
   ResetPins();
-
-  // serial delay
-  delay(300);
 }
 
 void loop()
@@ -64,6 +104,10 @@ void loop()
       {
         if (KeyStateCountDown[j][i] == 1) // if key is still down after debounce time
         {
+          debug_print("press ");
+          debug_print(i);
+          debug_print(" ");
+          debug_log(j);
           Mod.PressCoord(j, i);
           Mod.PrePress(GetValEEPROM(j, i, TempLayer), GetTypeEEPROM(j, i, TempLayer));
           LayerState[j][i] = TempLayer;

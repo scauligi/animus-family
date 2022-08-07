@@ -40,11 +40,13 @@ void receiveEvent(int numBytes)
   byte type = Wire.read();
   if (type == 1)
   {
+    // set TempLayer
     byte input = Wire.read();
     TempLayer = input;
   }
   else if (type == 2)
   {
+    // set key in EEPROM
     byte x = Wire.read();
     byte y = Wire.read();
     byte z = Wire.read();
@@ -54,11 +56,13 @@ void receiveEvent(int numBytes)
   }
   else if (type == 3)
   {
+    // set numlayers in EEPROM
     byte input = Wire.read();
     EEPROM.update(1023, input);
   }
   else if (type == 4)
   {
+    // set arbitrary byte in EEPROM
     byte val = Wire.read();
     int addr = 0;
     while (0 < Wire.available())
@@ -69,15 +73,18 @@ void receiveEvent(int numBytes)
   }
   else if (type == 5)
   {
+    // set KeyLayer
     byte input = Wire.read();
     KeyLayer = input;
   }
   else if (type == 6)
   {
+    // wut
     byte input = Wire.read();
   }
   else if (type == 7)
   {
+    // re-send key coord with current TempLayer
     byte x = Wire.read();
     byte y = Wire.read();
     LayerState[x][y] = TempLayer;
