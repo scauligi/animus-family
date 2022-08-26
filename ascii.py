@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import math
+import sys
 import re
 import textwrap
 from collections import defaultdict as ddict
@@ -10,13 +11,15 @@ import yaml
 
 BOX = " XX─X┌┐┬X└┘┴│├┤┼"
 
-INWIDTH = 7
-INHEIGHT = 3
+INWIDTH = 6
+INHEIGHT = 2
 
 WIDTH = INWIDTH + 1
 HEIGHT = INHEIGHT + 1
 
 YOFF = [0, HEIGHT, math.ceil(HEIGHT / 3), 0, 0, 0, math.ceil(HEIGHT / 3)]
+
+LAYER_NAMES = ["Base", "Sym", "Fn", "NPad", "Mouse"]
 
 
 def OFF(x, y):
@@ -147,14 +150,15 @@ def _tr(name):
         return m[1]
     if name == 'Null':
         return ''
+    name = re.sub(r'layer (\d+)', lambda m: LAYER_NAMES[w].lower() if (w := int(m[1]) - 1) < len(LAYER_NAMES) else m[0], name)
     return name
 
 
 pair_to_name = {parse_tuple(k): _tr(v) for k, v in data['pair_to_name'].items()}
 
-leftright = Path('../leftright.hex').read_bytes()
-lrom = leftright[:1024]
-rrom = leftright[1024:]
+leftright = Path('leftright.hex').read_bytes()
+lrom = bytearray(leftright[:1024])
+rrom = bytearray(leftright[1024:])
 
 
 def boxwrap(s, width=INWIDTH, height=INHEIGHT):
@@ -242,25 +246,61 @@ def layer(w):
         for i, s in enumerate(boxlines(n)):
             write(rendered, (x, y + i), s)
 
-    lines = list(boxlines(f'Layer {w+1}', width=labelwidth))
+    layername = LAYER_NAMES[w] if w < len(LAYER_NAMES) else f'Layer {w+1}'
+    lines = list(boxlines(layername, width=labelwidth))
     index = (INHEIGHT - len(lines)) // 2
     for line in lines:
         write(rendered, ptadd(labelpt, (1, index + 1)), line.strip().center(labelwidth))
 
     display(rendered)
 
+def emulate(command):
+    cmd, *args = command.split('(')
+    args = map(int, args)
+    match cmd:
+        case "uniquekseteeprom":
+            addr, val = args
+            lrom[addr] = val
+        case "uniqueksetkey":
+            x, y, z, val, ty = args
+            addr = ((z * 5 + y) * 8 + x) * 2
+            lrom[addr:addr+2] = (val, ty)
+        case "uniqueksetsubkey":
+            x, y, z, val, ty = args
+            addr = ((z * 5 + y) * 8 + x) * 2
+            rrom[addr:addr+2] = (val, ty)
+        case "uniqueksetmacro":
+            index, length, *keys, overflow = args
+            addr = 600 + index * (8 * 2 + 2)
+            assert len(keys) % 3 == 0
+            assert len(keys) // 3 == length
+            bits = 0
+            vals = []
+            for i in range(length):
+                val, ty, updown = keys[i*3:(i+1)*3]
+                bits |= int(bool(updown)) << i
+                vals.extend([val, ty])
+            lrom[addr:addr+2+length*2] = bits, length, *vals
+
 
 def main():
     nlayers = lrom[-1]
 
-    print('Layers: %d\n' % (nlayers,))
+    if len(sys.argv) > 1:
+        for fname in sys.argv:
+            for line in Path(fname).read_text().splitlines():
+                emulate(line)
+
+
+    names = ', '.join(f'"{n}"' for n in LAYER_NAMES)
+    print(f'Layers: {nlayers} (using: {names})')
+    print()
 
     macros()
     print()
 
     for w in range(nlayers):
         layer(w)
-
 
 if __name__ == '__main__':
     main()

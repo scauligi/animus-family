@@ -10,7 +10,7 @@ if len(sys.argv) > 1:
     inputIsArgs = True
     args = list(reversed(sys.argv[1:]))
 
-sp = Serial('/dev/ttyACM0', baudrate=19200, timeout=0.2, write_timeout=0)
+sp = Serial('/dev/tty.usbmodemCHIDKH1', baudrate=19200, timeout=0.2, write_timeout=0)
 
 while True:
     ser = sp.read()
