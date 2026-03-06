@@ -1,5 +1,6 @@
 /_build
 *.hex
+*.url
 
 # Windows image file caches
 Thumbs.db

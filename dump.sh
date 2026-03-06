@@ -1,4 +1,4 @@
 #!/bin/bash
 set -eu
 
-./bcat.py "uniquekdumpall" | tee leftright.hex | xxd
+./bcat.py "uniquekdumpall" | tee _dumped.hex | xxd
